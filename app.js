@@ -45,3 +45,71 @@ if(remaining < 0 ){
     console.log("Warning: You spent too much money!")
 }
 console.log("Remaining: " + remaining.toFixed(2) + " UZS")
+//============================================================================================================
+
+//LECTURE 3 
+// Challenge 1
+let number = +prompt("Enter number:");
+let evens = 0;
+let odds = 0;
+
+for (let i = 1; i <= number; i++) {
+    if (i % 2 === 0) {
+        evens++; 
+    } else {
+        odds++;  
+    }
+}
+
+console.log("Even numbers: " + evens);
+console.log("Odd numbers: " + odds);
+
+//Challenge 2 
+let nuM = +prompt("Enter the number for reverse:");
+let reversed = 0;
+
+while (nuM > 0) {
+    let lastDigit = nuM % 10; 
+    reversed = (reversed * 10) + lastDigit; 
+    nuM = Math.floor(nuM / 10); 
+}
+
+console.log("Reversed number: " + reversed);
+
+//Challenge 3
+let nUm = +prompt("Raqamlarini tekshirish uchun son kiriting:");
+let maxDigit = 0;
+
+while (nUm > 0) {
+    let digit = nUm % 10;
+    if (digit > maxDigit) {
+        maxDigit = digit; 
+    }
+    nUm = Math.floor(num / 10);
+}
+
+console.log("The biggest number: " + maxDigit);
+
+//Challenge 4
+let Num = +prompt("To get sum of numbers:");
+let sum = 0;
+
+while (Num > 0) {
+    sum += Num % 10;
+    Num = Math.floor(Num / 10);
+}
+
+console.log("Sum of numbers: " + sum);
+
+//Challenge 5
+let numBer = +prompt("Enter number:");
+let count = 0;
+
+if (numBer === 0) count = 1; 
+
+while (numBer > 0) {
+    numBer = Math.floor(num / 10);
+    count++; 
+}
+
+console.log("Amout of digits: " + count);
