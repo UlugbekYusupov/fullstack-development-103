@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //challenge1
 console.log("5"+5);
 console.log("5"-5);
@@ -50,3 +51,6 @@ console.log("Remaining Budget: " + remaining.toFixed(2));
 if (remaining < 0) {
     console.log("You have overspent");
 }
+
+
+>>>>>>> d91d96c10c49852320f0c52631e027ff70491fa0
