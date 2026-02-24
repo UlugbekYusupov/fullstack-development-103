@@ -48,3 +48,5 @@ if (remaining < 0) {
 } else {
     console.log("✅ You are within budget.");
 }
+
+console.log('test')
