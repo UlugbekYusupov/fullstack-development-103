@@ -1,0 +1,120 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+button {
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-weight: bold;
+    width: 200px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+#increment-btn {
+    background: darkred;
+}
+
+#save-btn {
+    background: darkgreen;
+}
+
+p {
+    padding-left: 20px;
+}
+
+.reset-button {
+    background-color: red;
+} */
+ 
+/* 
+body {
+    background: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+
+img {
+    width: 200px;
+    display: block;
+}
+
+p {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+button {
+    background-color: white;
+    color: black;
+    margin-top: 10px;
+    border: 1px solid black;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+#error {
+    color: red;
+    font-weight: 200;
+} */
+
+/* Game Settings */
+/* body {
+    background-color: darkgreen;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+h1  {
+    color: burlywood;
+}
+
+p {
+    color: white;
+}
+
+#QuestionElement {
+    color: white;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+} */
+/* End of the code of game (casino) */
+
+.apple {
+    width: 200px;
+    height: 50px;
+    border: 1px;
+    border-radius: 10px;
+    background-color: darkred;
+    margin: 15px;
+}
+
+
+.orange {
+    width: 200px;
+    height: 50px;
+    border: 1px;
+    border-radius: 10px;
+    background-color: darkorange;
+    margin: 15px;
+}

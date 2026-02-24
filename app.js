@@ -1,9 +1,518 @@
-console.log("5" + 5);
-console.log("5" - 5);
-console.log("5" * 5);
-console.log("10" / 2);
-console.log("5" + true);
-console.log("10" - true);
-console.log(5 + true);
-console.log(5 + null);
-console.log(5 + undefined);
+// Challenge 1
+// console.log("5" + 5);
+// console.log("5" - 5);
+// console.log("5" * 2);
+// console.log("10" / 2);
+// console.log(5 + true);
+// console.log("10" - true);
+// console.log("5" + true);
+// console.log(5 + null);
+// console.log(5 + undefined);
+
+// Challenge 2
+// 1-task
+// const value = Number("200");
+// const result = value + 50;
+// console.log(result);
+
+// 2-task
+// const age = String(25)
+// console.log("He is" + " " + age + " years old")
+
+// 3-task
+// console.log(Boolean("false"))
+
+// 4-task
+// console.log("10" - true) 
+// Result is 9 because "-" operator forces the string to become a number and true is equal to 1, while false is equal to 0.
+
+// Challenge 3
+// 1-task
+// const temprature = 17
+// console.log(temprature)
+
+// 2-task
+// formula: F=(C×9/5)+32
+// let f = (temprature * 9 / 5) + 32
+// console.log("Fahrenheit version: " + f)
+
+// 3-task
+// console.log("Celcius: " + temprature + " " + "Fahrenheit: " + f)
+
+// 4-task
+// temprature = 18
+// console.log(temprature)
+// Uncaught TypeError: Assignment to constant variable.
+
+// 5-task
+// const TempratureByUserValue = prompt("Give a value to Celsius: ")
+// console.log(TempratureByUserValue)
+
+// Challenge 4
+// let budget = Number(prompt("Enter your budget: "))
+
+// let Expense1 = Number(prompt("How much is the expense? (1-expense)"))
+// let Expense2 = Number(prompt("How much is the expense? (2-expense)"))
+// let Expense3 = Number(prompt("How much is the expense? (3-expense)"))
+
+// let AllExpenses = [Expense1,Expense2,Expense3]
+
+// function subtract() {
+//     for (let i = 0; i < AllExpenses.length; i++) {
+//         if (AllExpenses[i] > budget) {
+//             console.log("You are overspending!")
+//         }
+//         else if (i < budget) {
+//             budget -= AllExpenses[i]
+//         }
+//     }
+//     console.log("Balance: " + budget) 
+// }
+// subtract()
+
+// Lecture 3
+// Challenge 1
+// let UserInput = Number(prompt("Enter a number: "))
+
+// let EvenCounter = 0
+// let OddCounter = 0
+
+// function EvenOdd() {
+//     if (i <= 0) {
+//             return "Please enter another number!"
+//         }
+
+//     for (let i = 1; i <= UserInput; i++) {
+//         if (i % 2 == 0) {
+//             EvenCounter += 1
+//         }
+//         else {
+//             OddCounter += 1
+//         }
+//     }
+    
+//     console.log("Amount of Even numbers: " + EvenCounter)
+//     console.log("Amount of Odd numbers: " + OddCounter)
+// }
+
+// EvenOdd()
+
+// Challenge 2
+// let UserInput = Number(prompt("Enter a number: "))
+// let ReverseNumberCounter = ""
+// function ReverseNumbers() {
+//     if (UserInput <= 0) {
+//         return console.log("Enter a valid number!")
+//     }
+//     while (UserInput > 0) {
+//         let digit = UserInput % 10
+//         ReverseNumberCounter += digit
+//         UserInput = Math.floor(UserInput / 10)
+//     }
+
+//     ReverseNumberCounter = Number(ReverseNumberCounter)
+//     console.log("Reversed digits: " + ReverseNumberCounter)
+// }
+
+// ReverseNumbers()
+
+// Challenge 3
+// let UserInput = Number(prompt("Enter a number: "))
+// let digits = []
+// let largest = 0
+
+// function LargestDigit() {
+//     if (UserInput <= 0) {
+//         return console.log("Enter a valid number!")
+//     }
+
+//     while (UserInput > 0) {
+//         digits.push(UserInput % 10)
+//         UserInput = Math.floor(UserInput / 10)
+//     }
+    
+//     for (let i = 0; i < digits.length; i++) {
+//         if (digits[i] > largest) {
+//             largest = digits[i]
+//         }
+//     }
+
+//     console.log("Largest digit: " + largest)
+// }
+
+// LargestDigit()
+
+// Challenge 4
+// let UserInput = Number(prompt("Enter a number: "))
+// let digits = []
+// let AllDigits = 0
+
+// function SumDigits() {
+//     if (UserInput <= 0) {
+//         return console.log("Enter a valid number!")
+//     }
+
+//     while (UserInput > 0) {
+//         digits.push(UserInput % 10)
+//         UserInput = Math.floor(UserInput / 10)
+//     }
+
+//     for (let i = 0; i < digits.length; i++) {
+//         AllDigits += digits[i]
+//     }
+
+//     console.log("Sum of all digits: " + AllDigits)
+// }
+
+// SumDigits()
+
+// Challenge 5
+// let UserInput = Number(prompt("Enter a number: "))
+// let countdown = 0
+// let digits = []
+
+// function counter() {
+//     if (UserInput <= 0) {
+//         return console.log("Enter a valid number!")
+//     }
+
+//     while (UserInput > 0) {
+//         digits.push(UserInput % 10)
+//         UserInput = Math.floor(UserInput / 10)
+//     }
+
+//     for (let i = 0; i < digits.length; i++) {
+//         countdown += 1
+//     }
+
+//     console.log("Amount of digits: " + countdown)
+// }
+
+// counter()
+
+// JavaScript 7h 45m YouTube video ------------
+
+// let firstBatch = 5
+// let secondBatch = 7
+// let count = firstBatch + secondBatch
+// console.log(count)
+
+// let dogRatioAge = 7
+// let humanAge = 18
+// let HumaninDogAge = dogRatioAge * humanAge
+// console.log(HumaninDogAge)
+
+// let countEL = document.getElementById("count-el")
+// let saveEL = document.getElementById("save-el")
+// let resetBTN = document.getElementById("reset-btn")
+// console.log(countEL)
+
+// let countdown = 0
+// function increment() {
+//     countdown += 1
+//     countEL.textContent = countdown
+// }
+
+// function save() {
+//     let countString = countdown + " - "
+//     saveEL.textContent += countString
+//     countEL.textContent = 0
+//     countdown = 0
+//     console.log(countdown)
+// }
+
+// const MyName = "Jovohir"
+// const MyLastName = "Bahodirov"
+// const FullName = MyName + " " + MyLastName
+// console.log(FullName)
+
+// let MyName = "Jovohir"
+// let greeting = "Hi there"
+// FullGreeting = greeting + "," + " " + MyName + "!" 
+// console.log(FullGreeting)
+
+// let MyPoints = 3
+// function Add3Points() {
+//     MyPoints += 3
+//     console.log(MyPoints)
+// }
+
+// function Remove1Point() {
+//     MyPoints -= 1
+//     console.log(MyPoints)   
+// }
+
+// Add3Points()
+// Add3Points()
+// Add3Points()
+// Remove1Point()
+    
+// let Myname = "Jovohir"
+// let greeting = "Hello"
+// let myGreeting = greeting + " " + Myname
+// console.log(myGreeting)
+
+// let welcomeEL = document.getElementById("welcome-el")
+// let MyName = "Jovohir"
+// let greeting = "Hello " + MyName
+// welcomeEL.innerText = greeting
+// console.log(greeting)
+
+// let ErrorText = document.getElementById("error")
+// console.log(ErrorText)
+// function ShowError() {
+//     ErrorText.textContent = "Something went wrong!"
+// }
+
+// number1 = 15
+// number2 = 5
+// document.getElementById("num1").textContent = number1
+// document.getElementById("num2").textContent = number2
+// document.getElementById("result")
+
+// function add() {
+//     FinalResult = number1 + number2
+//     result.textContent = "Sum: " + FinalResult
+// }
+
+// function subtract() {
+//     FinalResult = number1 - number2
+//     result.textContent = "Subtracted: " + FinalResult
+// }
+
+// function divide() {
+//     FinalResult = number1 / number2
+//     result.textContent = "Divided: " + FinalResult
+// }
+
+// function multiply() {
+//     FinalResult = number1 * number2
+//     result.textContent = "Multiplied: " + FinalResult
+// }
+
+// let FirstCard = 6
+// let SecondCard = 8
+// let sum = FirstCard + SecondCard
+
+// if (sum < 21) {
+//     console.log("Do you wanna draw a new card?")
+// } else if (sum === 21) {
+//     console.log("You have won!")
+// } else {
+//     console.log("You have lost hahahahaha")
+// }
+
+// let PersonAge = 15
+// if (PersonAge > 21) {
+//     console.log("You can enter to the night club")
+// } else {
+// console.log("You are now allowed to enter to the night club because you are" + " " + PersonAge + " " + "years old")
+// }
+    
+// let FirstCard = 10
+// let SecondCard = 10
+// let sum = FirstCard + SecondCard
+// let HasWon = false
+// isAlive = true
+// message = ""
+
+// if (sum <= 20) {
+//     message = "Do you want to draw a new card ?"
+//     isAlive = true
+// }
+// else if (sum === 21) {
+//     message = "You have won!"
+//     HasWon = true
+// }
+// else {
+//     message = "Defeat!"
+//     isAlive = false
+// }
+// console.log(isAlive)
+// console.log(HasWon)
+// console.log(message)
+
+// Card Game -------------
+// let FirstCard = CreateRandomNumber()
+// let SecondCard = CreateRandomNumber()
+// let sum = FirstCard + SecondCard
+// let HasWon = false
+// let cards = [FirstCard, SecondCard] //array - list of items
+// isAlive = true
+// message = ""
+// let QuestionEl = document.getElementById("QuestionElement")
+// // SumCards = document.getElementById("SumCards")
+// SumCards = document.querySelector("#SumCards")
+// AllCards = document.querySelector("#AllCards")
+// let player = {
+//     name: "Jovohir",
+//     coins: 145,
+//     // greeting: function() {
+//     //     console.log("Hello")
+//     // }
+// }
+// let PlayerBalance = 150
+// let playerEL = document.getElementById("player-el")
+// playerEL.textContent = player.name + ": $" + player.coins
+
+// function StartGame() {
+//     RenderGame()
+// }
+// function RenderGame() {
+//     if (sum <= 20) {
+//         message = "Do you want to draw a new card ?"
+//         isAlive = true
+//     }
+//     else if (sum === 21) {
+//         message = "You have won!"
+//         HasWon = true
+//     }
+//     else {
+//         message = "You have lost!"
+//         isAlive = false
+//     }
+//     SumCards.textContent = "Sum: " + sum
+//     AllCards.textContent = "Cards: "
+//     for (let i = 0; i < cards.length; i++) {
+//         AllCards.textContent += cards[i] + " "
+//     }
+//     QuestionElement.textContent = message
+//     console.log(SumCards)
+//     console.log(AllCards)
+//     console.log(message)
+// }
+
+// function CreateNewCard() {
+//     if (HasWon === false && isAlive === true) {
+//         let NewCard = CreateRandomNumber()
+//         sum += NewCard
+//         cards.push(NewCard)
+//         console.log(cards)
+//         StartGame()
+//     }
+// }
+
+// function CreateRandomNumber() {
+//     RandomNumber = Math.floor(Math.random() * 13) + 1
+//     if (RandomNumber === 1) {
+//         return 11
+//     }
+//     else if (RandomNumber > 10) {
+//         return 10
+//     }
+//     return RandomNumber 
+// }   
+// --------------------------
+
+// let cards = [7,4,9,1,5,3,6,4,7,6]
+// cards.push(5, 6)
+// cards.pop()
+// console.log(cards)
+
+// for (let count = 1; count < 11; count += 1) {
+//     console.log(count)
+// }
+
+// let cards = [7,4,9,1,5,3,6,4,7,6]
+// for (let i = 0; i < cards.length; i++) {
+//     console.log(cards[i])
+// }
+
+// let MyList = ["Hello", "my", "name", "is", "Jovohir"]
+// let greetingEL = document.querySelector("greeting-el")
+// for (let i = 0; i < MyList.length; i++) {
+//     greetingEL.textContent += MyList[i] +  " "
+// }
+
+// let RandomNumber = Math.floor(Math.random() * 6) + 1
+// console.log(RandomNumber)
+
+// function CreateRandomNumber() {
+//     let RandomNumber = Math.floor(Math.random() * 6) + 1
+//     return RandomNumber
+// }
+// FinalResult = CreateRandomNumber()
+// console.log(FinalResult)
+
+// let person = {
+//     name: 'Jovohir',
+//     country: "Uzbekistan",
+//     age: 18
+// }
+
+// function LogData() {
+//     console.log(person.name + " is " + person.age + " years old and lives in " + person.country)
+// }
+
+// LogData() 
+
+// let age = 18
+
+// function pricing() {
+//     if (age < 6) {
+//         return console.log("You have got a free membership!")
+//     }
+//     else if (age > 6 && age < 17) {
+//         return console.log("You have got child discount!")
+//     }
+//     else if (age >= 18 && age < 26) {
+//         return console.log("You have got a student discount!")
+//     }
+//     else if (age > 27 && age < 66) {
+//         return console.log("You have no discount!")
+//     }
+//     else {
+//         return console.log("You have got a senior citizen discount!")
+//     }
+// }
+
+// pricing()
+
+// let countries = ["China", "USA", "India", "Indonesisa", "Pakistan"]
+// for (let i = 0; i < countries.length; i++) {
+//     console.log(countries[i])
+// }
+
+// let countries = ["China", "USA", "India", "Indonesisa", "Pakistan"]
+
+// countries.pop()
+// countries.push("Uzbekistan")
+// countries.shift()
+// countries.unshift("China")
+// console.log(countries)
+
+// let hands = ["rock", "paper", "scissor"]
+
+// function GetHand() {
+//     let randomIndex = Math.floor(Math.random() * 3)
+//     return hands[randomIndex]
+// }
+
+// console.log(GetHand())
+
+// let fruits = ["🍎", "🍊", "🍎", "🍊", "🍎"]
+
+// let appleEL = document.querySelector("#apple")
+// let orangeEL = document.querySelector("#orange")
+// let AppleArray = []
+// let OrangeArray = []
+
+// function sorting() {
+//     for (let i = 0; i < fruits.length; i++) {
+//         if (fruits[i] === "🍎") {
+//             AppleArray.push(fruits[i])
+//         }
+//         else {
+//            OrangeArray.push(fruits[i])
+//         }
+//     }
+
+//     appleEL.textContent = AppleArray
+//     orangeEL.textContent = OrangeArray
+
+//     console.log(AppleArray)
+//     console.log(OrangeArray)
+// }
+
+// sorting() 
+
