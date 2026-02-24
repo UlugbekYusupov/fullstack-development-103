@@ -41,6 +41,97 @@
 
 // console.log("10" - true);
 
+// ARIFMETIC operators 
+
+// console.log(5 + 3);
+// console.log(7 - 2);
+
+// 5 == "true" true
+// 5 === "5" false 
+// 10 != 5 true 
+// 10 !== "10" true 
+// 10 > 5 true 
+// 10 < 5 false 
+
+// const user = {
+//     name: "Ulugbek",
+// }
+
+// const userr = user;
+// console.log(userr === user); true 
+
+// !!true will be true 
+
+// let age = 20;
+// let status = age >= 18 ? "Adult" : "Minor";
+// console.log(status);
+
+// CONDITIONAL STATEMENT 
+
+// if (condition) {
+
+// }
+
+
+// if (condition) {
+
+// } else {
+
+// }
+
+
+// if (condition) {
+
+// } else if {
+
+// } else {
+
+// }
+
+
+// switch (expression) {
+//     case value1:
+//         break;
+//     case value2:
+//         break;
+//     default
+// }
+
+
+// for (initializing; CSSConditionRule; increament) {
+
+// }
+
+// while (condition) {
+
+// }
+
+// do (condition) {
+
+// } while (condition);
+
+// const user = {
+//     username: "Ulugbek",
+//     age: 20,
+//     country: "Uzbekistan",
+// };
+
+// const keys = Object.keys(user);
+// const values = Object.values(user)
+
+// console.log(values);
+
+// for (const key in user) {
+//     const element = user[key];
+//     console.log(element);    
+// }
+
+// for (const element of keys) {
+//     console.log(element);   
+// }
+
+
+
 // challange3
 
 // const temperatureCelcius = 25;
@@ -52,18 +143,71 @@
 
 // challange 4
 
-let totalBudget = 100
+// let totalBudget = 100
 
-let exp1 = Number(prompt("expense1: "))
-let exp2 = Number(prompt("expense2: "))
-let exp3 = Number(prompt("expense3: "))
+// let exp1 = Number(prompt("expense1: "))
+// let exp2 = Number(prompt("expense2: "))
+// let exp3 = Number(prompt("expense3: "))
 
-totalBudget -= exp1
-totalBudget -= exp2
-totalBudget -= exp3
+// totalBudget -= exp1
+// totalBudget -= exp2
+// totalBudget -= exp3
 
-if (totalBudget < 0) {
-    alert("You have overspent");
-}
+// if (totalBudget < 0) {
+//     alert("You have overspent");
+// }
 
-console.log(parseFloat(totalBudget));
+// console.log(parseFloat(totalBudget));
+
+
+// New practise
+
+// Challenge1
+
+// let number = Number(prompt("Enter a number:"));
+
+// let evenCount = 0;
+// let oddCount = 0;
+
+// for (let i = 1; i <= number; i++) {
+//     if (i % 2 === 0) {
+//         evenCount++;
+//     } else {
+//         oddCount++;
+//     }
+// }
+
+// console.log("Even numbers:", evenCount);
+// console.log("Odd numbers:", oddCount);
+
+// Challenge2 
+
+// let number = Number(prompt("Sonni kiriting :"))
+// let res = 0;
+
+// while (number > 0) {
+//    let LastDigit = number % 10;
+//    res = res * 10 + LastDigit;
+//    number = Math.floor(number / 10);
+// }
+
+// console.log(res);
+
+// Challenge3 
+
+// let userNumber = Number(prompt("Enter number :"))
+// let MaxNumber = 0
+
+// while (userNumber > 0) {
+//     let LastDigit = userNumber % 10;
+//     if (MaxNumber < LastDigit) {
+//         MaxNumber = LastDigit
+//     }
+//     userNumber = Math.floor(userNumber / 10);
+// }
+
+// console.log(MaxNumber);
+
+
+
+
