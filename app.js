@@ -1,52 +1,124 @@
-// console.log("5" + 5);
-// console.log("5" - 5);
-// console.log("5" * "2");
-// console.log("10" / 2);
-// console.log( 5 + true);
-// console.log("10" + true);
-// console.log("5" + true);
-// console.log(5 + null);
-// console.log(5 + undefined);
+// let n = Number(prompt("Enter a number:"));
 
-// Number("200") + 50
-// console.log(Number("200") + 50)
+// let evenCount = 0;
+// let oddCount = 0;
 
-// const celsius = 25;
+// for (let i = 1; i <= n; i++) {
+//     if (i % 2 === 0) {
+//         evenCount++;
+//     } else {
+//         oddCount++;
+//     }
+// }
 
-// const fahrenheit = (celsius * 9/5) + 32;
+// console.log("Even numbers:", evenCount);
+// console.log("Odd numbers:", oddCount);
 
-// console.log("Celsius:", celsius);
-// console.log("Fahrenheit:", fahrenheit);
+// challenge2
 
-// bonus version
+// let n = Number(prompt("enter a number"));
+// let res = 0;
 
-// const celsius = Number(prompt("Enter temperature in Celsius:"));
+// while (n > 0) {
+//     let lastDigit = n % 10;
+//     res + res * 10 + lastDigit;
+//     n = Math.floor(n / 10); 
+// }
 
-// const fahrenheit = (celsius * 9/5) + 32;
+// console.log(res);  
 
-// console.log("Celsius:", celsius);
-// console.log("Fahrenheit:", fahrenheit);
+// challenge 3
 
-// chellenge 4
+// let num = Number(prompt("enter a number:"));
+// let largest = 0;
 
-let budjet = Number(prompt("enter your total budjet"));
+// while (num > 0){
+//     let digit = num % 10;
+//     if (digit > largest){
+//         largest = digit;
+//     }
+//     num = Math.floor(num / 10);
 
-let expense1 = Number(prompt("enter first expense"));
-let expense2 = Number(prompt("enter second expense"));
-let expense3 = Number(prompt("enter third expense"));
+// }
+// console.log( "largest digit:", largest);
 
-let totalExpense = expense1 + expense2 + expense3;  
+// challenge 4
+// let num = Number(prompt("enter a number:"));
+// let sum = 0;
 
-let remaining = budjet - totalExpense;
+// while (num > 0){
+//     let lastDigit = num % 10;
+//     sum = sum + lastDigit;
+//     num = Math.floor(num / 10);
+// }
+// console.log("sum of the  digits:",sum);
 
-console.log("Total Budget:", budget.toFixed(2));
-console.log("Total Expenses:", totalExpenses.toFixed(2));
-console.log("Remaining Money:", remaining.toFixed(2));
+// challenge 5
 
-if (remaining < 0) {
-    console.log("⚠️ Warning: You have overspent!");
+// let number = Number(prompt("Enter a number:"));
+
+// let count = 0;
+
+// if (number === 0) {
+//     count = 1;
+// } else {
+//     while (number > 0) {
+//         number = Math.floor(number / 10);
+//         count++;
+//     }
+// }
+
+// console.log("Total digits:", count);
+
+// lecture 4
+// challenge1
+
+// let a = Number(prompt("Enter first number:"));
+// let b = Number(prompt("Enter second number:"));
+
+// if (a > b) {
+//     alert("Largest number is: " + a);
+// } else if (b > a) {
+//     alert("Largest number is: " + b);
+// } else {
+//     alert("Both numbers are equal");
+// }
+
+// challenge2
+
+let a = 0;
+let b = -1;
+let c = 4;
+
+let largest, middle, smallest;
+
+if (a >= b && a >= c) {
+    largest = a;
+    if (b >= c) {
+        middle = b;
+        smallest = c;
+    } else {
+        middle = c;
+        smallest = b;
+    }
+} else if (b >= a && b >= c) {
+    largest = b;
+    if (a >= c) {
+        middle = a;
+        smallest = c;
+    } else {
+        middle = c;
+        smallest = a;
+    }
 } else {
-    console.log("✅ You are within budget.");
+    largest = c;
+    if (a >= b) {
+        middle = a;
+        smallest = b;
+    } else {
+        middle = b;
+        smallest = a;
+    }
 }
 
-console.log('test')
+alert(largest + ", " + middle + ", " + smallest);
