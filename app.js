@@ -208,6 +208,91 @@
 
 // console.log(MaxNumber);
 
+// challenge4 
+
+// let number = Number(prompt("enter a number :"))
+// let originalNumber = number;
+
+// if (number < 0) {
+//     number * number * -1;
+// }
 
 
+// let sum = 0;
+// while (number > 0) {
+//     sum = sum + (number % 10);
+//     number = Math.floor(number / 10);
+// }
+
+// console.log(`Sum of the digits : ${originalNumber} = ${sum}`);
+
+// classwork
+
+// function outer() {
+//     let username = "Ulugbek";
+
+// function inner() {
+//     let fullname = username + "Yusupov";
+//     console.log(fullname);
+// }
+// inner();
+// }
+
+// outer();
+
+// function parent() {
+//     let parentVar = "I am parent";
+
+//     function child() {
+//         let childVar = "I am a child";
+//         console.log(childVar);
+//     } 
+//     child();
+//     console.log(parentVar);
+// }
+// console.log(parentVar);
+
+// Types of functions
+
+// declaration function 
+// function sum(a,b) {
+//     return a + b; 
+// }
+
+// let express = function () {};
+
+// express();
+
+// anonymus function
+// let arrow = () => {};
+
+// IIFE function
+// (function (a,b) {
+//     console.log(a + b);
+// })(3,4)
+
+// Function constructor
+// let s = new Function("a","b", "return a + b");
+// console.log(s(20,40));
+
+// Closures
+// function outer() {
+//     let count = 0;
+
+//     return function inner() {
+//         count++;
+//         console.log(count);
+//     };
+// }
+
+// const counter = outer();
+// counter()
+// counter()
+// counter()
+
+// Challenge1 New task 
+
+function greet(name) {
+    return "Hello," + name;
+} 
 
