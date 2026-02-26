@@ -1,63 +1,90 @@
-// CHALLANGE 1
+//1
 
-// task 1
+let number = Number(prompt("Sonni kiriting:"))
+let even = 0
+let odd = 0
+while (number > 0) {
+    if (number % 2 == 0) {
+        even += 1
+    }
+    else {
+        odd +=1
+    }
+    number -= 1
+}
+console.log(even,odd)
 
-let num = "200"
-num = num * 1
-console.log(num + 50)
 
-// task 2
+//task2
 
-console.log(25 + "years old")
+let num = Number(prompt("Enter a number:"));
+
+let reversed = 0;
+
+while (num > 0) {
+  let lastDigit = num % 10;    
+  reversed = reversed * 10 + lastDigit;
+  num = Math.floor(num / 10);
+}
+
+console.log("Reversed number:", reversed);
 
 // task 3
 
-console.log(Boolean("False"))
+let num1 = Number(prompt("Enter a number:"));
 
-// task 4
+let largest = 0;
 
-console.log("10" -true) // tushuntirish: minus amali ishlaganda stringni ham num deb hisoblab amal bajaradi shunda 10 dan 1 ni ayirib 9 chqarad. true bizda 1 ga teng buani uchun.
+while (num > 0) {
+  let digit = num % 10; 
 
-//_______________________________________________________________________________________________________________________________________________________________________________________
+  if (digit > largest) {
+    largest = digit;
+  }
 
-/// CHALLANGE 3
-
-// task 1
-
-const temperaturasi = 25
-console.log(temperaturasi)
-
-// selsiy funksiyasini ishlatouz
-
-const fahrenheit = (temperaturasi * 9/5) + 32
-console.log(fahrenheit)
-
-// ikkalasini ham chiqarish: 
-
-console.log(fahrenheit,temperaturasi)
-
-// task 4
-
-//temperaturasi = 30 // uzgartirib bulmaydi, uncaught typeerror berdi
-
-// yana birmarta ishlatouz faqat bunda userdan sorouz
-
-// const temperaturasi2 = Number(prompt("Haroratni kiriting:")) // 25
-// const fahrenheit2 = (temperaturasi2 *  9/5) + 32
-// console.log(fahrenheit2)
-
-//_______________________________________________________________________________________________________________________________________________________________________________________
-
-// CHALLANGE 4
-
-const budjet = Number(prompt("budjetingizni kiriting:"))
-
-let ex1 = Number(prompt("budjet miqdorini kiriting"))
-let ex2 = Number(prompt("ikkinchi miqdorini kiriting"))
-let ex3 = Number(prompt("uchinchi miqdorini kiriting"))
-let totalEx = ex1 + ex2 + ex3 - budjet
-if (totalEx < 0) {
-    console.log("Balansingiz yetmaydi birodar!")
-    alert("Balansingiz yetmaydi birodar!")
+  num = Math.floor(num / 10);
 }
-// console.log(totalEx)
+
+console.log("Largest digit:", largest);
+
+// task 4
+
+let num3 = Number(prompt("Enter a number:"));
+
+let sum = 0;
+
+
+if (num < 0) {
+  num = -num;
+}
+
+while (num > 0) {
+  let digit = num % 10;    
+  sum = sum + digit;       
+  num = Math.floor(num / 10)
+}
+
+console.log("Sum of digits:", sum);
+
+//task 5
+
+let num4 = Number(prompt("Enter a number:"));
+
+let count = 0;
+
+
+if (num < 0) {
+  num = -num;
+}
+
+// agar 0 bo‘lsa
+if (num === 0) {
+  count = 1;
+} else {
+  while (num > 0) {
+    num = Math.floor(num / 10); 
+    count++;
+  }
+}
+
+console.log("Total digits:", count);
