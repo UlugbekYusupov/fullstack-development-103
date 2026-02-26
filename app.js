@@ -36,15 +36,50 @@ const values = Object.values(user);
 // }
 // console.log(res)
 
-let usrNum = Number(prompt("give a num: "));
-let maxNum = 0;
+// let usrNum = Number(prompt("give a num: "));
+// let maxNum = 0;
 
-while (usrNum > 0) {
-  let lastDigit = usrNum % 10;
-  if (maxNum < lastDigit) {
-    maxNum = lastDigit;
+// while (usrNum > 0) {
+//   let lastDigit = usrNum % 10;
+//   if (maxNum < lastDigit) {
+//     maxNum = lastDigit;
+//   }
+//   usrNum = Math.floor(usrNum / 10);
+// }
+
+// console.log(maxNum);
+
+function outer() {
+  let username = "Ulugbek";
+
+  function inner() {
+    let fullname = username + "Yusupov";
+    console.log(fullname);
   }
-  usrNum = Math.floor(usrNum / 10);
+  inner();
 }
 
-console.log(maxNum);
+outer();
+
+sum();
+
+function sum(a, b) {
+  return a + b;
+}
+
+let express = function () {};
+
+express();
+
+let arrow = () => {};
+
+(function (a, b) {
+  console.log(a + b);
+})(3, 4);
+
+console.log(Array(2));
+
+let s = new Function("a", "b", "return a + b");
+
+console.log(s(10, 20));
+
