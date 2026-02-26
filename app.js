@@ -292,7 +292,126 @@
 
 // Challenge1 New task 
 
-function greet(name) {
-    return "Hello," + name;
-} 
+// function greet(name) {
+//     return "Hello," + name;
+// } 
+
+// console.log(greet("Ali"));
+
+// challenge2
+// function isPrime(n) {
+//     if (n <= 1) return false;
+
+//     for (let i = 2; i < n; i++) {
+//         if (n % i === 0) {
+//             return false;
+//         }
+//     } 
+//     return true;
+// }
+
+// console.log(isPrime(7)); true 
+// console.log(isPrime(10)); false 
+
+// // challenge3
+// function countDigits(n) {
+//    return Math.abs(n).toString().length; 
+// }
+
+// console.log(countDigits(12345)); 
+// console.log(countDigits(-9873));
+
+// challenge4
+// function isPalindrome(n) {
+//     n = Math.abs(n);
+//     let original = n;
+//     let reserved = 0;
+
+//     while(n > 0) {
+//         let digit = n % 10;
+//         reserved = reserved * 10 + digit;
+//         n = Math.floor(n / 10)
+//     }
+//     return original === reserved;
+// }
+
+// console.log(isPalindrome(121));
+// console.log(isPalindrome(123));
+
+// challenge5
+// function isArmstrong(n) {
+//     let original = Math.abs(n);
+//     let temp = original;
+//     let digits = original.toString().length;
+//     let sum = 0;
+
+//     while (temp > 0) {
+//         let digit = temp % 10;
+//         sum += Math.pow(digit, digits);
+//         temp = Math.floor(temp / 10);
+//     }
+//     return sum === original;
+// }
+
+// console.log(isArmstrong(153));
+// console.log(isArmstrong(123));
+
+// challenge6
+// function createCounter(start) {
+//     let count = start;
+
+//     return {
+//         increament() {
+//             count++;
+//         },
+//         decreament() {
+//             count--
+//         },
+//         getCount() {
+//             return count;
+//         }
+//     };
+// }
+
+// const counter = createCounter(5);
+
+// counter.increament();
+// counter.increament();
+// console.log(counter.getCount());
+
+// counter.decreament();
+// console.log(counter.getCount());
+
+// challenge7
+// function sayHello(name) {
+//     console.log("Hello" + name);
+// }
+
+// const sayHello = once(sayHello);
+
+// sayHelloOnce("Abdullox");
+// sayHelloOnce("David");
+// sayHelloOnce("Name")
+
+// challenge8
+// function lazyAdder(a) {
+//     return function(b) {
+//         return a + b;
+//     };
+// } 
+
+// const add5 = lazyAdder(5);
+
+// console.log(add5(10));
+// console.log(add5(20));
+ 
+
+
+
+
+
+
+
+
+
 
