@@ -709,3 +709,94 @@
 // else if (sum > 90 && sum <= 100) {
 //     console.log("Grade: A")
 // }
+
+// Lecture 5
+// Practice
+// Challenge 1
+// function greeting(name) {
+//     return console.log(name)
+// }
+// greeting('Jovohir')
+
+// let MyName = function(name) {
+//     return console.log(name);
+// }
+
+// MyName("Jovohir")
+
+// let MyName = (name) => name
+// console.log(MyName('Jovohir'));
+
+// (function() {
+//     console.log('Jovohir')
+// }) ()
+
+// let MyName = new Function(
+//     'name',
+//     'return console.log(name)'
+// );
+// MyName('Jovohir')
+
+// Challenge 2
+// var UserInput = Number(prompt("Enter a number: "))
+// function isPrime(n) {
+//     if (n <= 1) return false
+//     if (n === 2 || n === 3) return true
+//     if (n % 2 === 0 || n % 3 === 0) return false
+//     for (let i = 5; i < n; i += 2) {
+//     if (n % i === 0) return false
+// }
+//     return true
+// }
+// console.log(isPrime(UserInput))
+
+// var UserInput = Number(prompt("Enter a number: "))
+// var countdown = []
+
+// challenge 3
+// function CountDigits(n) {
+//     while (n > 0) {
+//         countdown.push(n % 10);
+//         n = Math.floor(n / 10);
+//     }
+//     return countdown.length
+// }
+// console.log(CountDigits(UserInput))
+
+// challenge 4
+// did not understand this one
+
+// challenge 5
+// did not understand this one
+
+// challenge 6
+// function createCounter(start) {
+//     let count = start;
+
+//     return {
+//         increment() {
+//             count += 1;
+//         },
+//         decrement() {
+//             count -= 1;
+//         },
+//         GetCount() {
+//             return count;
+//         }
+//     }
+// }
+
+// console.log(createCounter(10))
+
+// challenge 7
+// did not understand this one
+
+// function lazyAdder(a) {
+//   return function(b) {
+//     return a + b
+//   }
+// }
+
+// const add = lazyAdder(5)
+
+// console.log(add(10))
