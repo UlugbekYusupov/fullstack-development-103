@@ -88,3 +88,38 @@ if (x * y * z < 0) {
 } else {
   alert("The sign is +");
 }
+
+
+
+// Lecture 5
+// Challenge 2
+function isPrime(n) {
+  if (n <= 1) return false;
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) return false;
+  }
+  return true;
+}
+
+// Challenge 3
+function countDigits(n) {
+  return Math.abs(n).toString().length;
+}
+
+
+// Challenge 4
+function isPalindrome(n) {
+  const str = n.toString();
+  const reversed = str.split('').reverse().join('');
+  return str === reversed;
+}
+
+
+// Challenge 5
+function isArmstrong(n) {
+  const digits = n.toString().split('');
+  const power = digits.length;
+  const sum = digits.reduce((acc, digit) => acc + Math.pow(parseInt(digit), power), 0);
+  
+  return sum === n;
+}
