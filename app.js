@@ -123,3 +123,33 @@ function isArmstrong(n) {
   
   return sum === n;
 }
+
+// Challenge 6
+function createCounter(start) {
+  let count = start;
+  return {
+    increment: () => ++count,
+    decrement: () => --count,
+    getCount: () => count
+  };
+}
+
+// Challenge 7
+function once(fn) {
+  let called = false;
+  let result;
+  return function(...args) {
+    if (!called) {
+      called = true;
+      result = fn.apply(this, args);
+    }
+    return result;
+  };
+}
+
+// Challenge 8
+function lazyAdder(a) {
+  return function(b) {
+    return a + b;
+  };
+}
