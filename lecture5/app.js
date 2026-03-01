@@ -148,16 +148,16 @@
 // Scenario: Create a function that calculates the total price of an online shopping cart, applying discounts based on quantity.
 // Example: If a user buys 3+ items, apply a 10% discount; if 5+, apply 20%.
 
-function shoppingCart(items) {
+// function shoppingCart(items) {
 
-    if (item_quantity >= 3) {
-        items * 0.10
-    } else {
-        items * 0.20
-    }
-}
+//     if (item_quantity >= 3) {
+//         items * 0.10
+//     } else {
+//         items * 0.20
+//     }
+// }
 
-console.log(object);
+// console.log(object);
 
 
 // Challenge 2 - Password Strength Checker
@@ -168,6 +168,186 @@ console.log(object);
 // At least one special character
 // Return "Weak", "Medium", or "Strong" based on conditions.
 
+
+// function pwdChecker () {
+//     const usrPwd = prompt('enter a password')
+//     const specChar = '@!#$%^&*~'
+
+//     let pwdStrength = 0
+
+//     let is8Char = false
+//     let hasUpperCase = false
+//     let hasNumber = false
+//     let hasSpecChar = false
+
+//     if (usrPwd.length >= 8) {
+//         is8Char = true
+//     } else {
+//         alert('minimum 8 characters!')
+//         return pwdChecker()
+//     }
+
+//     for (i in usrPwd) {
+//         let char = usrPwd[i]
+
+//         if (char >= 'A' && char <= 'Z') {
+//             hasUpperCase = true
+
+//         }
+
+//         if (char >= '0' && char <= '9') {
+//             hasNumber = true       
+//         }
+
+//         if (specChar.includes(char)) {
+//             hasSpecChar = true
+//         }
+//     }
+
+//     if (is8Char === true) pwdStrength++
+//     if (hasNumber === true) pwdStrength++
+//     if (hasUpperCase === true) pwdStrength++
+//     if (hasSpecChar === true) pwdStrength++
+
+//     if (pwdStrength == 4) {
+//         alert('password strength: Strong')
+//     } else if (pwdStrength == 3 ) {
+//         alert('password strength: Medium')
+//     } else {
+//         alert('password strength: Weak')
+//     }
+// }
+    
+// pwdChecker()
+    
+
 // Challenge 3 - ATM Cash Withdrawal System
 // Scenario: Simulate an ATM that dispenses the least number of bills for a given amount (e.g., $130 → 1x $100, 1x $20, 1x $10).
 // if the requested amount is not in multiples of 10, return an error.
+
+// let amount = 459
+
+// function ATM_Simulator (num) {
+//     let hundreds = Math.floor(num / 100)
+//     num %= 100
+//     let twentys = Math.floor(num / 20)
+//     num %= 20
+//     let tens = Math.floor(num / 10)
+//     num %= 10
+//     let remainder = num
+
+//     return [hundreds, twentys, tens, remainder]
+// }
+
+// dispensed = ATM_Simulator(amount)
+
+// console.log(`$100 -> x${dispensed[0]}, $20 -> x${dispensed[1]}, $10 -> x${dispensed[2]}`);
+// console.log(`remainder: ${dispensed[3]}`);
+
+// Challenge 4 - Traffic Light Simulation
+// Scenario: Create a traffic light system that cycles through "Red" → "Green" → "Yellow" using setTimeout().
+// Each light stays for a different duration
+// Red: 5 seconds
+// Green: 3 seconds
+// Yellow: 2 seconds
+
+// let red = () => {console.log('red');}
+// let yellow = () => {console.log('yellow');}
+// let green = () => {console.log('green');}
+
+// function trafficLight () {
+//     setTimeout(red, 1000)
+//     setTimeout(yellow, 4000)
+//     setTimeout(green, 6000)
+// }
+
+// trafficLight()
+
+// Challenge 6 - Closures in Banking System
+// Scenario: Create a bankAccount function that returns an object with methods to:
+// Deposit money
+// Withdraw money (only if sufficient balance)
+// View balance
+// Ensure balance is private using closures.
+
+// function bankAccount () {
+    
+//     let balance = 434;
+
+//     return {
+//         deposit: function (add){
+//             balance += add
+//         },
+//         withdraw: function (remove){
+//             if (remove > balance) {
+//                 alert('insufficient balance');
+//             } else {
+//                 balance -= remove
+//             }
+//         },
+//         balance: function (){
+
+//             function innerBalance () {
+//                 return balance
+//             }
+
+//             return innerBalance()
+//         }
+//     }
+// }
+
+// const profile = bankAccount()
+
+// console.log(profile.balance()); 
+// profile.deposit(20)
+// console.log(profile.balance()); 
+// profile.withdraw(3)
+
+// Challenge 7 - Role-Based Access System 
+// Scenario: Create a function that assigns user roles (admin, editor, viewer) and allows certain actions based on role.
+// Admin can add, edit, delete content
+// Editor can edit, view
+// Viewer can only view
+
+const permissions = {
+    admin: ['add', 'edit', 'delete', 'view'],
+    editor: ['edit', 'view'],
+    viewer: ['view']
+};
+
+
+function checkAccess(userRole, requestedAction) {
+
+    if (permissions[userRole]?.includes(requestedAction)) {
+        console.log('access granted');
+    } else {
+        console.log('access denied');
+    }
+}
+
+checkAccess('smth', 'delete')
+
+
+// checkAccess('admin', 'view')
+
+
+// Challenge 8 - Dynamic Tax Calculator
+// Scenario: Build a function that calculates income tax based on salary.
+// Income < $10,000 → No tax
+// $10,000 - $50,000 → 10% tax
+// $50,000+ → 20% tax
+
+// function taxCalculator (num) {
+//     if (num > 50000) {
+//         let tax = num * 0.20
+//         console.log(`your tax amount: ${tax}`);
+//     } else if (num >= 10000) {
+//         let tax = num * 0.10
+//         console.log(`your tax amount: ${tax}`);
+//     } else {
+//         console.log('no tax for u');
+//     }
+// }
+
+// taxCalculator(60000)
+
