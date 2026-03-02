@@ -800,3 +800,263 @@
 // const add = lazyAdder(5)
 
 // console.log(add(10))
+
+// challenge 7 Updated version
+// let UserName = prompt("What is your name ?")
+// let UserAddress = prompt("Enter your address: ")
+// let UserOrder = prompt("What do you wanna order? ")
+
+// function OrderFood() {
+//     console.log("Dear " + UserName + " your" + UserOrder + " will be ready in 15 minutes and will be delivered to " + UserAddress)
+// }
+// OrderFood()
+
+// Assignment
+// Challenge 1 
+// let product = prompt("Enter product name: ")
+// let quantity = Number(prompt("Enter the quantity: "))
+// let price = 190000
+// let PriceAfterDiscount = 0
+// // I'm using this formula to find the percentage - (Percentage / 100) * value
+
+// function discount() {
+//     if (quantity > 3 && quantity < 5) {
+//         let tax = (10 / 100) * (quantity * price)
+//         PriceAfterDiscount -= tax
+//         console.log("10% discount has been applied")
+//         console.log("Total sum: " + PriceAfterDiscount)
+//     }
+//     else if (quantity > 5) {
+//         let tax = (20 / 100) * (quantity * price)
+//         PriceAfterDiscount -= tax
+//         console.log("20% discount has been applied")
+//         console.log("Total sum: " + PriceAfterDiscount)
+//     }
+//     else {
+//         PriceAfterDiscount = (quantity * price)
+//         console.log("no discount has been applied")
+//         console.log("Total sum: " + PriceAfterDiscount)
+//     }
+    
+// }
+
+// discount()
+
+// Challenge 2
+// let UserPassword = prompt("Enter the password: ");
+
+// function hasUppercase(str) {
+//   return /[A-Z]/.test(str)
+// }
+
+// function hasNumber(str) {
+//   return /\d/.test(str)
+// }
+
+// function HasEnoughCharacters(str) {
+//   return str.length >= 8
+// }
+
+// function HasSpecialCharacters(str) {
+//   return /[^a-zA-Z0-9]/.test(str)
+// }
+
+// function CheckPassword(password) {
+
+//   if (!password || password.trim() === "") {
+//     console.log("Password must not be empty! Please enter the password again")
+//   }
+
+//   const A = hasUppercase(password)
+//   const B = hasNumber(password)
+//   const C = HasEnoughCharacters(password)
+//   const D = HasSpecialCharacters(password)
+
+//   const passed = [A, B, C, D].filter(Boolean).length
+
+//   if (passed === 4) {
+//     console.log("Strong password!")
+//   }
+//   else if (passed === 3) {
+//     console.log("Medium password - one requirement missing")
+//   }
+//   else if (passed === 1 || passed === 2) {
+//     console.log("Weak password - multiple requirements missing")
+//   }
+//   else { 
+//     console.log(
+//       "Password must contain uppercase letter, number, special character and be at least 8 characters (Weak password)"
+//     )
+//   }
+// }
+
+// CheckPassword(UserPassword)
+
+// Challenge 3
+// let UserMoney = Number(prompt("Enter your money (only integers): ")) 
+// if (!Number.isInteger(UserMoney) || UserMoney <= 0 || UserMoney % 10 !== 0) {
+//     alert("Invalid amount")
+// }
+// else {
+//     let bills = [100, 50, 20, 10, 5, 1]
+//     for (let bill of bills) {
+//         let count = Math.floor(UserMoney / bill)
+
+//         if (count > 0) {
+//             console.log(count + " x $" +bill)
+//             UserMoney %= bill
+//         }
+//     }
+// }
+
+// Challenge 4
+// function TrafficLight(color) {
+//     console.log(color);
+// }
+// setTimeout(TrafficLight, 5000, "Red")
+// setTimeout(TrafficLight, 3000, "Green")
+// setTimeout(TrafficLight, 2000, "Yellow")
+
+// Challenge 6 
+// function BankAccount(InitialBalance = 0) {
+//     let balance = InitialBalance
+
+//     return {
+//         deposit(amount) {
+//             if (amount > 0) {
+//                 balance += amount
+//             }
+//             else {
+//                 console.log('Balance cannot be negative!')
+//             }
+//         },
+
+//         withdraw(amount) {
+//             if (amount > 0 && amount < balance) {
+//                 balance -= amount
+//             }
+//             else {
+//                 console.log("Invalid amount")
+//             }
+//         },
+
+//         GetBalance() {
+//             return balance
+//         }
+//     }
+// }
+
+// const Account = BankAccount(200000)
+
+// const UserDeposit = Number(prompt("Enter deposit: "))
+// Account.deposit(UserDeposit)
+
+// const UserWithdraw =  Number(prompt("Enter amount to withdraw: "))
+// Account.withdraw(UserWithdraw)
+
+// console.log("Final Balance: " + Account.GetBalance())
+
+// Challenge 7 
+// let role = prompt("Enter your role (admin, editor, viewer): ")
+// let content = ["Image", "MP4", "Music", "Game"]
+
+// function AddContentByUser() {
+//     let AddContent = prompt("Add new content: ")
+//     content.push(AddContent)
+//     console.log("All contents: " + content)
+// }
+
+// function EditContentByUser() {
+//     console.log("Current contents: ")
+//     content.forEach((item, index) => {
+//         console.log("Index: " + index + " Content name: " + item)
+//     })
+//     let UserChooseContentIndex = Number(prompt("Enter the index of the content to edit: "))
+//     if (UserChooseContentIndex >= 0 && UserChooseContentIndex < content.length) {
+//         let EditedContent = prompt("What do you want to change to? ") 
+//         content[UserChooseContentIndex] = EditedContent
+//         console.log("Updated content: ")
+//         console.log(content)
+//     }
+//     else console.log("Invalid Index")
+// }
+
+// function DeleteContent() {
+//     console.log("Current contents: ")
+//     content.forEach((item, index) => {
+//         console.log("Index: " + index  + " " + "Content name: " + item)
+//     })
+
+//     let UserChooseIndexToDelete = prompt("Enter the index of the content you wanna delete: ")
+//     if (UserChooseIndexToDelete >= 0 && UserChooseIndexToDelete < content.length) {
+//         console.log(content[UserChooseIndexToDelete] + " has been deleted from content list!")
+//         content.splice(UserChooseIndexToDelete, 1)
+//         console.log("Updated content: ")
+//         console.log(content)
+//     }
+//     else alert("Wrong Index")
+// }
+
+// function ViewContent() {
+//     return console.log(content)
+// }
+
+// if (role === "admin") {
+//     console.log("1. Add")
+//     console.log("2. Edit")
+//     console.log("3. Delete")
+//     let action = Number(prompt("Choose an action (1-3) "))
+//     if (action === 1) {
+//         AddContentByUser()
+//     }
+//     else if (action === 2) {
+//         EditContentByUser()
+//     }
+//     else DeleteContent()
+// }
+
+// else if (role === "editor") {
+//     console.log("1. Edit")
+//     console.log("2. View")
+//     let action = Number(prompt("Choose an action (1-2) "))
+//     if (action === 1) {
+//         EditContentByUser()
+//     }
+//     else if (action === 2) {
+//         ViewContent()
+//     }
+//     else {
+//         console.log ("You have chosen an invalid action!")
+//     }
+// }
+
+// else if (role === "viewer") {
+//     console.log("1. View")
+//     console.log("Presently, you can only view contents")
+//     ViewContent()
+// }
+
+// function () {
+
+// }
+
+// Challenge 8
+// (Percentage / 100) * value
+// let salary = Number(prompt("Enter your salary: "))
+// function tax() {
+//     if (salary <= 10000) {
+//         alert("You have no tax!")
+//     }
+//     else if (salary >= 10000 && salary < 50000) {
+//         let tax = salary * (10/100)
+//         salary -= tax
+//         console.log("Your salary after the tax: ",salary + " Tax: 10%")
+//     }
+//     else if (salary >= 50000) {
+//         let tax = salary * (20/100)
+//         salary -= tax
+//         console.log("Your salary after the tax:",salary + " Tax: 20%")
+//     }
+// }
+
+// tax()
