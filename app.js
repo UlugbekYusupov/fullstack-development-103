@@ -97,3 +97,77 @@
 //     count = count + 1;
 // }
 // console.log("Number of digits:", count);
+
+
+// Practice
+// let number1 = 10;
+// let number2 = 25;
+// if (number1 > number2) {
+//     console.log("Eng katta son:", number1);
+// } else if (number2 > number1) {
+//     console.log("Eng katta son:", number2);
+// } else {
+//     console.log("Ikkala son teng");
+// }
+
+    
+
+// let a = 3;
+// let b = 7;
+// let c = 2;
+
+// let product = a * b * c;
+
+// if (product > 0) {
+//     alert("The sign is +");
+// } else if  (product < 0) {
+//     alert("The sign is -");
+// } else {
+//     alert("The product is 0");
+// }
+
+// let numbers = [0, -1, 4];
+
+// numbers.sort(function(a,b) {
+//     return b - a;
+// });
+
+// alert(numbers.join(","));
+
+
+// for (let i = 0; i <= 15; i++) {
+
+//     if (i % 2 == 0) {
+//         console.log(i + " is even");
+//     } else {
+//         console.log(i + " is odd ");
+//     }
+// }
+
+// for (let i = 1; i <= 100; i++) {
+//     if (i % 3 == 0 && i % 5 == 0) {
+//         console.log("FizzBuzz");
+//     } 
+//     else if (i % 3 == 0) {
+//         console.log("Fizz");
+//     }
+//     else if (i % 5 == 0) {
+//         console.log("Buzz");
+//     } 
+//     else {
+//         console.log(i ++);
+//     }
+// }
+
+// for (let num = 100; num <= 999; num++) {
+
+//     let hundreds = Math.floor(num / 100);
+//     let tens = Math.floor((num % 100) / 10);
+//     let units = num % 10;
+
+//     let sumOfCubes = Math.pow(hundreds, 3) + Math.pow(tens, 3) + Math.pow(units, 3);
+
+//     if (sumOfCubes == num) {
+//         console.log(num++)
+//     }
+// }
