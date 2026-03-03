@@ -152,4 +152,57 @@ function lazyAdder(a) {
   return function(b) {
     return a + b;
   };
+
+
+// Challenge 1
+function calculateCartTotal(prices) {
+    const totalBeforeDiscount = prices.reduce((sum, price) => sum + price, 0);
+    const count = prices.length;
+    let discount = 0;
+
+    if (count >= 5) {
+        discount = 0.20; // 20%
+    } else if (count >= 3) {
+        discount = 0.10; // 10%
+    }
+
+    const finalTotal = totalBeforeDiscount * (1 - discount);
+    return Number(finalTotal.toFixed(2));
 }
+}
+
+// Challenge 2
+function checkPasswordStrength(password) {
+    const hasMinLength = password.length >= 8;
+    const hasUpper = /[A-Z]/.test(password);
+    const hasNumber = /[0-9]/.test(password);
+    const hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+    const score = [hasMinLength, hasUpper, hasNumber, hasSpecial].filter(Boolean).length;
+
+    if (score === 4) return "Strong";
+    if (score >= 2) return "Medium";
+    return "Weak";
+}
+
+// Challenge 3 
+function atmWithdrawal(amount) {
+    if (amount % 10 !== 0) {
+        return "Error: Amount must be a multiple of 10.";
+    }
+
+    const bills = [100, 50, 20, 10];
+    const result = {};
+    let remaining = amount;
+
+    for (let bill of bills) {
+        const count = Math.floor(remaining / bill);
+        if (count > 0) {
+            result[`$${bill}`] = count;
+            remaining %= bill;
+        }
+    }
+
+    return result;
+}
+
