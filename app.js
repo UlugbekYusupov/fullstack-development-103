@@ -131,7 +131,6 @@
 // }
 
 
-
 // challange3
 
 // const temperatureCelcius = 25;
@@ -404,7 +403,150 @@
 
 // console.log(add5(10));
 // console.log(add5(20));
- 
+
+// ARRAYS 
+
+// Length property 
+// Indexing & Accessing Elements
+
+// let colors = ["Green","Blue","Red"];
+// console.log(colors);
+
+// let colors = ["green","red","blue"]
+// console.log(colors[0],colors[1],colors[2]);
+
+// let colors = ["blue","pink","ok"]
+// console.log(colors(length));
+
+// let nums = new Array(5);
+// console.log(nums);
+
+// let names = Array("Bob","OKay")
+// console.log(names);
+
+// Spread operators or Rest operator
+
+// let original = [1,2,3];
+// let copy =  [...original];
+// console.log(copy);
+
+// let numbers = Array.of(5);
+// console.log(numbers);
+
+// function sum(...rest) {
+//     console.log(rest[0] + rest[1]);
+// }
+
+// console.log(3, 4);
+
+// const users = {
+//     name:"Ulugbek",
+//     email:"okay@gmail.com",
+// };
+
+// const {name: nimadir, email: okaygo} = {...users} 
+
+// console.log(nimadir);
+
+// let arr = [1,2,3];
+// arr.push(4);
+// console.log(arr);
+
+// arr.pop(4);
+// console.log(arr);
+
+
+// MAP Function
+
+// let prices = ["100$","200$","300$"];
+// let clothes = ["T-shirt","Jeans","Gloves"];
+
+// const UpdatedPrices = prices.map(function (element, index) {
+//     console.log(element, index);
+// }); 
+
+
+// let prices = ["100$","200$","300$"];
+
+// const UpdatedPrices = prices.map(function (value, index) {
+//     return value > 5;
+// });
+
+// console.log(UpdatedPrices);
+
+
+// with for 
+
+// let prices = ["100$","200$","300$"];
+// let clothes = ["T-shirt","Jeans","Gloves"];
+
+// for(let i= 0; i < prices.length; i++) {
+//     prices[i]
+// }
+
+// console.log(prices);
+
+
+// const words = ["spray","okay","result","vs","github"]
+
+// const result = words.filter((word) )
+
+
+// const array = [1,2,3,4];
+
+// const initialValue = 0;
+
+// const sumWithInitial = array.reduce(
+//     (accumulator, currentValue) => accumulator + currentValue,
+//     initialValue,
+// )
+
+// console.log(sumWithInitial);
+
+
+// const animals = ["ant","boson","camel","duck","elephant"];
+
+// console.log(animals.slice(2));
+
+
+// const animals = ["ant","boson","camel","duck","elephant"];
+
+// console.log(animals.slice(-2));
+
+
+// const months = ["Jan","March","April","June"];
+
+// months.splice(1, 0, "Feb");
+
+// console.log(months);
+
+// HOMEWORK 
+
+// Challenge1
+
+// function FirstElements(array, n = 1) {
+//     return array.slice(0, n);
+// }
+
+// const arr = [1,2,3,4,5];
+
+// console.log(FirstElements(arr));
+// console.log(FirstElements(arr,3));
+// console.log(FirstElements(arr,10));
+
+// Challnge2
+
+// function SecondElements(array, n = 1) {
+//     return array.slice(-n);
+// }
+
+// const arr = [1,2,3,4,5];
+
+// console.log(SecondElements(arr));
+// console.log(SecondElements(arr,3));
+
+
+
 
 
 
