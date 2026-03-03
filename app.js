@@ -1,90 +1,101 @@
-//1
+//vazzifa 1
 
-let number = Number(prompt("Sonni kiriting:"))
-let even = 0
-let odd = 0
-while (number > 0) {
-    if (number % 2 == 0) {
-        even += 1
-    }
-    else {
-        odd +=1
-    }
-    number -= 1
-}
-console.log(even,odd)
+let number1 = Number(prompt("Enter a number for Challenge 1:"));
 
+let evenCount = 0;
+let oddCount = 0;
 
-//task2
-
-let num = Number(prompt("Enter a number:"));
-
-let reversed = 0;
-
-while (num > 0) {
-  let lastDigit = num % 10;    
-  reversed = reversed * 10 + lastDigit;
-  num = Math.floor(num / 10);
+for (let i = 1; i <= number1; i++) {
+  if (i % 2 === 0) {
+    evenCount++;
+  } else {
+    oddCount++;
+  }
 }
 
+console.log("Even count:", evenCount);
+console.log("Odd count:", oddCount);
+
+
+console.log("Even count:", evenCount);
+console.log("Odd count:", oddCount);
+
+//2
+
+let number2 = Number(prompt("Enter a number for Challenge 2:"));
+
+let reversedNumber = 0;
+
+if (number2 < 0) {
+  number2 = -number2;
+}
+
+while (number2 > 0) {
+  let lastDigit = number2 % 10;
+  reversedNumber = reversedNumber * 10 + lastDigit;
+  number2 = Math.floor(number2 / 10);
+}
+
+console.log("Reversed number:", reversedNumber);
 console.log("Reversed number:", reversed);
 
-// task 3
+//3
 
-let num1 = Number(prompt("Enter a number:"));
+let number3 = Number(prompt("Enter a number for Challenge 3:"));
 
-let largest = 0;
+let largestDigit = 0;
 
-while (num > 0) {
-  let digit = num % 10; 
+if (number3 < 0) {
+  number3 = -number3;
+}
 
-  if (digit > largest) {
-    largest = digit;
+while (number3 > 0) {
+  let currentDigit = number3 % 10;
+
+  if (currentDigit > largestDigit) {
+    largestDigit = currentDigit;
   }
 
-  num = Math.floor(num / 10);
+  number3 = Math.floor(number3 / 10);
 }
 
-console.log("Largest digit:", largest);
+console.log("Largest digit:", largestDigit);
 
-// task 4
+//4
 
-let num3 = Number(prompt("Enter a number:"));
+let number4 = Number(prompt("Enter a number for Challenge 4:"));
 
-let sum = 0;
+let sumOfDigits = 0;
 
-
-if (num < 0) {
-  num = -num;
+if (number4 < 0) {
+  number4 = -number4;
 }
 
-while (num > 0) {
-  let digit = num % 10;    
-  sum = sum + digit;       
-  num = Math.floor(num / 10)
+while (number4 > 0) {
+  let digitValue = number4 % 10;
+  sumOfDigits = sumOfDigits + digitValue;
+  number4 = Math.floor(number4 / 10);
 }
 
-console.log("Sum of digits:", sum);
+console.log("Sum of digits:", sumOfDigits);
 
-//task 5
+//5
 
-let num4 = Number(prompt("Enter a number:"));
+let number5 = Number(prompt("Enter a number for Challenge 5:"));
 
-let count = 0;
+let digitCount = 0;
 
-
-if (num < 0) {
-  num = -num;
+if (number5 < 0) {
+  number5 = -number5;
 }
 
-// agar 0 bo‘lsa
-if (num === 0) {
-  count = 1;
+if (number5 === 0) {
+  digitCount = 1;
 } else {
-  while (num > 0) {
-    num = Math.floor(num / 10); 
-    count++;
+  while (number5 > 0) {
+    number5 = Math.floor(number5 / 10);
+    digitCount++;
   }
 }
 
-console.log("Total digits:", count);
+console.log("Total digits:", digitCount);
