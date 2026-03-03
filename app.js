@@ -1,177 +1,122 @@
- 
-// console.log("5"+5);
-// console.log("5"- 5);
-// console.log("5"* "2");
-// console.log("5"/2);
-// console.log(5+true);
-// console.log("10" - true);
-// console.log("5"+true);
-// console.log(5+null);
-// console.log(5+undefined);
-
-
-
-
-// console.log("200")+50
-// String(25) + " years old"
-// Boolean("false") 
-// console.log("10" - true)
-
-
-
-
-// let budget = Number(prompt("Total budget kiriting"));
-// let exp1 = Number(prompt("Expense 1 kiriting"));
-// let exp2 = Number(prompt("Expense 2 kiriting"));
-// let exp3 = Number(prompt("Expense 3 kiriting"));
-
-// let totalExp = exp1 + exp2 + exp3;
-// let remaining = budget - totalExp;
-
-// let overspent = remaining < 0;             
-// let overAmount = Math.abs(remaining);
-
-// console.log("Budget " + budget.toFixed(2));
-// console.log("Total expenses " + totalExp.toFixed(2));
-// console.log("Remaining " + remaining.toFixed(2));
-
-// let messages = [
-//   "You are within your budget",
-//   "You have overspent by " + overAmount.toFixed(2)
-// ];
-
-// console.log(messages[Number(overspent)]);
-
-
-
-// // 3
-// const readline = require("readline");
-
-// const rl = readline.createInterface({
-//   input: process.stdin,
-//   output: process.stdout
-// });
-
-// rl.question("Enter temperature in Celsius: ", (answer) => {
-//   const celsius = Number(answer);
-
-//   if (Number.isNaN(celsius)) {
-//     console.log("Please enter a valid number.");
-//     rl.close();
-//     return;
-//   }
-
-//   const fahrenheit = (celsius * 9 / 5) + 32;
-
-//   console.log(`Celsius: ${celsius}°C`);
-//   console.log(`Fahrenheit: ${fahrenheit}°F`);
-
-//   rl.close();
-// });
-
-
-// Challange 1
-// const n = Number(prompt("N ni kiriting:"));
-
-// let even = 0;
-// let odd = 0;
-
-// for (let i = 1; i <= n; i++) {
-//   if (i % 2 === 0) {
-//     even++;
-//   } else {
-//     odd++;
-//   }
-// }
-
-// console.log("Juft sonlar:", even);
-// console.log("Toq sonlar:", odd);
-
-// ###############################################################################
-
-// challane 2
-
-// let  = Number(prompt("Son kiriting:"));  
-
-// let rev = 0;          
-// let isNegative = false;
-
-
-// if (n < 0) {
-//   isNegative = true;
-//   n = -n; 
-// }
-
-// while (n > 0) {
-//   let digit = n % 10;          
-//   rev = rev * 10 + digit;      
-//   n = Math.floor(n / 10);     
-// }
-
-// if (isNegative) {
-//   rev = -rev;
-// }
-
-// console.log("Teskari son:", rev);
-
-
-
-// // ##
-
-// let number = 58392;   
-// let largest = 0;
-
-// while (number > 0) {
-
-//     let digit = number % 10;   
-
-//     if (digit > largest) {     
-//         largest = digit;
-//     }
-
-//     number = Math.floor(number / 10);  
-// }
-
-// console.log("Largest digit:", largest);
-
-
-// ##
-
-
-
-// let number = 12345;
-// let sum = 0;
-
-// while (number > 0) {
-
-//     let digit = number % 10;   
-//     sum = sum + digit;         
-
-//     number = Math.floor(number / 10);  
-// }
-
-// console.log("Sum of digits:", sum);
-
-
-// ##
-
-
-// let number = 987654;
-// let count = 0;
-
-// while (number > 0) {
-
-//     number = Math.floor(number / 10);  
-//     count = count + 1;                 
-// }
-
-// console.log("Digit count:", count);
-
-
+// Challane 1
+// Function Declaration
 function greet(name) {
+  return "Hello, " + name + "!";
+}
+console.log(greet("Ali"));
+
+//  Function Expression
+const greet2 = function(name) {
+  return "Hello, " + name + "!";
+};
+console.log(greet2("Vali"));
+
+//  Arrow Function
+const greet3 = (name) => {
+  return "Hello, " + name + "!";
+};
+console.log(greet3("Hasan"));
+
+//  IIFE
+const greet4 = (function() {
+  return function(name) {
     return "Hello, " + name + "!";
+  };
+})();
+console.log(greet4("Husan"));
+
+//  Function Constructor
+const greet5 = new Function("name", "return 'Hello, ' + name + '!';");
+console.log(greet5("Aziza"));
+
+// Challang2 2
+function isPrime(n) {
+  if (n <= 1) {
+    return false;
+  }
+
+  for (var i = 2; i < n; i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
+console.log(isPrime(7));  
+console.log(isPrime(10));
 
-console.log(greet("Ali"))
 
+// Challane 3
+
+function countDigits(n) {
+  var num = Math.abs(n);
+  var str = num.toString();
+  return str.length;
+}
+
+console.log(countDigits(12345));
+console.log(countDigits(-9876));
+
+// Challange 4
+
+function isPalindrome(n) {
+  var str = n.toString();
+  var reversed = str.split("").reverse().join("");
+
+  if (str === reversed) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(isPalindrome(121));
+console.log(isPalindrome(123));
+
+// Challange 5
+
+function isArmstrong(n) {
+  var str = n.toString();
+  var power = str.length;
+  var sum = 0;
+
+  for (var i = 0; i < str.length; i++) {
+    var digit = Number(str[i]);
+    sum = sum + Math.pow(digit, power);
+  }
+
+  return sum === n;
+}
+
+console.log(isArmstrong(153));
+console.log(isArmstrong(123));
+
+
+// Challane 6
+
+function createCounter(start) {
+  var count = start;
+
+  return {
+    increment: function() {
+      count++;
+    },
+    decrement: function() {
+      count--;
+    },
+    getCount: function() {
+      return count;
+    }
+  };
+}
+
+var counter = createCounter(5);
+
+counter.increment();
+counter.increment();
+console.log(counter.getCount());
+
+counter.decrement();
+console.log(counter.getCount());
