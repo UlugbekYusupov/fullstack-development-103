@@ -545,6 +545,136 @@
 // console.log(SecondElements(arr));
 // console.log(SecondElements(arr,3));
 
+// challenge3
+
+// const fruits = ["apple","banana","orange","grape"];
+// const result1 = fruits.join();
+// console.log(result1);
+
+// const result2 = fruits.join(" - ");
+// console.log(result2);
+
+// const result3 = fruits.join("");
+// console.log(result3);
+
+// function joinarr(array, separator = ",") {
+//     return array.join(separator)
+// }
+
+// console.log(joinarr(fruits));
+// console.log(joinarr(fruits, " "));
+// console.log(joinarr(fruits, " | "));
+
+// challenge4
+
+// const input = 25468;
+// const result = insertdash(input);
+// console.log(result);
+
+// function insertdash(input) {
+//     const str = input.toString();
+//     return str.split("").join("-")
+// }
+
+// console.log(insertdash(24568));
+
+
+// challenge5
+
+// var arr1 = [-3,8,7,6,5,-4,3,2,1];
+
+// var sortedarr = arr1.sort(function(a,b) {
+//     return a - b;
+// })
+
+// console.log(sortedarr);
+
+// challenge6
+
+// var arr1 = [3, "a", "a", "a", 2, 3, "a", 3, "a", 2, 4, 9, 3];
+
+// function findmostfrequent(arr) {
+//     var frequency = {};
+//     var maxcount = 0;
+//     var mostfrequentitem;
+
+//     for (var i = 0; i < arr.length; i++) {
+//         var item = arr[i];
+//         frequency[item] = (frequency[item] || 0) + 1
+
+//     if (frequency[item] > maxcount) {
+//         maxcount = frequency[item];
+//         mostfrequentitem = item;
+//     }   
+//     }
+
+//     return {
+//         item: mostfrequentitem,
+//         count: maxcount
+//     };
+// }
+
+// var result = findmostfrequent(arr1);
+
+// console.log(result.item + "(" + result.count + "times)");
+
+// challenge7
+
+// function swapCase(str) {
+//   let result = '';
+//   for (let i = 0; i < str.length; i++) {
+//     let c = str[i];
+//     if (c == c.toUpperCase()) {
+//       result += c.toLowerCase();
+//     } else {
+//       result += c.toUpperCase();
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(swapCase("The Quick Brown Fox"));
+
+// challenge8
+
+// let color = ["blue","green","red","orange","violet","indigo","yellow"];
+// let suffix = ["th","st","nd","rd"];
+
+// color.map((item, index) => {
+//   let num = index + 1;
+//   if (num === 1) {
+//     console.log(num + suffix[1] + " " + item);
+//   } else if (num === 2) {
+//     console.log(num + suffix[2] + " " + item);
+//   } else if (num === 3) {
+//     console.log(num + suffix[3] + " " + item);
+//   } else {
+//     console.log(num + suffix[0] + " " + item);
+//   }
+// });
+
+// challenge9
+
+let arr1 = [1, 0, 2, 3, 4];
+let arr2 = [3, 5, 6, 7, 8, 13];
+let result = [];
+
+let maxLength = Math.max(arr1.length, arr2.length);
+
+for (let i = 0; i < maxLength; i++) {
+  let val1 = arr1[i] || 0;  
+  let val2 = arr2[i] || 0;  
+  result[i] = val1 + val2;
+}
+
+console.log(result);
+
+
+
+
+
+
+
 
 
 
