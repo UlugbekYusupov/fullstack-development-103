@@ -86,39 +86,129 @@
 
 // challenge2
 
-let a = 0;
-let b = -1;
-let c = 4;
+// let a = 0;
+// let b = -1;
+// let c = 4;
 
-let largest, middle, smallest;
+// let largest, middle, smallest;
 
-if (a >= b && a >= c) {
-    largest = a;
-    if (b >= c) {
-        middle = b;
-        smallest = c;
-    } else {
-        middle = c;
-        smallest = b;
+// if (a >= b && a >= c) {
+//     largest = a;
+//     if (b >= c) {
+//         middle = b;
+//         smallest = c;
+//     } else {
+//         middle = c;
+//         smallest = b;
+//     }
+// } else if (b >= a && b >= c) {
+//     largest = b;
+//     if (a >= c) {
+//         middle = a;
+//         smallest = c;
+//     } else {
+//         middle = c;
+//         smallest = a;   
+//     }
+// } else {
+//     largest = c;
+//     if (a >= b) {
+//         middle = a;
+//         smallest = b;
+//     } else {
+//         middle = b;
+//         smallest = a;
+//     }
+// }
+
+// alert(largest + ", " + middle + ", " + smallest);
+
+
+
+// lecture 5
+// challenge1
+
+// function greet(name) {
+//     return "Hello, " + name + "!";
+// }
+
+// const greet = function(name) {
+//     return "Hello, " + name + "!";
+// };
+
+// const greet = (name) => {
+//     return "Hello, " + name + "!";
+// };
+
+// const greet = name => "Hello, " + name + "!";
+
+// const greet = name => `Hello, ${name}!`;
+
+// challenge2
+// function isPrime(n) {
+//     if (n <= 1) return false;
+
+//     for (let i = 2; i <= Math.sqrt(n); i++) {
+//         if (n % i === 0) {
+//             return false;
+//         }
+//     }
+
+//     return true;
+// }
+
+// console.log(isPrime(7));  // true
+// console.log(isPrime(10)); // false
+
+// challenge3
+
+// function countDigits(n) {
+//     n = Math.abs(n); // handle negative numbers
+
+//     if (n === 0) return 1;
+
+//     let count = 0;
+
+//     while (n > 0) {
+//         n = Math.floor(n / 10);
+//         count++;
+//     }
+
+//     return count;
+// }
+
+// console.log(countDigits(12345)); // 5
+
+// challenge 4
+// function isPalindrome(n) {
+//     let original = n;
+//     let reversed = 0;
+
+//     while (n > 0) {
+//         let digit = n % 10;
+//         reversed = reversed * 10 + digit;
+//         n = Math.floor(n / 10);
+//     }
+
+//     return original === reversed;
+// }
+// console.log(isPalindrome(121)); // true
+// console.log(isPalindrome(123)); // false
+
+// challenge5
+function isArmstrong(n) {
+    let original = n;
+    let digits = countDigits(n);
+    let sum = 0;
+
+    while (n > 0) {
+        let digit = n % 10;
+        sum += digit ** digits;
+        n = Math.floor(n / 10);
     }
-} else if (b >= a && b >= c) {
-    largest = b;
-    if (a >= c) {
-        middle = a;
-        smallest = c;
-    } else {
-        middle = c;
-        smallest = a;
-    }
-} else {
-    largest = c;
-    if (a >= b) {
-        middle = a;
-        smallest = b;
-    } else {
-        middle = b;
-        smallest = a;
-    }
+
+    return sum === original;
 }
 
-alert(largest + ", " + middle + ", " + smallest);
+console.log(isArmstrong(153)); // true
+console.log(isArmstrong(123)); // false
