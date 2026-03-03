@@ -93,3 +93,67 @@ function isArmstrong(n) {
         return false;
     }
 }
+//6
+function createCounter(start) {
+  let count = start;   
+
+  function increment() {
+    count++;
+  }
+
+  function decrement() {
+    count--;
+  }
+
+  function getCount() {
+    return count;
+  }
+
+  return {
+    increment,
+    decrement,
+    getCount
+  };
+}
+
+const counter = createCounter(10);
+
+counter.increment();
+counter.increment();
+console.log(counter.getCount()); 
+
+counter.decrement();
+console.log(counter.getCount()); 
+//7
+function once(fn) {
+  let called = false;
+
+  return function() {
+    if (!called) {
+      called = true;
+      return fn();
+    }
+  };
+}
+
+function greet() {
+  console.log("Hello!");
+}
+
+const run = once(greet);
+
+run(); 
+run(); 
+run(); 
+//8
+function lazyAdder(a) {
+  return function(b) {
+    return a + b;
+  };
+}
+
+
+const add5 = lazyAdder(5);
+
+console.log(add5(10)); 
+console.log(add5(20)); 
