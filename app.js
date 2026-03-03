@@ -82,4 +82,3 @@ console.log(Array(2));
 let s = new Function("a", "b", "return a + b");
 
 console.log(s(10, 20));
-
