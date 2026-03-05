@@ -171,3 +171,50 @@
 //         console.log(num++)
 //     }
 // }
+
+
+// Lesson 6: Array
+// function first(arr, n) {
+//     if (n < 0) {
+//         return n;
+//     }
+//     if (arr.length === 0) {
+//         return [];
+//     }
+//     if (n === undefined) {
+//         return arr[0];
+//     }
+//     return arr.slice(0, n)
+// }
+// console.log(first([7, 9, 0, -2]));
+// console.log(first([], 3));
+// console.log(first([7, 9, 0, -2], 3));
+// console.log(first([7, 9, 0, -2],6));
+// console.log(first([7, 9, 0, -2],-3));
+
+// function last(arr, n) {
+//     if (n === undefined) {
+//         return arr[arr.length - 1];
+//     }
+//     return arr.slice(-n);
+// }
+// console.log(last([7, 9, 0, -2]));
+// console.log(last([7, 9, 0, -2],3));
+// console.log(last([7, 9, 0, -2],6));
+
+// var myColor = ["Red", "Green", "White", "Black"];
+// var result = myColor.join(",");
+// console.log(result);
+
+
+// var num = "025468";
+// var result = "";
+// for (var i = 0; i < num.length; i++) {
+//   result += num[i];
+//   if (num[i] % 2 === 0 && num[i+1] % 2 === 0) {
+//     result += "-";
+//   }
+
+// }
+
+// console.log(result);
