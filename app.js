@@ -206,3 +206,98 @@ function atmWithdrawal(amount) {
     return result;
 }
 
+// JS Array
+// 1
+function first(arr, n) {
+  if (arr == null || arr.length === 0) return [];
+  if (n == null) return arr[0];
+  if (n < 0) return [];
+  return arr.slice(0, n);
+}
+
+
+console.log(first([7, 9, 0, -2]));      
+console.log(first([], 3));              
+console.log(first([7, 9, 0, -2], 3));   
+console.log(first([7, 9, 0, -2], 6));   
+console.log(first([7, 9, 0, -2], -3));  
+
+
+// 2
+function last(arr, n) {
+  if (arr == null || arr.length === 0) return [];
+  if (n == null) return arr[arr.length - 1];
+  return arr.slice(Math.max(arr.length - n, 0));
+}
+
+
+console.log(last([7, 9, 0, -2]));       
+console.log(last([7, 9, 0, -2], 3));    
+console.log(last([7, 9, 0, -2], 6));    
+
+// 3
+const myColor = ["Red", "Green", "White", "Black"];
+
+
+const result = myColor.join(","); 
+
+console.log(result);
+
+// 4
+function insertDashes(input) {
+  
+  return input.toString().split('').join('-');
+}
+
+console.log(insertDashes('025468')); 
+
+// 5
+var arr1 = [-3, 8, 7, 6, 5, -4, 3, 2, 1];
+
+
+arr1.sort(function(a, b) {
+  return a - b;
+});
+
+console.log(arr1.join(',')); 
+
+// 6
+var arr1 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+
+function mostFrequent(arr) {
+  const counts = {};
+  let maxCount = 0;
+  let maxItem = null;
+
+  for (let item of arr) {
+    counts[item] = (counts[item] || 0) + 1;
+    
+    if (counts[item] > maxCount) {
+      maxCount = counts[item];
+      maxItem = item;
+    }
+  }
+  
+  return `${maxItem} ( ${maxCount} times )`;
+}
+
+console.log(mostFrequent(arr1)); // Output: a ( 5 times )
+
+// 7
+function swapCase(str) {
+  let swapped = '';
+  
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    // Check if the character is uppercase
+    if (char === char.toUpperCase()) {
+      swapped += char.toLowerCase();
+    } else {
+      swapped += char.toUpperCase();
+    }
+  }
+  
+  return swapped;
+}
+
+console.log(swapCase('The Quick Brown Fox')); // Output: tHE qUICK bROWN fOX
