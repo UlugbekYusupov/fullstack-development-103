@@ -1,66 +1,101 @@
-// ----------Functions---------------
-// challange 1
+// Challange 1
 
-function greet(name) {
-    return "Hello, " + name;
-}
+// function first(arr, n) {  
+//   if (n === undefined) {
+//     return arr[0];
+//   }
+  
+//   if (n < 0) {
+//     return [];
+//   }
+  
+//   return arr.slice(0, n);
+// }
 
-// challamge 2
+// console.log(first([7, 9, 0, -2]));      
+// console.log(first([], 3));              
+// console.log(first([7, 9, 0, -2], 3));   
+// console.log(first([7, 9, 0, -2], 6));   
+// console.log(first([7, 9, 0, -2], -3));  
 
-function isPrime(n) {
-  if (n <= 1) {
-    return false;
-  }
+// // Challange 2
 
-  for (let i = 2; i < n; i++) {
-    if (n % i === 0) {
-      return false;
-    }
-  }
+// function last(num , n){
+//     if (n=== undefined) {
+//         return num[0]
+//     }
 
-  return true;
-}
+//     if (n<0) {
+//         return [];
+//     }
 
-// Challange 3
+//     return num.slice(-n)
+// }
 
-function countDigits(n) {
-  let count = 0;
+// console.log(last([7, 9, 0, -2])); 
+// console.log(last([7, 9, 0, -2],3)); 
+// console.log(last([7, 9, 0, -2],6)); 
 
-  while (n > 0) {
-    count++;
-    n = Math.floor(n / 10);
-  }
+// // challange 3
 
-  return count;
-}
+// MyColor = ["red" , "green" , "white" , "black"]
 
-// challange 4
+// console.log(MyColor.join());
 
-function isPalindrome(n) {
-  let str = n.toString();
-  let reversed = str.split("").reverse().join("");
+// // challange 4
 
-  if (str === reversed) {
-    return true;
-  } else {
-    return false;
-  }
-}
+// numbers = [2, 5, 8, 9]
 
-// Challange 5
+// console.log(numbers.join("-"))
 
-function isArmstrong(n) {
-  let str = n.toString();
-  let power = str.length;
-  let sum = 0;
+// // challange 5
 
-  for (let i = 0; i < str.length; i++) {
-    sum = sum + Number(str[i]) ** power;
-  }
+// const arr1 = [ -3, 8, 7, 6, 5, -4, 3, 2, 1 ];
+// arr1.sort()
+// console.log(arr1);
 
-  if (sum === n) {
-    return true;
-  } else {
-    return false;
-  }
-}
+// // challange 6
+
+//  const mostF=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+
+// const frequent = mostF.find((element) => element = "a")
+// console.log(frequent);
+ 
+// // challange 7
+
+// function swapCase(str) {
+//   let result = '';
+
+//   for (let i = 0; i < str.length; i++) {
+//     let char = str[i];
+
+//     if (char === char.toUpperCase()) {
+
+//       result += char.toLowerCase();
+//     } else {
+
+//       result += char.toUpperCase();
+//     }
+//   }
+
+//   return result;
+// }
+
+
+// console.log(swapCase('The Quick Brown Fox')); 
+
+// // challange 8
+
+// let color = ["Blue ", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow "];
+// let o = ["th", "st", "nd", "rd"];
+
+// color.map((currentColor, index) => {
+//   let choiceNum = index + 1; 
+  
+
+//   let suffix = o[choiceNum] || o[0]; 
+
+//   console.log(`${choiceNum}${suffix} choice is ${currentColor}.`);
+// });
+
+
