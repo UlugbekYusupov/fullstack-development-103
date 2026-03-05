@@ -1,214 +1,107 @@
-// let n = Number(prompt("Enter a number:"));
+// lecture 6
+// challenge 1
 
-// let evenCount = 0;
-// let oddCount = 0;
+function first(arr, n) {
+  if (arr.length === 0) return [];
 
-// for (let i = 1; i <= n; i++) {
-//     if (i % 2 === 0) {
-//         evenCount++;
-//     } else {
-//         oddCount++;
-//     }
-// }
+  if (n === undefined) {
+    return arr[0];
+  }
 
-// console.log("Even numbers:", evenCount);
-// console.log("Odd numbers:", oddCount);
+  if (n < 0) {
+    return [];
+  }
 
-// challenge2
-
-// let n = Number(prompt("enter a number"));
-// let res = 0;
-
-// while (n > 0) {
-//     let lastDigit = n % 10;
-//     res + res * 10 + lastDigit;
-//     n = Math.floor(n / 10); 
-// }
-
-// console.log(res);  
-
-// challenge 3
-
-// let num = Number(prompt("enter a number:"));
-// let largest = 0;
-
-// while (num > 0){
-//     let digit = num % 10;
-//     if (digit > largest){
-//         largest = digit;
-//     }
-//     num = Math.floor(num / 10);
-
-// }
-// console.log( "largest digit:", largest);
-
-// challenge 4
-// let num = Number(prompt("enter a number:"));
-// let sum = 0;
-
-// while (num > 0){
-//     let lastDigit = num % 10;
-//     sum = sum + lastDigit;
-//     num = Math.floor(num / 10);
-// }
-// console.log("sum of the  digits:",sum);
-
-// challenge 5
-
-// let number = Number(prompt("Enter a number:"));
-
-// let count = 0;
-
-// if (number === 0) {
-//     count = 1;
-// } else {
-//     while (number > 0) {
-//         number = Math.floor(number / 10);
-//         count++;
-//     }
-// }
-
-// console.log("Total digits:", count);
-
-// lecture 4
-// challenge1
-
-// let a = Number(prompt("Enter first number:"));
-// let b = Number(prompt("Enter second number:"));
-
-// if (a > b) {
-//     alert("Largest number is: " + a);
-// } else if (b > a) {
-//     alert("Largest number is: " + b);
-// } else {
-//     alert("Both numbers are equal");
-// }
+  return arr.slice(0, n);
+}
+console.log(first([7, 9, 0, -2]));      // 7
+console.log(first([], 3));              // []
+console.log(first([7, 9, 0, -2], 3));   // [7,9,0]
+console.log(first([7, 9, 0, -2], 6));   // [7,9,0,-2]
+console.log(first([7, 9, 0, -2], -3));  // []
 
 // challenge2
+function last(arr, n) {
+  if (arr.length === 0) return [];
 
-// let a = 0;
-// let b = -1;
-// let c = 4;
+  if (n === undefined) {
+    return arr[arr.length - 1];
+  }
 
-// let largest, middle, smallest;
-
-// if (a >= b && a >= c) {
-//     largest = a;
-//     if (b >= c) {
-//         middle = b;
-//         smallest = c;
-//     } else {
-//         middle = c;
-//         smallest = b;
-//     }
-// } else if (b >= a && b >= c) {
-//     largest = b;
-//     if (a >= c) {
-//         middle = a;
-//         smallest = c;
-//     } else {
-//         middle = c;
-//         smallest = a;   
-//     }
-// } else {
-//     largest = c;
-//     if (a >= b) {
-//         middle = a;
-//         smallest = b;
-//     } else {
-//         middle = b;
-//         smallest = a;
-//     }
-// }
-
-// alert(largest + ", " + middle + ", " + smallest);
-
-
-
-// lecture 5
-// challenge1
-
-// function greet(name) {
-//     return "Hello, " + name + "!";
-// }
-
-// const greet = function(name) {
-//     return "Hello, " + name + "!";
-// };
-
-// const greet = (name) => {
-//     return "Hello, " + name + "!";
-// };
-
-// const greet = name => "Hello, " + name + "!";
-
-// const greet = name => `Hello, ${name}!`;
-
-// challenge2
-// function isPrime(n) {
-//     if (n <= 1) return false;
-
-//     for (let i = 2; i <= Math.sqrt(n); i++) {
-//         if (n % i === 0) {
-//             return false;
-//         }
-//     }
-
-//     return true;
-// }
-
-// console.log(isPrime(7));  // true
-// console.log(isPrime(10)); // false
+  return arr.slice(Math.max(arr.length - n, 0));
+}
+console.log(last([7, 9, 0, -2]));      // -2
+console.log(last([7, 9, 0, -2], 3));   // [9,0,-2]
+console.log(last([7, 9, 0, -2], 6));   // [7,9,0,-2]
 
 // challenge3
+let myColor = ["Red", "Green", "White", "Black"];
 
-// function countDigits(n) {
-//     n = Math.abs(n); // handle negative numbers
+let result = myColor.join(",");
 
-//     if (n === 0) return 1;
+console.log(result);
 
-//     let count = 0;
-
-//     while (n > 0) {
-//         n = Math.floor(n / 10);
-//         count++;
-//     }
-
-//     return count;
-// }
-
-// console.log(countDigits(12345)); // 5
-
-// challenge 4
-// function isPalindrome(n) {
-//     let original = n;
-//     let reversed = 0;
-
-//     while (n > 0) {
-//         let digit = n % 10;
-//         reversed = reversed * 10 + digit;
-//         n = Math.floor(n / 10);
-//     }
-
-//     return original === reversed;
-// }
-// console.log(isPalindrome(121)); // true
-// console.log(isPalindrome(123)); // false
-
-// challenge5
-function isArmstrong(n) {
-    let original = n;
-    let digits = countDigits(n);
-    let sum = 0;
-
-    while (n > 0) {
-        let digit = n % 10;
-        sum += digit ** digits;
-        n = Math.floor(n / 10);
-    }
-
-    return sum === original;
+// challenge4
+function insertDash(num) {
+  let str = num.toString();
+  let result = str.split("").join("-");
+  return result;
 }
 
-console.log(isArmstrong(153)); // true
-console.log(isArmstrong(123)); // false
+console.log(insertDash(25468));
+
+// challenge 5
+var arr1 = [-3, 8, 7, 6, 5, -4, 3, 2, 1];
+
+arr1.sort(function(a, b){
+  return a - b;
+});
+
+console.log(arr1);
+
+// challenge 6
+var arr1 = [3,'a','a','a',2,3,'a',3,'a',2,4,9,3];
+
+let count = {};
+let max = 0;
+let mostFrequent;
+
+for(let i = 0; i < arr1.length; i++){
+
+  let item = arr1[i];
+
+  if(count[item] == null){
+    count[item] = 1;
+  }else{
+    count[item]++;
+  }
+
+  if(count[item] > max){
+    max = count[item];
+    mostFrequent = item;
+  }
+}
+
+console.log(mostFrequent + " (" + max + " times)");
+
+// challenge 7
+function swapCase(str){
+
+  let result = "";
+
+  for(let i = 0; i < str.length; i++){
+
+    let char = str[i];
+
+    if(char === char.toUpperCase()){
+      result += char.toLowerCase();
+    }else{
+      result += char.toUpperCase();
+    }
+
+  }
+
+  return result;
+}
+
+console.log(swapCase("The Quick Brown Fox"));
