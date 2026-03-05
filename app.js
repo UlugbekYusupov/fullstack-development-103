@@ -1060,3 +1060,188 @@
 // }
 
 // tax()
+
+// let numbers = Array.of(5)
+// console.log(numbers);
+
+// let SetToArray = [...new Set ([6,7,8,9,10])]
+// console.log(SetToArray);
+
+// let original = [1,2,3]
+// let copy = [...original]
+// console.log(copy)
+
+// let numbers = Array.of(10)
+// console.log(numbers);
+
+// let MyList = [1,2,3,4,5]
+// MyList.shift()
+// MyList.unshift(1)
+// console.log(MyList);
+
+// map()
+// let numbers = [1,2,3,4,5,6]
+// let NewArray = numbers.map(num => num * 2)
+// console.log(NewArray)
+
+// let fruits = new Map()
+// fruits.set("Apple", 500)
+// fruits.set("Orange", 600)
+// fruits.set("Pineapple", 100)
+
+// console.log(fruits.get("Apple"))
+
+// let users = [
+//     {name: "Jovohir", age: 20},
+//     {name: "someone", age: 40},
+//     {name: "someone-2", age: 1}
+// ]
+
+// let names = users.map(user => user.name)
+// console.log(names);
+
+// filter()
+// let numbers = [1,2,3,4,5,6,7,8,9]
+// let EvenNumbers = numbers.filter(n => n % 2 === 0)
+// console.log(EvenNumbers);
+
+// let users = [
+//     {name: "Jovohir", age: 20},
+//     {name: "someone", age: 40},
+//     {name: "someone-2", age: 1}
+// ]
+
+// let OlderUsers = users.filter(user => user.age >= 20)
+// console.log(OlderUsers);
+
+
+// reduce()
+// let numbers = [1,2,3,4]
+// let sum = numbers.reduce((acc, num) => acc + num, 0)
+// console.log(sum);
+
+// find()
+// let numbers = [1,2,3,4,5,6]
+// let FindNum = numbers.find(n => n > 5)
+// console.log(FindNum)
+
+// let products = [
+//     {id: 1, name: "Iphone"},
+//     {id: 2, name: "Samsung"},
+//     {id: 3, name: "Mi"}
+// ]
+
+// let FindPhone = products.find(p => p.id === 2)
+// console.log(FindPhone);
+
+// findIndex()
+// let numbers = [10,20,30,40,50]
+// let result = numbers.findIndex(n => n > 20)
+// console.log(result);
+
+// includes()
+// let fruits = ["Apple", "Orange", "Kiwi"]
+// console.log(fruits.includes("Orange"))
+
+// Splice()
+// array.splice(startIndex, deleteCount, newItems)
+
+// let numbers = [10,20,30,40,50]
+// numbers.splice(1,2)
+// console.log(numbers);
+
+// let numbers =  [1,2,5]
+// numbers.splice(2,0,3,4)
+// console.log(numbers);
+
+// Challenge 1
+// function first(n) {
+//     return n[0]
+// }
+// console.log(first([9,8,7,6,5]));
+
+// Challenge 2
+// function last(n) {
+//     return n.at(-1)
+// }
+// console.log(last([1,2,3,4]));
+
+// Challenge 3
+// function joining(MyList) {
+//     return MyList.join()
+// }
+// console.log(joining(["Red", "Green", "White", "Black"]))
+
+// Challenge 4
+// let UserNumber = prompt("Enter a number: ").split("")
+
+// function dashes() {
+//     console.log(UserNumber.join("-"));
+    
+// }
+// dashes()
+
+// Challenge 5
+// function SortNumber(n) {
+//     return n.sort((a,b) => a - b)
+// }
+// console.log(SortNumber([5,1,9,-4,20]));
+
+// Challenge 6
+// function mostFrequent(arr) {
+//     let count = {};
+//     let maxItem;
+//     let maxCount = 0;
+
+//     for (let item of arr) {
+//         count[item] = (count[item] || 0) + 1;
+
+//         if (count[item] > maxCount) {
+//             maxCount = count[item];
+//             maxItem = item;
+//         }
+//     }
+
+//     return `${maxItem} (${maxCount} times)`;
+// }
+
+// var arr1 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+
+// console.log(mostFrequent(arr1));
+// Did not understand this one
+
+// Challenge 7
+// let UserText = prompt("Enter text: ")
+// function ChangingText() {
+//     let result = ""
+//     for (let char of UserText) {
+//         if (char === char.toUpperCase()) {
+//             result += char.toLowerCase()
+//         }
+//         else {
+//             result += char.toUpperCase()
+//         }
+//     }
+//     console.log("Final result: " + result);
+    
+// }
+// ChangingText()
+
+// Challenge 8
+// let color = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+// let MyObject = {}
+
+// function ObjectContainer() {
+//     for (let i = 0; i < color.length; i++) {
+//         MyObject[(i + 1) + " choice"] = color[i]
+//     }
+//     return MyObject
+// }
+
+// console.log(ObjectContainer());
+
+// Challenge 9
+// let array1 = [1,0,2,3,4];
+// let array2 = [3,5,6,7,8,13];
+// let FinalArray = new array1.map((num, i) => (array2[i] || 0) + num)
+// console.log(FinalArray);
