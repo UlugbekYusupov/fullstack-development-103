@@ -1,164 +1,111 @@
 // =========================== Challenge 1 ===========================
 
-// function 1
-// function greet(name) {
-//     console.log(`Hello, ${name}`)
+// let array = [[],1,2,3,4]
+
+// function first(arr) {
+//     return arr[0]
 // }
 
-// greet('Kamronbek')
+// console.log(first(array))
 
-// function 2
-// let greet = function (name) {
-//     console.log(`Hello, ${name}`)
+// =========================== Challenge 2 ===========================
+
+// let array = [1,2,3,4]
+
+// function lastElement(arr) {
+//     return arr[arr.length-1]
 // }
 
-// greet('Kamronbek')
+// console.log(lastElement(array))
 
-// function 3
-// let greet = (name) => {
-//     console.log(`Hello, ${name}`)
+// =========================== Challenge 3 ===========================
+
+// let myColors = ["Red", "Green", "Blue", "Yellow"]
+// let convertedColors = ""
+// myColors.map((color) => {
+//     convertedColors += " " +  color + ","
+// })
+
+// console.log(convertedColors)
+
+// =========================== Challenge 4 ===========================
+
+// let number = prompt('Enter a number: ')
+// let numbersWithDashes = " "
+
+// for(let i = 0; i < number.length; i++) {
+//     numbersWithDashes += number[i] + "-"
 // }
 
-// greet('Kamronbek')
+// numbersWithDashes = numbersWithDashes.slice(0, -1)
+// console.log(numbersWithDashes)
 
-// function 4
-// (function(name){
-//     console.log(`Hello, ${name}`)
-// }('Kamronbek'))
+// =========================== Challenge 5 ===========================
 
-// =========================== Challenge 2 =========================== 
-// let count = 0;
+// let numbers = [ -3, 8, 7, 6, 5, -4, 3, 2, 1 ]
+// console.log(numbers.sort((a, b) => a - b))
 
-// function isPrime(n) {
-//     for(let i = 1; i < n; i++) {
-//         if(n % i == 0) {
-//             count += 1
-//         }
+// =========================== Challenge 6 ===========================
+
+// let arr1 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+
+// let counter = {};
+// let maxCount = 0;
+// let mostFrequent;
+
+// for (let item of arr1) {
+//     counter[item] = (counter[item] || 0) + 1;
+
+//     if (counter[item] > maxCount) {
+//         maxCount = counter[item];
+//         mostFrequent = item;
 //     }
 // }
 
+// console.log(`${mostFrequent} ( ${maxCount} times )`);
 
-// isPrime(17)
+// =========================== Challenge 7 ===========================
 
-// if(count <= 2) console.log('prime num')
-//     else console.log('not prime')
+// let str = prompt("Enter a string:");
+// let result = "";
 
-// =========================== Challenge 3 =========================== 
-// let count = 0
-// let number = Number(prompt('Enter number: '))
-
-// function countDigits(n) { 
-//     while (n > 0) {
-//     n = Math.floor(n / 10);
-//     count += 1
-// }
-// }
-
-// countDigits(number)
-// console.log(count)
-
-// =========================== Challenge 4 =========================== 
-// function isPalindrome(n) {
-//     let firstNumber = n
-//     let reversedNumber = 0
-
-//     while (n > 0) {
-//         let digit = n % 10          
-//         reversedNumber = reversedNumber * 10 + digit
-//         n = Math.floor(n / 10)  
-//     }
-
-//     return firstNumber === reversedNumber
-// }
-
-// console.log(isPalindrome(121))
-// console.log(isPalindrome(321))
-
-// =========================== Challenge 5 =========================== 
-// function isArmstrong(n) {
-//     if (n < 0) return false
-
-//     let number = n
-//     let temp = n
-//     let digits = 0
-//     let sum = 0
-
-//     while (temp > 0) {
-//         digits++
-//         temp = Math.floor(temp / 10)
-//     }
-
-//     temp = n
-
-//     while (temp > 0) {
-//         let digit = temp % 10
-//         sum += digit ** digits
-//         temp = Math.floor(temp / 10)
-//     }
-
-//     return sum === number
-// }
-
-// console.log(isArmstrong(153)) 
-// console.log(isArmstrong(133)) 
-
-// =========================== Challenge 6 =========================== 
-
-// function createCounter(start) {
-//     let count = start
-
-//     return {
-//         increment() {
-//             count++
-//         },
-//         decrement() {
-//             count--
-//         },
-//         getCount() {
-//             return count
-//         }
-//     }
-// }
-// const counter = createCounter(5)
-
-// counter.increment()
-// counter.increment()
-// counter.decrement()
-
-// console.log(counter.getCount()) 
-
-// =========================== Challenge 7 =========================== 
-
-// function once(fn) {
-//     let called = false
-
-//     return function() {
-//         if (!called) {
-//             called = true
-//             return fn()
-//         }
+// for (let i = 0; i < str.length; i++) {
+//     if (str[i] === str[i].toUpperCase()) {
+//         result += str[i].toLowerCase();
+//     } else {
+//         result += str[i].toUpperCase();
 //     }
 // }
 
-// function greet() {
-//     console.log("Hello!")
+// console.log(result);
+
+// =========================== Challenge 8 ===========================
+
+// let color = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+// let o = ["th","st","nd","rd"];
+
+// for (let i = 0; i < color.length; i++) {
+
+//     let ordinal;
+
+//     if (i + 1 == 1) ordinal = o[1];
+//     else if (i + 1 == 2) ordinal = o[2];
+//     else if (i + 1 == 3) ordinal = o[3];
+//     else ordinal = o[0];
+
+//     console.log(`${i+1}${ordinal} choice is ${color[i]}.`);
 // }
 
-// const sayHello = once(greet)
+// =========================== Challenge 9 ===========================
 
-// sayHello()
-// sayHello() 
-// sayHello() 
+// let array1 = [1,0,2,3,4];
+// let array2 = [3,5,6,7,8,13];
 
-// =========================== Challenge 8 =========================== 
+// let result = [];
+// let maxLength = Math.max(array1.length, array2.length);
 
-// function lazyAdder(a) {
-//     return function(b) {
-//         return a + b
-//     }
+// for (let i = 0; i < maxLength; i++) {
+//     result.push((array1[i] || 0) + (array2[i] || 0));
 // }
 
-// const add5 = lazyAdder(5)
-
-// console.log(add5(10)) 
-// console.log(add5(20)) 
+// console.log(result);
