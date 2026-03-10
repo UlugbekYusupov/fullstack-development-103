@@ -301,3 +301,4 @@ function swapCase(str) {
 }
 
 console.log(swapCase('The Quick Brown Fox')); // Output: tHE qUICK bROWN fOX
+
