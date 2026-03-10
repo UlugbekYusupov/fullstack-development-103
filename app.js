@@ -218,3 +218,38 @@
 // }
 
 // console.log(result);
+
+// let num = "025468";
+// let result = num.split("").join("-");
+// console.log(result);
+
+// let arr1 = [-3, 8, 7, 6, 5, -4, 3, 2, 1];
+// arr1.sort(function(a,b){
+//     return a - b;
+// })
+// console.log(arr1.join(","));
+
+// let str = "The Quick Brown Fox";
+// let result = "";
+// for (let i = 0; i< str.length; i++) {
+//     if (str[i] === str[i].toUpperCase()) {
+//         result += str[i].toLowerCase();
+//     } else {
+//         result += str[i].toUpperCase();
+//     }
+// }
+// console.log(result);
+
+
+// let arr1 = [1, 0, 2, 3, 4];
+// let arr2 = [3, 5, 6, 7, 8, 13];
+// let result = [];
+// let maxLength = Math.max(arr1.length, arr2.lenth);
+// for (let i = 0; i < maxLength; i++) {
+//     let num1 = arr1[i] || 0;
+//     let num2 = arr2[i] || 0;
+
+//     result.push(num1 + num2);
+// }
+// console.log(result);
+
