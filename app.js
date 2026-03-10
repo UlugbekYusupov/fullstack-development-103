@@ -9,6 +9,8 @@
 // console.log(5 +  undefined);
 // console.log("5" + "5");
 
+const { version } = require("react");
+
 
 // var a = "ulugbek";
 // const a = "ulugbek";
@@ -655,19 +657,219 @@
 
 // challenge9
 
-let arr1 = [1, 0, 2, 3, 4];
-let arr2 = [3, 5, 6, 7, 8, 13];
-let result = [];
+// let arr1 = [1, 0, 2, 3, 4];
+// let arr2 = [3, 5, 6, 7, 8, 13];
+// let result = [];
 
-let maxLength = Math.max(arr1.length, arr2.length);
+// let maxLength = Math.max(arr1.length, arr2.length);
 
-for (let i = 0; i < maxLength; i++) {
-  let val1 = arr1[i] || 0;  
-  let val2 = arr2[i] || 0;  
-  result[i] = val1 + val2;
-}
+// for (let i = 0; i < maxLength; i++) {
+//   let val1 = arr1[i] || 0;  
+//   let val2 = arr2[i] || 0;  
+//   result[i] = val1 + val2;
+// }
 
-console.log(result);
+// console.log(result);
+
+// OBJECTS IN JS
+
+// let person = {
+//   firstName:"John",
+//   lastName:"Doe",
+//   age :50
+// }
+
+// console.log(person);
+
+
+// Object literal
+
+// let car = {
+//   bradnd:"Mercedes",
+//   model:"class S",
+//   year:2024,
+//   start: function () {
+//     console.log("Car is starting...");
+    
+//   }
+// };
+
+// console.log(car.bradnd);
+// car.start();
+
+
+// Using new Object
+
+// let person = new Object();
+// person.name = "Alice";
+// person.age = 25;
+// person.greet = function () {
+//   return `Hello my name is ${this.name}`;
+// };
+
+// console.log(person.greet());
+
+// Ways to create Objects 
+
+// Factory function 
+
+// function createPerson(name,age) {
+// return {
+//   name,
+//   age,
+//   greet() {
+//     return `Hi im ${this.name}, and im ${this.age} years old`;
+//    } 
+//   };
+//  }
+
+// let person1 = createPerson("Alice",25);
+// let person2 = createPerson("Miky",32);
+
+// console.log(person1.greet);
+// console.log(person2.greet);
+
+// Constructor Function 
+
+// function Person(name, age) {
+//     this.name = name;
+//     this.age = age;
+//     this.greet = function() {
+//         return `Hi, I'm ${this.name}, and I'm ${this.age} years old`;
+//     };
+// }
+
+// let person1 = new Person("Alice",25);
+// let person2 = new Person("Bob",21);
+
+// console.log(person1.greet);
+// console.log(person2.greet);
+
+// Using Object.cerate(prototype)
+
+// let animal = {
+//     type: "Mammal",
+//     makeSound() {
+//         console.log("Some generic animal sound");
+//     }
+// };
+
+// let dog = Object.create(animal);
+// dog.breed = "Golden Retrivier";
+// dog.makeSound();
+// console.log(dog.type);
+
+// Using ES6 class
+
+// class Person {
+//     constructor(name, age) {
+//         this.name = name;
+//         this.age = age;
+//     }
+
+// greet() {
+//     return `Hello, my name is ${this.name}`;
+//    }
+// }
+
+// let person1 = new Person("Alice",25);
+// console.log(person1.greet());
+
+// Ways to create Objects / Single Object / Object.fereeze
+
+// const config = Object.freeze({
+//     theme: "dark",
+//     version: "1.0.0"
+// });
+
+// config.theme = "light";
+// console.log(config.theme);
+
+
+// Object Properties & Accessors 
+
+// let car = {brand: "Tesla", model: "Model S"};
+// console.log(car.brand);
+// console.log(car['model']);
+
+// let key = "score";
+// let student = { [key]: 95 };
+// console.log(student.score);
+
+// Practise
+
+// Challenge1
+
+// const students = [ 
+//   {name:"Alice", scores: [80,90,100] },
+//   {name:"Bob", scores: [50,60,70] },
+//   {name:"Charlie", scores: [30,40,20] }
+// ];
+
+
+// function StudentResults(students) {
+//     return students.map(student => {
+//         const sum = student.scores.reduce((total, score) => total + score, 0);
+//         const average = sum / student.score.length;
+//         const passed = average >= 50;
+    
+//     return {
+//         name: student.name,
+//         average: Math.round(average * 100) / 100,
+//         passed: passed
+//     };
+//     });
+// }
+
+// const results = StudentResults(students);
+// console.log("Student Results",results);
+
+// Challenge2 
+
+// const cart = [
+//     { id: 1, name: "Laptop", price: 900, quantity: 1},
+//     { id: 2, name: "Mouse", price: 50, quantity: 2},
+//     { id: 3, name: "Keyboard", price: 100, quantity: 1},
+// ];
+
+// function showSummary(cart) {
+//     let total = 0;
+//     let mostExpensive = cart[0];
+
+//     for (let i = 0; i < cart.length; i++) {
+//         let item = cart[i];
+//         total = total + (item.price * item.quantity);
+    
+//         if (item.price > mostExpensive.price) {
+//             mostExpensive = item;
+//         }
+//     }
+
+//     let finalTotal = total;
+//     if (total > 100) {
+//         finalTotal = total * 0.9;
+//         console.log("disc applied");
+//     }
+
+//     console.log("cart summary");
+//     console.log("subtotal: " + total);
+//     console.log("total :" + finalTotal);
+//     console.log("most expensive :" + mostExpensive + mostExpensive.price);    
+// }
+
+// showSummary(cart);
+
+// Challenge3
+
+
+
+
+
+
+
+
+
+
 
 
 
