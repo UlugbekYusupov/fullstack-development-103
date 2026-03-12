@@ -253,3 +253,90 @@
 // }
 // console.log(result);
 
+
+// Lecture 7 Object in JS
+// let car = {
+//     brand: "BMW",
+//     model: "Model G",
+//     year: 2026,
+//     start: function() {
+//         console.log("Car is starting now....");
+        
+//     }
+// };
+// console.log(car.brand);
+// car.start();
+
+
+// let person = new Object();
+
+// person.name = "Jake";
+// person.age = 18;
+// person.greet = function() {
+//     return `Hi, my name is ${this.name}`;
+// };
+
+// console.log(person.greet());
+
+// function createPeople(name,age) {
+//     return {
+//         name,
+//         age,
+//         greet() {
+//             return `Hi, I am ${this.name}, and I am ${this.age} years old`;
+//         }
+//     };
+// }
+// let person1 = createPeople("Tom", 19);
+// let person2 = createPeople("Jak", 20)
+// console.log(person1.greet());
+// console.log(person2.greet());
+
+// function Person(name, age) {
+//     this.name = name;
+//     this.age = age;
+//     this.greet = function () {
+//         return `Hi, I am ${this.name}, and I am ${this.age} years old`;
+
+//     };
+// }
+// let person1 = new Person("Akmal", 23);
+// let person2 = new Person("Islom", 22);
+// console.log(person1.greet());
+// console.log(person2.greet());
+
+// let animal = {
+//     type: "Mammal",
+//     makeSound() {
+//         console.log("Some animalk sound");
+        
+//     }
+// };
+// let dog = Object.create(animal);
+// dog.breed = "Golden Retriever";
+// dog.makeSound();
+// console.log(dog.type);
+
+// class Person {
+//     constructor(name, age) {
+//         this.name = name;
+//         this.age = age;
+//     }
+//     greet() {
+//         return `Hello, my name is ${this.name}`;
+//     }
+// }
+// let person1 = new Person("Akmal", 25)
+// console.log(person1.greet());
+
+// const config = Object.freeze({
+//     theme: "dark",
+//     version: "1.0.0"
+// });
+// config.theme = "light";
+// console.log(config.theme);
+
+
+
+
+
