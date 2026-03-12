@@ -355,3 +355,31 @@ const updateStock = (id, newStock) => {
 };
 const deleteProduct = (id) => products = products.filter(p => p.id !== id);
 const findProduct = (name) => products.find(p => p.name === name);
+
+// 4
+const teams = [
+  { name: "Team A", wins: 5, losses: 2, points: 15 },
+  { name: "Team B", wins: 6, losses: 1, points: 18 }
+];
+
+const rankedTeams = [...teams].sort((a, b) => b.points - a.points);
+
+const bestTeam = rankedTeams[0];
+
+console.log(`Best Team: ${bestTeam.name}`);
+
+
+// 5
+const inventory = [
+  { itemName: "Laptop", category: "Electronics", stock: 5 },
+  { itemName: "Phone", category: "Electronics", stock: 10 },
+  { itemName: "Desk", category: "Furniture", stock: 2 }
+];
+
+function totalStockByCategory(category) {
+  return inventory
+    .filter(item => item.category === category)
+    .reduce((sum, item) => sum + item.stock, 0);
+}
+
+const lowStockItems = inventory.filter(item => item.stock < 3);
