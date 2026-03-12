@@ -1,321 +1,292 @@
-function first(arr, n) {
+//challenge1
+let students = [
+  { name: "Ali", scores: [60, 70, 80] },
+  { name: "Vali", scores: [40, 45, 50] },
+  { name: "Sami", scores: [90, 85, 88] }
+];
 
-  if (arr.length === 0) return [];
+let topStudent = null;
+let highestAvg = 0;
 
-  if (n == null) return arr[0];
+for (let student of students) {
 
-  if (n < 0) return n;
+  // average hisoblash
+  let sum = 0;
+  for (let score of student.scores) {
+    sum += score;
+  }
 
-  return arr.slice(0, n);
+  let avg = sum / student.scores.length;
+
+  // pass yoki fail
+  let status = avg >= 50 ? "Passed" : "Failed";
+
+  console.log(student.name + " average:", avg, "-", status);
+
+  // top student topish
+  if (avg > highestAvg) {
+    highestAvg = avg;
+    topStudent = student.name;
+  }
 }
-console.log(first([7, 9, 0, -2]));      
-console.log(first([], 3));              
-console.log(first([7, 9, 0, -2], 6));   
-console.log(first([7, 9, 0, -2], -3));  
 
-//2
-function last(arr, n) {
+console.log("Top student:", topStudent, "with average:", highestAvg);
 
-  if (n == null) return arr[arr.length - 1];
+//challenge2
+let cart = [
+  { id: 1, name: "Laptop", price: 800, quantity: 1 },
+  { id: 2, name: "Mouse", price: 20, quantity: 2 },
+  { id: 3, name: "Keyboard", price: 50, quantity: 1 }
+];
 
-  if (n > arr.length) return arr;
+let totalPrice = 0;
+let mostExpensive = cart[0];
 
-  return arr.slice(arr.length - n);
+for (let item of cart) {
+
+  // total price hisoblash
+  totalPrice += item.price * item.quantity;
+
+  // eng qimmat itemni topish
+  if (item.price > mostExpensive.price) {
+    mostExpensive = item;
+  }
 }
 
+console.log("Total price:", totalPrice);
 
-console.log(last([7, 9, 0, -2]));      
-console.log(last([7, 9, 0, -2], 3));   
-console.log(last([7, 9, 0, -2], 6));
+// discount
+if (totalPrice > 100) {
+  let discount = totalPrice * 0.10;
+  totalPrice -= discount;
+  console.log("Discount applied:", discount);
+}
 
-//3
-let myColor = ["Red", "Green", "White", "Black"];
+console.log("Final price:", totalPrice);
 
-let result = myColor.join(",");
+console.log("Most expensive item:", mostExpensive.name, "-", mostExpensive.price);
 
-console.log(result); 
+//challenge3
+let products = [
+  { id: 1, name: "Laptop", price: 800, stock: 5 },
+  { id: 2, name: "Mouse", price: 20, stock: 50 },
+  { id: 3, name: "Keyboard", price: 50, stock: 30 }
+];
 
-//4
-function addDash(num) {
+// ADD PRODUCT
+function addProduct(product) {
+  products.push(product);
+}
 
-  let str = num.toString();   
-  let result = "";
+// UPDATE STOCK
+function updateStock(id, newStock) {
+  for (let product of products) {
+    if (product.id === id) {
+      product.stock = newStock;
+      return;
+    }
+  }
+}
 
-  for (let i = 0; i < str.length; i++) {
+// DELETE PRODUCT
+function deleteProduct(id) {
+  products = products.filter(product => product.id !== id);
+}
 
-    result += str[i];
+// FIND PRODUCT
+function findProduct(name) {
+  return products.find(product => product.name === name);
+}
 
-    if (i !== str.length - 1) {
-      result += "-";
+// ----------------------
+// TESTING
+// ----------------------
+
+addProduct({ id: 4, name: "Monitor", price: 200, stock: 10 });
+
+updateStock(2, 40);
+
+deleteProduct(3);
+
+console.log("Found product:", findProduct("Laptop"));
+
+// MAP – product names
+let productNames = products.map(product => product.name);
+console.log("Product names:", productNames);
+
+// FILTER – stock > 10
+let availableProducts = products.filter(product => product.stock > 10);
+console.log("Available products:", availableProducts);
+
+// REDUCE – total inventory value
+let totalValue = products.reduce((total, product) => {
+  return total + product.price * product.stock;
+}, 0);
+
+console.log("Total inventory value:", totalValue);
+
+console.log("Final product list:", products);
+
+//challenge4
+let posts = [
+  {
+    author: "Ali",
+    likes: 120,
+    shares: 30,
+    comments: [
+      { user: "Vali", message: "Great post!" },
+      { user: "Sami", message: "Nice!" }
+    ]
+  },
+  {
+    author: "Vali",
+    likes: 200,
+    shares: 40,
+    comments: [
+      { user: "Ali", message: "Amazing!" },
+      { user: "John", message: "Love this!" }
+    ]
+  },
+  {
+    author: "Sami",
+    likes: 150,
+    shares: 20,
+    comments: [
+      { user: "Ali", message: "Good job!" }
+    ]
+  }
+];
+
+// MOST LIKED POST
+function mostLikedPost(posts) {
+  let mostLiked = posts[0];
+
+  for (let post of posts) {
+    if (post.likes > mostLiked.likes) {
+      mostLiked = post;
+    }
+  }
+
+  return mostLiked;
+}
+
+// TOTAL ENGAGEMENT
+function totalEngagement(posts) {
+  let total = 0;
+
+  for (let post of posts) {
+    total += post.likes + post.shares + post.comments.length;
+  }
+
+  return total;
+}
+
+// RESULTS
+console.log("Most liked post:", mostLikedPost(posts));
+console.log("Total engagement:", totalEngagement(posts));
+
+//challenge5
+let teams = [
+  {
+    name: "Lions",
+    wins: 10,
+    losses: 2,
+    points: 30,
+    goalsScored: 25,
+    goalsConceded: 10
+  },
+  {
+    name: "Tigers",
+    wins: 8,
+    losses: 4,
+    points: 24,
+    goalsScored: 20,
+    goalsConceded: 15
+  },
+  {
+    name: "Eagles",
+    wins: 12,
+    losses: 1,
+    points: 36,
+    goalsScored: 30,
+    goalsConceded: 8
+  }
+];
+
+// SORT TEAMS BY RANKING
+function sortTeamsByRanking(teams) {
+  return teams.sort((a, b) => b.points - a.points);
+}
+
+// FIND BEST TEAM
+function bestTeam(teams) {
+  let best = teams[0];
+
+  for (let team of teams) {
+    if (team.points > best.points) {
+      best = team;
+    }
+  }
+
+  return best;
+}
+
+// GOAL DIFFERENCE
+function goalDifference(team) {
+  return team.goalsScored - team.goalsConceded;
+}
+
+// RESULTS
+console.log("Sorted leaderboard:");
+console.log(sortTeamsByRanking(teams));
+
+console.log("Best team:");
+console.log(bestTeam(teams));
+
+// Goal difference for each team
+for (let team of teams) {
+  console.log(
+    team.name + " goal difference: " + goalDifference(team)
+  );
+}
+
+//challenge6
+let inventory = [
+  { itemName: "Laptop", category: "Electronics", stock: 15 },
+  { itemName: "Mouse", category: "Electronics", stock: 5 },
+  { itemName: "Chair", category: "Furniture", stock: 20 },
+  { itemName: "Table", category: "Furniture", stock: 8 },
+  { itemName: "Notebook", category: "Stationery", stock: 50 }
+];
+
+// TOTAL STOCK PER CATEGORY
+function totalStockPerCategory(items) {
+  let result = {};
+
+  for (let item of items) {
+    if (!result[item.category]) {
+      result[item.category] = 0;
     }
 
+    result[item.category] += item.stock;
   }
 
   return result;
 }
 
-console.log(addDash(25468)); 
+// LOW STOCK ALERT
+function lowStockAlert(items, limit = 10) {
+  let lowStockItems = items.filter(item => item.stock < limit);
 
-//5
-function sortArray(arr) {
+  console.log("Low stock items:");
 
-  return arr.sort(function(a, b) {
-    return a - b;
-  });
-
-}
-var arr1 = [ -3, 8, 7, 6, 5, -4, 3, 2, 1 ];
-
-console.log(sortArray(arr1));
-
-//6
-function mostFrequent(arr) {
-
-  let count = {};
-  let max = 0;
-  let result;
-
-  for (let i = 0; i < arr.length; i++) {
-
-    let item = arr[i];
-
-    count[item] = (count[item] || 0) + 1;
-
-    if (count[item] > max) {
-      max = count[item];
-      result = item;
-    }
-
+  for (let item of lowStockItems) {
+    console.log(item.itemName + " stock is low (" + item.stock + ")");
   }
-
-  return result + " ( " + max + " times )";
 }
 
-var arr1=[3,'a','a','a',2,3,'a',3,'a',2,4,9,3];
+// RESULTS
+console.log("Total stock per category:");
+console.log(totalStockPerCategory(inventory));
 
-console.log(mostFrequent(arr1));
-
-//7
-function swapCase(str) {
-
-  let result = "";
-
-  for (let i = 0; i < str.length; i++) {
-
-    if (str[i] === str[i].toUpperCase()) {
-      result += str[i].toLowerCase();
-    } 
-    else {
-      result += str[i].toUpperCase();
-    }
-
-  }
-
-  return result;
-}
-console.log(swapCase("The Quick Brown Fox"));
-
-//8
-let color = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
-let o = ["th","st","nd","rd"];
-
-for (let i = 0; i < color.length; i++) {
-
-  let num = i + 1;
-  let ordinal;
-
-  if (num === 1) {
-    ordinal = num + o[1];
-  } 
-  else if (num === 2) {
-    ordinal = num + o[2];
-  } 
-  else if (num === 3) {
-    ordinal = num + o[3];
-  } 
-  else {
-    ordinal = num + o[0];
-  }
-
-  console.log(ordinal + " choice is " + color[i]);
-}
-
-//9
-function sumArrays(a1, a2) {
-
-  let result = [];
-  let maxLength = Math.max(a1.length, a2.length);
-
-  for (let i = 0; i < maxLength; i++) {
-
-    let val1 = a1[i] || 0;
-    let val2 = a2[i] || 0;
-
-    result.push(val1 + val2);
-  }
-
-  return result;
-}
-
-let array1 = [1,0,2,3,4];
-let array2 = [3,5,6,7,8,13];
-
-console.log(sumArrays(array1, array2));
-function greet(name) {
-    return "Hello, " + name + "!";
-}
-
-let greet2 = function(name) {
-    return "Hello, " + name + "!";
-};
-
-let greet3 = (name) => {
-    return "Hello, " + name + "!";
-};
-
-let greet4 = name => "Hello, " + name + "!";
-
-function greet5(name) {
-    return `Hello, ${name}!`;
-}
-
-console.log(greet("Ali"));
-console.log(greet2("Ali"));
-console.log(greet3("Ali"));
-console.log(greet4("Ali"));
-console.log(greet5("Ali"));
-
-//2
-function isPrime(n) {
-    if (n <= 1) return false;
-
-    for (let i = 2; i < n; i++) {
-        if (n % i === 0) {
-            return false;
-        }
-    }
-
-    return true;
-
-//3
-function countDigits(n) {
-    let count = 0;
-
-    if (n === 0) return 1;
-
-    while (n > 0) {
-        n = Math.floor(n / 10);
-        count++;
-    }
-
-    return count;
-}
-
-//4
-function isPalindrome(n) {
-    let original = n;
-    let reversed = 0;
-
-    while (n > 0) {
-        let digit = n % 10;
-        reversed = reversed * 10 + digit;
-        n = Math.floor(n / 10);
-    }
-
-    if (original === reversed) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-//5
-function isArmstrong(n) {
-    let original = n;
-    let sum = 0;
-    let digits = 0;
-    let temp = n;
-
-    while (temp > 0) {
-        temp = Math.floor(temp / 10);
-        digits++;
-    }
-
-    temp = n;
-
-    while (temp > 0) {
-        let digit = temp % 10;
-        sum = sum + Math.pow(digit, digits);
-        temp = Math.floor(temp / 10);
-    }
-
-    if (sum === original) {
-        return true;
-    } else {
-        return false;
-    }
-}
-//6
-function createCounter(start) {
-  let count = start;   
-
-  function increment() {
-    count++;
-  }
-
-  function decrement() {
-    count--;
-  }
-
-  function getCount() {
-    return count;
-  }
-
-  return {
-    increment,
-    decrement,
-    getCount
-  };
-}
-
-const counter = createCounter(10);
-
-counter.increment();
-counter.increment();
-console.log(counter.getCount()); 
-
-counter.decrement();
-console.log(counter.getCount()); 
-//7
-function once(fn) {
-  let called = false;
-
-  return function() {
-    if (!called) {
-      called = true;
-      return fn();
-    }
-  };
-}
-
-function greet() {
-  console.log("Hello!");
-}
-
-const run = once(greet);
-
-run(); 
-run(); 
-run(); 
-//8
-function lazyAdder(a) {
-  return function(b) {
-    return a + b;
-  };
-}
-
-
-const add5 = lazyAdder(5);
-
-console.log(add5(10)); 
-console.log(add5(20))
+lowStockAlert(inventory);
