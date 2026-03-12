@@ -302,3 +302,56 @@ function swapCase(str) {
 
 console.log(swapCase('The Quick Brown Fox')); // Output: tHE qUICK bROWN fOX
 
+
+// Lecture 7
+// Challenge 1
+const students = [
+  { name: "Alice", scores: [80, 90, 100] },
+  { name: "Bob", scores: [50, 60, 70] },
+  { name: "Charlie", scores: [30, 40, 20] }
+];
+
+const results = students.map(student => {
+  const sum = student.scores.reduce((a, b) => a + b, 0);
+  const avg = sum / student.scores.length;
+  return { 
+    name: student.name, 
+    average: avg, 
+    passed: avg >= 50 
+  };
+});
+
+const topStudent = results.reduce((prev, curr) => (prev.average > curr.average) ? prev : curr);
+
+console.log(`${topStudent.name} has the highest average: ${topStudent.average}`);
+
+// 2
+const cart = [
+  { id: 1, name: "Laptop", price: 900, quantity: 1 },
+  { id: 2, name: "Mouse", price: 50, quantity: 2 },
+  { id: 3, name: "Keyboard", price: 100, quantity: 1 }
+];
+
+let total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+if (total > 100) {
+  total = total * 0.9;
+}
+
+const mostExpensive = cart.reduce((prev, curr) => (prev.price > curr.price) ? prev : curr);
+
+console.log(`Total Price: $${total} (after discount)`);
+
+// 3
+let products = [
+  { id: 1, name: "Laptop", price: 1200, stock: 10 },
+  { id: 2, name: "Phone", price: 700, stock: 15 }
+];
+
+const addProduct = (newProd) => products.push(newProd);
+const updateStock = (id, newStock) => {
+  const prod = products.find(p => p.id === id);
+  if (prod) prod.stock = newStock;
+};
+const deleteProduct = (id) => products = products.filter(p => p.id !== id);
+const findProduct = (name) => products.find(p => p.name === name);
