@@ -227,14 +227,138 @@ console.log("Number of digits:", count);
 
 // challenge9
 
-let arr1 = [1, 0, 2, 3, 4];
-let arr2 = [3, 5, 6, 7, 8, 13];
-let result = [];
+// let arr1 = [1, 0, 2, 3, 4];
+// let arr2 = [3, 5, 6, 7, 8, 13];
+// let result = [];
 
-let maxLength = Math.max(arr1.length, arr2.length);
+// let maxLength = Math.max(arr1.length, arr2.length);
 
-for (let i = 0; i < maxLength; i++) {
-  let val1 = arr1[i] || 0;  
-  let val2 = arr2[i] || 0;  
-  result[i] = val1 + val2;
+// for (let i = 0; i < maxLength; i++) {
+//   let val1 = arr1[i] || 0;  
+//   let val2 = arr2[i] || 0;  
+//   result[i] = val1 + val2;
+// }
+
+
+
+// Challenge 1
+const students = [
+  { name: "Alice", scores: [80, 90, 100] },
+  { name: "Bob", scores: [50, 60, 70] },
+  { name: "Charlie", scores: [30, 40, 20] }
+];
+
+function getAverage(scores) {
+  return scores.reduce((a, b) => a + b, 0) / scores.length;
 }
+
+let topStudent = null;
+let highestAvg = -1;
+
+students.forEach(student => {
+  const avg = getAverage(student.scores);
+  if (avg > highestAvg) {
+    highestAvg = avg;
+    topStudent = student;
+  }
+});
+
+console.log(`${topStudent.name} has the highest average: ${highestAvg}`);
+
+
+
+// Challenge 2
+const cart = [
+  { id: 1, name: "Laptop", price: 900, quantity: 1 },
+  { id: 2, name: "Mouse", price: 50, quantity: 2 },
+  { id: 3, name: "Keyboard", price: 100, quantity: 1 }
+];
+
+const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+const finalTotal = total > 100 ? total * 0.9 : total;
+
+const mostExpensive = cart.reduce((max, item) => {
+  const val = item.price * item.quantity;
+  return val > (max.price * max.quantity) ? item : max;
+}, cart[0]);
+
+console.log(`Total Price: ${finalTotal} (after discount)`);
+
+
+
+// Challenge 3
+let products = [
+  { id: 1, name: "Laptop", price: 1200, stock: 10 },
+  { id: 2, name: "Phone", price: 700, stock: 15 }
+];
+
+function addProduct(id, name, price, stock) {
+  products.push({ id, name, price, stock });
+}
+
+function updateStock(id, newStock) {
+  const p = products.find(p => p.id === id);
+  if (p) p.stock = newStock;
+}
+
+function deleteProduct(id) {
+  products = products.filter(p => p.id !== id);
+}
+
+function findProduct(name) {
+  return products.find(p => p.name.toLowerCase() === name.toLowerCase());
+}
+
+
+
+// Challenge 4
+const posts = [
+  { author: "Alice", likes: 100, comments: 20, shares: 5 },
+  { author: "Bob", likes: 200, comments: 50, shares: 10 }
+];
+
+const mostLiked = posts.reduce((max, p) => p.likes > max.likes ? p : max, posts[0]);
+
+const totalEngagement = posts.reduce((sum, p) => 
+  sum + p.likes + p.comments + p.shares, 0);
+
+console.log("Most liked:", mostLiked.author);
+console.log("Total engagement:", totalEngagement);
+
+
+
+// Challenge 5
+const teams = [
+  { name: "Team A", wins: 5, losses: 2, points: 15 },
+  { name: "Team B", wins: 6, losses: 1, points: 18 },
+  { name: "Team C", wins: 4, losses: 3, points: 12 }
+];
+
+const sortedTeams = [...teams].sort((a, b) => b.points - a.points);
+const bestTeam = sortedTeams[0];
+
+console.log("Best team:", bestTeam.name);
+console.log("Ranking:", sortedTeams.map(t => t.name));
+
+
+
+// Challenge 6
+const inventory = [
+  { itemName: "Laptop", category: "Electronics", stock: 5 },
+  { itemName: "Phone", category: "Electronics", stock: 10 },
+  { itemName: "Mouse", category: "Accessories", stock: 25 }
+];
+
+function totalStockByCategory(category) {
+  return inventory
+    .filter(item => item.category === category)
+    .reduce((sum, item) => sum + item.stock, 0);
+}
+
+function getLowStockItems(threshold = 10) {
+  return inventory.filter(item => item.stock <= threshold);
+}
+
+console.log("Electronics stock:", totalStockByCategory("Electronics"));
+console.log("Low stock:", getLowStockItems(10).map(i => i.itemName));
+
