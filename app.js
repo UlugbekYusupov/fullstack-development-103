@@ -1245,3 +1245,360 @@
 // let array2 = [3,5,6,7,8,13];
 // let FinalArray = new array1.map((num, i) => (array2[i] || 0) + num)
 // console.log(FinalArray);
+
+// let cars = {
+//     brand: "Tesla",
+//     model: "Model X",
+//     year: 2026,
+//     start: function() {
+//         console.log("Car is starting...");
+        
+//     }
+// }
+
+// console.log(cars.brand);
+// cars.start()
+
+// let person = new Object()
+// person.name = "Jovohir"
+// person.age = 18
+// person.greet = function () {
+    // return `Hello bro, my name is ${this.name}`
+// }
+// console.log(person.greet());
+
+// Objects
+
+// let object = {
+//     FirstName: "Jovohir",
+//     LastName: "Doe", 
+//     age: 18
+// }
+// console.log(object);
+
+// Object Literal ({})
+// let car = {
+//     brand: "Tesla",
+//     model: "Version X",
+//     year: 2026,
+//     start: function() {
+//         console.log("I like Tesla}");
+//     }
+// }
+// console.log(car.brand);
+// car.start()
+
+// Using new Object()
+// let person = new Object()
+// person.name = "Jovohir"
+// person.age = 18
+// person.introduction = function() {
+//     return `Hello, my name is ${this.name}`
+// }
+// console.log(person.introduction());
+
+// Factory Function
+// function WritePerson(name, age) {
+//     return {
+//         name,
+//         age,
+//         greet() {
+//             return `Hello, my name is ${this.name} and I'm ${this.age} years old`
+//         }
+//     }
+// }
+
+// let person1 = WritePerson("Jovohir", 18)
+// let person2 = WritePerson("Muhammad", 22)
+
+// console.log(person1.greet());
+// console.log(person2.greet());
+
+// Constructor Function
+// function People (name, age) {
+//     this.name = name
+//     this.age = age
+//     this.info = function () {
+//         return `Hi, I'm ${this.name} and I'm ${this.age} years old`
+//     }
+// }
+
+// let person1 = new People("Jovohir", 18)
+// let person2 = new People("Muhamamd", 25)
+
+// console.log(person1.info());
+// console.log(person2.info());
+
+// Using Object.create(prototype)
+
+// let animal = {
+//     type: "Mammal",
+//     MakeSound() {
+//         console.log("Some generic mammal sound!");
+//     }
+// }
+
+// let dog = Object.create(animal)
+// dog.breed = "This is dog"
+// dog.MakeSound()
+// console.log(dog.type);
+// console.log(dog.breed);
+
+// Using ES6 class
+// class Person {
+//     constructor (name, age) {
+//         this.name = name
+//         this.age = age
+//     }
+//     greet() {
+//         return `Hello guys! My name is ${this.name} and I'm ${this.age} years old`
+//     }
+// }
+
+// let person1 = new Person ("Jovohir", 18)
+// console.log(person1);
+// console.log(person1.greet());
+
+// Singleton Object (Object.freeze())
+// const config = Object.freeze( {
+//     theme: "dark",
+//     version: 11
+// })
+// config.theme = "Light"
+// console.log(config.theme);
+
+// Object homwork
+// Challenge 1
+// const students = [
+//     {name: "Alice", scores: [80,90,100]},
+//     {name: "Bob", scores: [50,60,70]},
+//     {name: "Charlie", scores: [30,40,20]}
+// ]
+
+// function GetAverage(scores) {
+//     let sum = scores.reduce((a,b) => a + b, 0) / scores.length
+//     return sum 
+// }
+
+// function Status(average) {
+//     return average >= 50? "Passed" : "Failed"
+// }
+
+// students.forEach(student => {
+//     let average = GetAverage(student.scores)
+//     console.log(student.name, ":", GetAverage(student.scores), "-", Status(average));
+// })
+
+// let TopStudent = ""
+// let MaxAverage = 0
+// students.forEach(student => {
+//     let average = GetAverage(student.scores)
+//     if (average > MaxAverage) {
+//         MaxAverage = average
+//         TopStudent = student.name
+//     }
+// })
+// console.log(TopStudent, "got the highest score:", MaxAverage);
+
+// Challenge 2
+// const cart = [
+//     {id: 1, name: "Laptop", price: 900, quantity: 1},
+//     {id: 2, name: "Mouse", price: 50, quantity: 2},
+//     {id: 3, name: "Keyboard", price: 100, quantity: 1}
+// ]
+
+// let MostExpensiveItem = ""
+// let MaxNumber = 0
+
+// function MostExpensiveProduct() {
+//     cart.forEach(item => {
+//         if (item.price > MaxNumber) {
+//             MaxNumber = item.price
+//             MostExpensiveItem = item.name
+//         }
+//         console.log(`Most expensive item is ${MostExpensiveItem} (${MaxNumber}$)`);
+        
+//     })
+// }
+
+// function GetSum(cart) {
+//     let SumPrices = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
+//     return SumPrices
+// }
+
+// function Discount(SumPrices) {
+//     if (SumPrices < 100) {
+//         SumPrices = SumPrices * (1 - 0.1)
+//     }
+//     return SumPrices
+// }
+
+// let total = GetSum(cart)
+
+// console.log(`Total price: ${Discount(total)}$ (after 10% of discount)`);
+// MostExpensiveProduct()
+
+// Challenge 3
+// let products = [
+//     {id: 1, name: "Laptop", price: 1200, stock: 10},
+//     {id: 2, name: "Phone", price: 700, stock: 15}
+// ]
+
+// function DeleteProductByID() {
+//     let UserDeleting = Number(prompt("Enter an ID to remove a product: (1-2)"))
+
+//     let OiriginalLength = products.length
+//     products = products.filter(item => item.id !== UserDeleting)
+//     if (OiriginalLength === products.length) {console.log("Product not found!")}
+    
+//     console.log("Remaining products: ");
+//     console.log(products);
+// }
+
+// function AddNewProduct() {
+//     let UserAddingProductName = prompt("Enter the name of a new product: ")
+//     let UserEnteringPrice = Number(prompt("Enter its price: "))
+//     let UserEnteringStock = Number(prompt("Enter the amount of that product: "))
+
+//     let NewProductByUser = {
+//         id: products.length + 1,
+//         name: UserAddingProductName,
+//         price: UserEnteringPrice,
+//         stock: UserEnteringStock
+//     }
+//     products.push(NewProductByUser)
+
+//     console.log("Your product has been added!");
+//     console.log("Updated Inventory: ");
+//     console.log(products);
+// }
+
+// function UpdateStockByUser() {
+//     let UserEnterIDtoUpdateStock = Number(prompt("Enter an ID of the product to update its stock: "))
+//     let UserSetNewStock = Number(prompt("Enter its new amount: "))
+
+//     let product = products.find(ProductID => ProductID.id === UserEnterIDtoUpdateStock)
+//     if (product) {
+//         product.stock = UserSetNewStock
+//         console.log("Stock has been successfully updated!");
+//         console.log(products);
+//     }
+//     else {console.log("Product not found!");}
+// }
+
+// function UserFindingProduct() {
+//     let UserSearchingForProduct = prompt("Enter the product name you are searching: ")
+//     let FoundProduct = products.find(item => item.name.toLowerCase() === UserSearchingForProduct.toLowerCase())
+//     console.log(FoundProduct);
+// }
+
+// DeleteProductByID()
+// AddNewProduct()
+// UpdateStockByUser()
+// UserFindingProduct()
+
+// Challenge 4
+// let posts = [
+//     {author: "Alice", likes: 100, comments: 20, shares: 5},
+//     {author: "Bob", likes: 200, comments: 50, shares: 10}
+// ]
+
+// let MaxLike = 0
+
+// function MostLike() {
+//     posts.forEach(post => {
+//         if (post.likes > MaxLike) {
+//             MaxLike = post.likes
+//         }
+//     })
+
+//     console.log(`Most liked post has ${MaxLike} likes`)
+// }
+
+// function TotalEngagement() {
+//     let sum = posts.reduce((total, post) => 
+//         total + post.likes + post.comments + post.shares, 0
+//     )
+
+//     console.log(`Total engagement: ${sum}`)
+// }
+
+// function AuthorComment() {
+//     let AuthorCommentObject = posts.map(post => ({
+//         author: post.author,
+//         comments: post.comments
+//     }))
+
+//     console.log(AuthorCommentObject)
+// }
+
+// MostLike()
+// TotalEngagement()
+// AuthorComment()
+
+// challenge 5
+// const teams = [
+//     { name: "Team A", wins: 5, losses: 2, points: 15, goalsScored: 12, goalsConceded: 6 },
+//     { name: "Team B", wins: 6, losses: 1, points: 18, goalsScored: 15, goalsConceded: 5 }
+// ]
+
+// function sortTeams() {
+//     const sorted = teams.sort((a, b) => b.points - a.points)
+//     console.log("Leaderboard:", sorted)
+// }
+
+// function bestTeam() {
+//     let best = teams[0]
+
+//     teams.forEach(team => {
+//         if (team.points > best.points) {
+//             best = team
+//         }
+//     })
+
+//     console.log("Best team:", best)
+// }
+
+// function showGoals() {
+//     teams.forEach(team => {
+//         console.log(
+//             team.name + 
+//             "Goals scored: " + team.goalsScored + 
+//             "Goals conceded: " + team.goalsConceded
+//         )
+//     })
+// }
+
+// sortTeams()
+// bestTeam()
+// showGoals()
+
+// challenge 6
+// const inventory = [
+//     { itemName: "Laptop", category: "Electronics", stock: 5 },
+//     { itemName: "Phone", category: "Electronics", stock: 10 },
+//     { itemName: "Chair", category: "Furniture", stock: 3 }
+// ]
+
+// function totalStockByCategory(category) {
+//     let total = 0
+
+//     inventory.forEach(item => {
+//         if (item.category === category) {
+//             total += item.stock
+//         }
+//     })
+
+//     console.log("Total stock in", category + ":", total)
+// }
+
+// function lowStockAlert() {
+//     inventory.forEach(item => {
+//         if (item.stock < 5) {
+//             console.log("Low stock alert:", item.itemName, "- only", item.stock, "left")
+//         }
+//     })
+// }
+
+// totalStockByCategory("Electronics")
+// lowStockAlert()
