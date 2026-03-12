@@ -246,185 +246,360 @@
 //       return role === "admin" || role === "editor";
 //     },
 
-//     canDelete: function() {
-//       return role === "admin";
-//     },
+// //     canDelete: function() {
+      // return role === "admin";
+// //     },
 
-//     canView: function() {
-//       return role === "admin" || role === "editor" || role === "viewer";
-//     }
-//   };
-// }
+// //     canView: function() {
+// //       return role === "admin" || role === "editor" || role === "viewer";
+// //     }
+// //   };
+// // }
 
-// // CHALLENGE8
-// function calculateTax(income) {
-//   if (income < 10000) {
-//     return 0;
-//   } else if (income <= 50000) {
-//     return income * 0.10;
-//   } else {
-//     return income * 0.20;
+// // // CHALLENGE8
+// // function calculateTax(income) {
+// //   if (income < 10000) {
+// //     return 0;
+// //   } else if (income <= 50000) {
+// //     return income * 0.10;
+// //   } else {
+// //     return income * 0.20;
+// //   }
+// // }
+
+
+// // Challange 1
+
+// function first(arr, n) {
+//   if (arr.length === 0) return [];
+
+//   if (n == null) {
+//     return arr[0];
 //   }
+
+//   if (n < 0) {
+//     return n;
+//   }
+
+//   return arr.slice(0, n);
 // }
 
-
-// Challange 1
-
-function first(arr, n) {
-  if (arr.length === 0) return [];
-
-  if (n == null) {
-    return arr[0];
-  }
-
-  if (n < 0) {
-    return n;
-  }
-
-  return arr.slice(0, n);
-}
-
-// Test
-console.log(first([7, 9, 0, -2]));       // 7
-console.log(first([],3));                // []
-console.log(first([7, 9, 0, -2],3));     // [7,9,0]
-console.log(first([7, 9, 0, -2],6));     // [7,9,0,-2]
-console.log(first([7, 9, 0, -2],-3));    // -3
+// // Test
+// console.log(first([7, 9, 0, -2]));       // 7
+// console.log(first([],3));                // []
+// console.log(first([7, 9, 0, -2],3));     // [7,9,0]
+// console.log(first([7, 9, 0, -2],6));     // [7,9,0,-2]
+// console.log(first([7, 9, 0, -2],-3));    // -3
 
 
-// Challange 2
+// // Challange 2
 
-function last(arr, n) {
-  if (n == null) {
-    return arr[arr.length - 1];
-  }
+// // function last(arr, n) {
+// //   if (n == null) {
+// //     return arr[arr.length - 1];
+// //   }
 
-  return arr.slice(Math.max(arr.length - n, 0));
-}
+// //   return arr.slice(Math.max(arr.length - n, 0));
+// // }
 
-// Test
-console.log(last([7, 9, 0, -2]));       // -2
-console.log(last([7, 9, 0, -2],3));     // [9,0,-2]
-console.log(last([7, 9, 0, -2],6));     // [7,9,0,-2]
-
-
-// Challane 3
-
-let myColor = ["Red", "Green", "White", "Black"];
-
-let result = myColor.join(",");
-
-console.log(result);
+// // // Test
+// // console.log(last([7, 9, 0, -2]));       // -2
+// // console.log(last([7, 9, 0, -2],3));     // [9,0,-2]
+// // console.log(last([7, 9, 0, -2],6));     // [7,9,0,-2]
 
 
-// Challane 4
+// // Challane 3
 
-function addDash(num) {
-  let str = num.toString();
-  return str.split("").join("-");
-}
+// let myColor = ["Red", "Green", "White", "Black"];
 
-console.log(addDash(25468));
+// let result = myColor.join(",");
 
-// Challange 5
+// console.log(result);
 
-let numbers = [-3, 8, 7, 6, 5, -4, 3, 2, 1];
 
-numbers.sort(function(a, b) {
-  return a - b;
+// // Challane 4
+
+// function addDash(num) {
+//   let str = num.toString();
+//   return str.split("").join("-");
+// }
+
+// console.log(addDash(25468));
+
+// // Challange 5
+
+// let numbers = [-3, 8, 7, 6, 5, -4, 3, 2, 1];
+
+// numbers.sort(function(a, b) {
+//   return a - b;
+// });
+
+// console.log(numbers);
+
+// // // Challange 6
+
+
+// let items = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+
+// let counter = {};
+// let mostItem;
+// let mostCount = 0;
+
+// for (let i = 0; i < items.length; i++) {
+
+//   let element = items[i];
+
+//   if (counter[element] == null) {
+//     counter[element] = 1;
+//   } else {
+//     counter[element]++;
+//   }
+
+//   if (counter[element] > mostCount) {
+// //     mostCount = counter[element];
+// //     mostItem = element;
+// //   }
+// // }
+
+// // console.log(mostItem + " (" + mostCount + " times)");
+
+
+// // // Challane 7
+
+
+// // let text = "The Quick Brown Fox";
+// // let resulttt = "";
+
+// // for (let i = 0; i < text.length; i++) {
+
+// //   let letter = text[i];
+
+// //   if (letter === letter.toUpperCase()) {
+// //     resulttt += letter.toLowerCase();
+// //   } else {
+// //     resulttt += letter.toUpperCase();
+// //   }
+
+// // }
+
+// // console.log(result);
+
+
+// // // Challange 8
+
+// // let colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+// // let suffix = ["th","st","nd","rd"];
+
+// // for (let i = 0; i < colors.length; i++) {
+
+// //   let number = i + 1;
+// //   let ending;
+
+// //   if (number == 1) {
+// //     ending = suffix[1];
+// //   } else if (number == 2) {
+// //     ending = suffix[2];
+// //   } else if (number == 3) {
+// //     ending = suffix[3];
+// //   } else {
+// //     ending = suffix[0];
+// //   }
+
+// //   console.log(number + ending + " choice is " + colors[i]);
+// // }
+
+
+// // // Challane 9
+
+
+// // let array1 = [1,0,2,3,4];
+// // let array2 = [3,5,6,7,8,13];
+
+// // let resultt = [];
+
+// // let maxLength = Math.max(array1.length, array2.length);
+
+// // for (let i = 0; i < maxLength; i++) {
+
+// //   let value1 = array1[i] || 0;
+// //   let value2 = array2[i] || 0;
+
+// //   resultt.push(value1 + value2);
+// // }
+
+// // console.log(result);
+
+// let car  = {
+//   brand: "Tesla",
+//   model: "Model S",
+//   year: 2024,
+//   start: function() {
+//     console.log("Car is starting....")
+//   }
+// };
+// console.log(car.brand);
+// console.log(car.model);
+// console.log(car.start);
+// car.start()
+
+
+// let person = new Object()
+// person.name = "Alice";
+// person.age = 25;
+// person.greet = function() {
+//   return `Hello, my name is ${this.name} and i am ${this.age}`;
+// };
+// console.log(person.greet())
+
+
+                                      // Lekture 7
+
+const students = [
+  { name: "Ali", scores: [70, 80, 60] },
+  { name: "Vali", scores: [40, 50, 45] },
+  { name: "Sardor", scores: [90, 85, 95] }
+];
+
+students.forEach(s => {
+  s.avg = s.scores.reduce((a, b) => a + b) / s.scores.length;
+  s.passed = s.avg >= 50;
 });
 
-console.log(numbers);
+const topStudent = students.reduce((a, b) => (a.avg > b.avg ? a : b));
 
-// Challange 6
+console.log(students);
+console.log(topStudent);
 
 
-let items = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+// challane 2
 
-let counter = {};
-let mostItem;
-let mostCount = 0;
 
-for (let i = 0; i < items.length; i++) {
+const cart = [
+  { id: 1, name: "Phone", price: 300, quantity: 1 },
+  { id: 2, name: "Headphones", price: 50, quantity: 2 },
+  { id: 3, name: "Charger", price: 20, quantity: 3 }
+];
 
-  let element = items[i];
+let total = cart.reduce((a, b) => a + b.price * b.quantity, 0);
 
-  if (counter[element] == null) {
-    counter[element] = 1;
-  } else {
-    counter[element]++;
-  }
+if (total > 100) total *= 0.9;
 
-  if (counter[element] > mostCount) {
-    mostCount = counter[element];
-    mostItem = element;
-  }
+const expensive = cart.reduce((a, b) => (a.price > b.price ? a : b));
+
+console.log(total);
+console.log(expensive);
+
+// challane 3
+
+let products = [
+  { id: 1, name: "Laptop", price: 1000, stock: 5 },
+  { id: 2, name: "Mouse", price: 25, stock: 20 }
+];
+
+function addProduct(p) {
+  products.push(p);
 }
 
-console.log(mostItem + " (" + mostCount + " times)");
+function updateStock(id, stock) {
+  const p = products.find(x => x.id === id);
+  if (p) p.stock = stock;
+}
 
+function deleteProduct(id) {
+  products = products.filter(x => x.id !== id);
+}
 
-// Challane 7
+function findProduct(name) {
+  return products.find(x => x.name === name);
+}
 
+addProduct({ id: 3, name: "Keyboard", price: 50, stock: 10 });
+updateStock(1, 3);
+deleteProduct(2);
 
-let text = "The Quick Brown Fox";
-let resulttt = "";
+console.log(products);
+console.log(findProduct("Laptop"));
 
-for (let i = 0; i < text.length; i++) {
+// challane 4
 
-  let letter = text[i];
+const posts = [
+  { author: "Alice", likes: 100, comments: 20, shares: 5 },
+  { author: "Bob", likes: 200, comments: 50, shares: 10 }
+];
 
-  if (letter === letter.toUpperCase()) {
-    resulttt += letter.toLowerCase();
-  } else {
-    resulttt += letter.toUpperCase();
+function mostLikedPost(arr) {
+  let mostLiked = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i].likes > mostLiked.likes) {
+      mostLiked = arr[i];
+    }
   }
 
+  return mostLiked;
 }
 
-console.log(result);
+function totalEngagement(arr) {
+  let total = 0;
 
-
-// Challange 8
-
-let colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
-let suffix = ["th","st","nd","rd"];
-
-for (let i = 0; i < colors.length; i++) {
-
-  let number = i + 1;
-  let ending;
-
-  if (number == 1) {
-    ending = suffix[1];
-  } else if (number == 2) {
-    ending = suffix[2];
-  } else if (number == 3) {
-    ending = suffix[3];
-  } else {
-    ending = suffix[0];
+  for (let i = 0; i < arr.length; i++) {
+    total += arr[i].likes + arr[i].comments + arr[i].shares;
   }
 
-  console.log(number + ending + " choice is " + colors[i]);
+  return total;
 }
 
+let topPost = mostLikedPost(posts);
 
-// Challane 9
+console.log("Most liked post: " + topPost.author + " with " + topPost.likes + " likes");
+console.log("Total engagement: " + totalEngagement(posts));
 
+// challane 5
 
-let array1 = [1,0,2,3,4];
-let array2 = [3,5,6,7,8,13];
+const teams = [
+  { name: "Team A", wins: 5, losses: 2, points: 15 },
+  { name: "Team B", wins: 6, losses: 1, points: 18 },
+  { name: "Team C", wins: 4, losses: 3, points: 12 }
+];
 
-let resultt = [];
-
-let maxLength = Math.max(array1.length, array2.length);
-
-for (let i = 0; i < maxLength; i++) {
-
-  let value1 = array1[i] || 0;
-  let value2 = array2[i] || 0;
-
-  resultt.push(value1 + value2);
+function sortTeams(arr) {
+  return arr.sort(function(a, b) {
+    return b.points - a.points;
+  });
 }
 
-console.log(result);
+function bestTeam(arr) {
+  let best = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i].points > best.points) {
+      best = arr[i];
+    }
+  }
+
+  return best;
+}
+
+console.log("Sorted teams:");
+console.log(sortTeams(teams));
+
+let topTeam = bestTeam(teams);
+console.log("Best-performing team: " + topTeam.name);
+
+// challane 6
+
+const inventory = [
+  { itemName: "Laptop", category: "Electronics", stock: 5 },
+  { itemName: "Phone", category: "Electronics", stock: 10 },
+  { itemName: "Chair", category: "Furniture", stock: 3 },
+  { itemName: "Table", category: "Furniture", stock: 7 }
+];
+
+function totalStockByCategory(category) {
+  return inventory
+    .filter(item => item.category === category)
+    .reduce((sum, item) => sum + item.stock, 0);
+}
+
+console.log("Electronics total stock:", totalStockByCategory("Electronics"));
+console.log("Furniture total stock:", totalStockByCategory("Furniture"));
