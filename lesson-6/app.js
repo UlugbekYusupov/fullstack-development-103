@@ -1,39 +1,59 @@
 // task-1
-// function task1(arr) {
-//     console.log(arr[0]);
+// function task1(arr,n) {
+//     if (!n) {
+//         console.log(arr);
+//     }
+//     else if (arr.length === 0 || n > arr.length) {
+//         console.log(arr);
+//     }
+//     else if (n < 0) {
+//         console.log(n);
+//     }
+//     else{
+//         console.log(arr.slice(0, n));
+//     }
 // }
 
 // task1([1, 2, 3, 4, 5]);
 
 // task-2
-// function task2(arr) {
-//     console.log(arr[arr.length - 1]);
+// function task2(arr,n){  
+//     if (!n) {
+//         console.log(arr);
+//     }
+//     else if (arr.length === 0 || n > arr.length) {
+//         console.log(arr);
+//     }
+//     else if (n < 0) {
+//         console.log(n);
+//     }
+//     else{
+//         console.log(arr.slice(-n));
+//     }
 // }
 
-// task2([1, 2, 3, 4, 5]);
+// task2([1, 2, 3, 4, 5],2);
 
 // // task-3
 // function task3(arr) {
 //     console.log(arr.join(","));
 // }
-
-// task3([1, 2, 3, 4, 5]); 
+// let temp = [1, 2, 3, 4, 5]
+// task3(temp); 
+// console.log(typeof(temp));
 
 // task-4
 // function task4(number) {
-//     return number.
-//         toString()
-//         .split("")
-//         .join("-");
+//     return number.toString().split("").join("-");
 // }
 
 // let number = Number(prompt("Enter a number"));
 // console.log(task4(number));
 
 // task-5
-// function task5(arr) {
-//     return arr.sort((a, b) => a - b);
-// }
+function task5(arr) {
+    return arr.sort((a, b) => a - b);
+}
 
 // console.log(task5([-5, 3, 8, 1, 2]));
 
@@ -86,25 +106,25 @@
 
 
 // task-8
-// let color = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
-// let o = ["th", "st", "nd", "rd"];
+let color = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+let o = ["th", "st", "nd", "rd"];
 
-// for (let i = 0; i < color.length; i++) {
+for (let i = 0; i < color.length; i++) {
 
-//   let ordinal;
+  let ordinal;
 
-//   if (i === 0) {
-//     ordinal = i + 1 + o[1];
-//   } else if (i === 1) {
-//     ordinal = i + 1 + o[2];
-//   } else if (i === 2) {
-//     ordinal = i + 1 + o[3];
-//   } else {
-//     ordinal = i + 1 + o[0];
-//   }
+  if (i === 0) {
+    ordinal = i + 1 + o[1];
+  } else if (i === 1) {
+    ordinal = i + 1 + o[2];
+  } else if (i === 2) {
+    ordinal = i + 1 + o[3];
+  } else {
+    ordinal = i + 1 + o[0];
+  }
 
-//   console.log(ordinal + " choice is " + color[i]);
-// }
+  console.log(ordinal + " choice is " + color[i]);
+}
 
 
 // task-9
