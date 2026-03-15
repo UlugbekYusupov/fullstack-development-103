@@ -1602,3 +1602,60 @@
 
 // totalStockByCategory("Electronics")
 // lowStockAlert()
+
+// DOM
+// const title = document.getElementById("title")
+// const text = document.querySelector(".text")
+// const title = document.getElementById("title")
+// console.log(title);
+// console.log(text);
+// title.textContent = "New title"
+
+// Changing style
+// const message = document.getElementById("message")
+
+// message.style.color = "red"
+// message.style.fontSize = "30px"
+
+// Creating new elements
+// const container = document.getElementById("container")
+
+// const newElement = document.createElement("p")
+
+// newElement.textContent = "This is new"
+
+// container.appendChild(newElement)
+
+// removing elements
+// const element = document.getElementById("removeMe")
+// element.remove()
+
+// Events
+// const button = document.getElementById("btn")
+
+// button.addEventListener("click", function() {
+//     alert("Button clicked!")
+// })
+
+// Simple Counter
+// let count = 0
+
+// const button = document.getElementById("add")
+// const counter = document.getElementById("count")
+
+// button.addEventListener("click", function () {
+//     count++
+//     counter.textContent = count
+// })
+
+// Add to cart program
+
+// let cart = 0
+
+// const buyBtn = document.querySelector(".buy")
+// const cartCount = document.getElementById("cart")
+
+// buyBtn.addEventListener("click", function() {
+//     cart++
+//     cartCount.textContent = cart
+// })
