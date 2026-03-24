@@ -23,7 +23,7 @@
 // console.log(Boolean("false"))
 
 // 4-task
-// console.log("10" - true) 
+// console.log("10" - true)
 // Result is 9 because "-" operator forces the string to become a number and true is equal to 1, while false is equal to 0.
 
 // Challenge 3
@@ -66,7 +66,7 @@
 //             budget -= AllExpenses[i]
 //         }
 //     }
-//     console.log("Balance: " + budget) 
+//     console.log("Balance: " + budget)
 // }
 // subtract()
 
@@ -90,7 +90,7 @@
 //             OddCounter += 1
 //         }
 //     }
-    
+
 //     console.log("Amount of Even numbers: " + EvenCounter)
 //     console.log("Amount of Odd numbers: " + OddCounter)
 // }
@@ -130,7 +130,7 @@
 //         digits.push(UserInput % 10)
 //         UserInput = Math.floor(UserInput / 10)
 //     }
-    
+
 //     for (let i = 0; i < digits.length; i++) {
 //         if (digits[i] > largest) {
 //             largest = digits[i]
@@ -228,7 +228,7 @@
 
 // let MyName = "Jovohir"
 // let greeting = "Hi there"
-// FullGreeting = greeting + "," + " " + MyName + "!" 
+// FullGreeting = greeting + "," + " " + MyName + "!"
 // console.log(FullGreeting)
 
 // let MyPoints = 3
@@ -239,14 +239,14 @@
 
 // function Remove1Point() {
 //     MyPoints -= 1
-//     console.log(MyPoints)   
+//     console.log(MyPoints)
 // }
 
 // Add3Points()
 // Add3Points()
 // Add3Points()
 // Remove1Point()
-    
+
 // let Myname = "Jovohir"
 // let greeting = "Hello"
 // let myGreeting = greeting + " " + Myname
@@ -308,7 +308,7 @@
 // } else {
 // console.log("You are now allowed to enter to the night club because you are" + " " + PersonAge + " " + "years old")
 // }
-    
+
 // let FirstCard = 10
 // let SecondCard = 10
 // let sum = FirstCard + SecondCard
@@ -400,8 +400,8 @@
 //     else if (RandomNumber > 10) {
 //         return 10
 //     }
-//     return RandomNumber 
-// }   
+//     return RandomNumber
+// }
 // --------------------------
 
 // let cards = [7,4,9,1,5,3,6,4,7,6]
@@ -444,7 +444,7 @@
 //     console.log(person.name + " is " + person.age + " years old and lives in " + person.country)
 // }
 
-// LogData() 
+// LogData()
 
 // let age = 18
 
@@ -514,7 +514,7 @@
 //     console.log(OrangeArray)
 // }
 
-// sorting() 
+// sorting()
 
 // Wrong Version ------
 // let i = 1
@@ -568,7 +568,7 @@
 //     console.log("Count is: " + count)
 // } while (count < 5)
 
-// for...in and for...of loops 
+// for...in and for...of loops
 
 // for in - The for...in statement iterates over all enumerable property keys (names/indices) of an object, including inherited properties from its prototype chain.
 
@@ -581,9 +581,9 @@
 
 // for (const key in person) {
 //     console.log(key + ": " + person[key])
-// } 
+// }
 
-// for of 
+// for of
 // The for...of statement iterates directly over the values of an iterable object.
 
 // const cars = ['BMW', 'AUDI', 'TESLA', 'NEXIA']
@@ -598,7 +598,7 @@
 //     console.log("Larger number is " + FirstNumber)
 // }
 // else if (SecondNumber > FirstNumber) {
-//     console.log("Larger number is " + SecondNumber) 
+//     console.log("Larger number is " + SecondNumber)
 // }
 // else {
 //     console.log("They are equal")
@@ -681,7 +681,7 @@
 //     }
 // }
 
-// 6-exercise 
+// 6-exercise
 // Could not accomplish this task
 
 // 7-exercise
@@ -812,7 +812,7 @@
 // OrderFood()
 
 // Assignment
-// Challenge 1 
+// Challenge 1
 // let product = prompt("Enter product name: ")
 // let quantity = Number(prompt("Enter the quantity: "))
 // let price = 190000
@@ -837,7 +837,7 @@
 //         console.log("no discount has been applied")
 //         console.log("Total sum: " + PriceAfterDiscount)
 //     }
-    
+
 // }
 
 // discount()
@@ -883,7 +883,7 @@
 //   else if (passed === 1 || passed === 2) {
 //     console.log("Weak password - multiple requirements missing")
 //   }
-//   else { 
+//   else {
 //     console.log(
 //       "Password must contain uppercase letter, number, special character and be at least 8 characters (Weak password)"
 //     )
@@ -893,7 +893,7 @@
 // CheckPassword(UserPassword)
 
 // Challenge 3
-// let UserMoney = Number(prompt("Enter your money (only integers): ")) 
+// let UserMoney = Number(prompt("Enter your money (only integers): "))
 // if (!Number.isInteger(UserMoney) || UserMoney <= 0 || UserMoney % 10 !== 0) {
 //     alert("Invalid amount")
 // }
@@ -917,7 +917,7 @@
 // setTimeout(TrafficLight, 3000, "Green")
 // setTimeout(TrafficLight, 2000, "Yellow")
 
-// Challenge 6 
+// Challenge 6
 // function BankAccount(InitialBalance = 0) {
 //     let balance = InitialBalance
 
@@ -956,7 +956,7 @@
 
 // console.log("Final Balance: " + Account.GetBalance())
 
-// Challenge 7 
+// Challenge 7
 // let role = prompt("Enter your role (admin, editor, viewer): ")
 // let content = ["Image", "MP4", "Music", "Game"]
 
@@ -973,7 +973,7 @@
 //     })
 //     let UserChooseContentIndex = Number(prompt("Enter the index of the content to edit: "))
 //     if (UserChooseContentIndex >= 0 && UserChooseContentIndex < content.length) {
-//         let EditedContent = prompt("What do you want to change to? ") 
+//         let EditedContent = prompt("What do you want to change to? ")
 //         content[UserChooseContentIndex] = EditedContent
 //         console.log("Updated content: ")
 //         console.log(content)
@@ -1114,7 +1114,6 @@
 // let OlderUsers = users.filter(user => user.age >= 20)
 // console.log(OlderUsers);
 
-
 // reduce()
 // let numbers = [1,2,3,4]
 // let sum = numbers.reduce((acc, num) => acc + num, 0)
@@ -1177,7 +1176,7 @@
 
 // function dashes() {
 //     console.log(UserNumber.join("-"));
-    
+
 // }
 // dashes()
 
@@ -1223,7 +1222,7 @@
 //         }
 //     }
 //     console.log("Final result: " + result);
-    
+
 // }
 // ChangingText()
 
@@ -1252,7 +1251,7 @@
 //     year: 2026,
 //     start: function() {
 //         console.log("Car is starting...");
-        
+
 //     }
 // }
 
@@ -1263,7 +1262,7 @@
 // person.name = "Jovohir"
 // person.age = 18
 // person.greet = function () {
-    // return `Hello bro, my name is ${this.name}`
+// return `Hello bro, my name is ${this.name}`
 // }
 // console.log(person.greet());
 
@@ -1271,7 +1270,7 @@
 
 // let object = {
 //     FirstName: "Jovohir",
-//     LastName: "Doe", 
+//     LastName: "Doe",
 //     age: 18
 // }
 // console.log(object);
@@ -1377,7 +1376,7 @@
 
 // function GetAverage(scores) {
 //     let sum = scores.reduce((a,b) => a + b, 0) / scores.length
-//     return sum 
+//     return sum
 // }
 
 // function Status(average) {
@@ -1417,7 +1416,7 @@
 //             MostExpensiveItem = item.name
 //         }
 //         console.log(`Most expensive item is ${MostExpensiveItem} (${MaxNumber}$)`);
-        
+
 //     })
 // }
 
@@ -1450,7 +1449,7 @@
 //     let OiriginalLength = products.length
 //     products = products.filter(item => item.id !== UserDeleting)
 //     if (OiriginalLength === products.length) {console.log("Product not found!")}
-    
+
 //     console.log("Remaining products: ");
 //     console.log(products);
 // }
@@ -1516,7 +1515,7 @@
 // }
 
 // function TotalEngagement() {
-//     let sum = posts.reduce((total, post) => 
+//     let sum = posts.reduce((total, post) =>
 //         total + post.likes + post.comments + post.shares, 0
 //     )
 
@@ -1562,8 +1561,8 @@
 // function showGoals() {
 //     teams.forEach(team => {
 //         console.log(
-//             team.name + 
-//             "Goals scored: " + team.goalsScored + 
+//             team.name +
+//             "Goals scored: " + team.goalsScored +
 //             "Goals conceded: " + team.goalsConceded
 //         )
 //     })
@@ -1659,3 +1658,533 @@
 //     cart++
 //     cartCount.textContent = cart
 // })
+
+// Examples by my teacher (DOM)
+// const heading = document.createElement("h1")
+// heading.textContent = "Bu h1 elementi"
+// document.body.appendChild(heading)
+
+// const button = document.createElement("button")
+// button.textContent = "Click me!"
+// document.body.appendChild(button)
+
+// button.classList.add("btn")
+// heading.classList.add("heading")
+
+// button.addEventListener("click", function () {
+// heading.classList.toggle("heading")
+// })
+
+// const body = document.body
+//
+// const title = document.createElement("h1")
+// const countEl = document.createElement("h2")
+// const plusBtn = document.createElement("button")
+// const minusBtn = document.createElement("button")
+//
+// title.textContent = "Counter"
+// countEl.textContent = "0"
+// plusBtn.textContent = "+"
+// minusBtn.textContent = "-"
+//
+// body.appendChild(title)
+// body.appendChild(countEl)
+// body.appendChild(plusBtn)
+// body.appendChild(minusBtn)
+//
+// let count = 0
+//
+// plusBtn.addEventListener("click", function() {
+// count++
+// countEl.textContent = count
+// })
+//
+// minusBtn.addEventListener("click", function() {
+// count--
+// countEl.textContent = count
+// })
+
+// const body = document.body
+
+// const p = document.createElement("p")
+
+// p.textContent = "Hello Bro"
+
+// body.appendChild(p)
+
+// const body = document.body
+
+// const btn = document.createElement("button")
+// btn.textContent = "CLick"
+
+// const text = document.createElement("p")
+// text.textContent = "0"
+
+// body.appendChild(btn)
+// body.appendChild(text)
+
+// let count = 0
+
+// btn.addEventListener("click", function() {
+//     count++
+//     text.textContent = count
+// })
+
+// const body = document.body
+
+// const btn = document.createElement("button")
+// btn.textContent = "Toggle"
+
+// const box = document.createElement("div")
+// box.textContent = "box"
+
+// document.body.appendChild(btn)
+// document.body.appendChild(box)
+
+// btn.addEventListener("click", function() {
+// box.classList.toggle("active")
+// })
+
+// const body = document.body
+
+// const ul = document.createElement("ul")
+
+// for (let i = 1; i <= 5; i++) {
+//     const li = document.createElement("li")
+//     li.textContent = "Item " + i
+//     ul.appendChild(li)
+// }
+
+// document.body.appendChild(ul)
+
+// ul.addEventListener("click", function(e) {
+//     console.log(e.target.textContent)
+// })
+
+// calculator (practice - 3)
+// const body = document.body;
+// body.classList.add("body");
+
+// const container = document.createElement("section");
+// container.classList.add("main-container");
+
+// const display = document.createElement("div");
+// display.classList.add("console");
+// let representation = "";
+// display.textContent = representation;
+
+// const topFourButtons = document.createElement("div");
+// topFourButtons.classList.add("top-four-orange-button");
+
+// const buttonsContainer = document.createElement("div");
+// buttonsContainer.classList.add("all-buttons");
+
+// const numbers = document.createElement("div");
+// numbers.classList.add("numbers");
+
+// const sevenEightNine = document.createElement("div");
+// sevenEightNine.classList.add("sevenEightNine");
+
+// const fourFiveSix = document.createElement("div");
+// fourFiveSix.classList.add("fourFiveSix");
+
+// const oneTwoThree = document.createElement("div");
+// oneTwoThree.classList.add("oneTwoThree");
+
+// const actions = document.createElement("div");
+// actions.classList.add("actions");
+
+// const zeroDotEqual = document.createElement("div");
+// zeroDotEqual.classList.add("zeroDotEqual");
+
+// const bigZero = document.createElement("div");
+// bigZero.classList.add("bigZero");
+
+// const dotContainer = document.createElement("div");
+// dotContainer.classList.add("dotContainer");
+
+// const equalContainer = document.createElement("div");
+// equalContainer.classList.add("equalContainer");
+
+// document.body.appendChild(container);
+// container.append(display, topFourButtons, buttonsContainer, zeroDotEqual);
+
+// buttonsContainer.append(numbers, actions);
+// numbers.append(sevenEightNine, fourFiveSix, oneTwoThree);
+
+// zeroDotEqual.append(bigZero, dotContainer, equalContainer);
+
+// // buttons
+// const clearButton = document.createElement("button");
+// clearButton.textContent = "C";
+
+// const deleteButton = document.createElement("button");
+// deleteButton.textContent = "DEL";
+
+// const percentageButton = document.createElement("button");
+// percentageButton.textContent = "%";
+
+// const divide = document.createElement("button");
+// divide.textContent = "/";
+
+// const seven = document.createElement("button");
+// seven.textContent = "7";
+
+// const eight = document.createElement("button");
+// eight.textContent = "8";
+
+// const nine = document.createElement("button");
+// nine.textContent = "9";
+
+// const four = document.createElement("button");
+// four.textContent = "4";
+
+// const five = document.createElement("button");
+// five.textContent = "5";
+
+// const six = document.createElement("button");
+// six.textContent = "6";
+
+// const one = document.createElement("button");
+// one.textContent = "1";
+
+// const two = document.createElement("button");
+// two.textContent = "2";
+
+// const three = document.createElement("button");
+// three.textContent = "3";
+
+// const zero = document.createElement("button");
+// zero.textContent = "0";
+
+// const dot = document.createElement("button");
+// dot.textContent = ".";
+
+// const multiply = document.createElement("button");
+// multiply.textContent = "*";
+
+// const minusBtn = document.createElement("button");
+// minusBtn.textContent = "-";
+
+// const plusButton = document.createElement("button");
+// plusButton.textContent = "+";
+
+// const equal = document.createElement("button");
+// equal.textContent = "=";
+
+// // appends
+// topFourButtons.append(clearButton, deleteButton, percentageButton, divide);
+// sevenEightNine.append(seven, eight, nine);
+// fourFiveSix.append(four, five, six);
+// oneTwoThree.append(one, two, three);
+// actions.append(multiply, minusBtn, plusButton);
+// bigZero.append(zero);
+// dotContainer.append(dot);
+// equalContainer.append(equal);
+
+// const allButtons = [one, two, three, four, five, six, seven, eight, nine, zero];
+
+// const actionButtons = [
+//   multiply,
+//   minusBtn,
+//   plusButton,
+//   dot,
+//   percentageButton,
+//   divide,
+// ];
+
+// // functions
+// allButtons.forEach((button) => {
+//   button.addEventListener("click", function () {
+//     representation += button.textContent;
+//     display.textContent = representation;
+//   });
+// });
+
+// actionButtons.forEach((actionButton) => {
+//   actionButton.addEventListener("click", function () {
+//     representation += actionButton.textContent;
+//     display.textContent = representation;
+//   });
+// });
+
+// clearButton.addEventListener("click", function () {
+//   representation = "";
+//   display.textContent = "";
+// });
+
+// deleteButton.addEventListener("click", function () {
+//   representation = representation.slice(0, -1);
+//   display.textContent = representation;
+// });
+
+// function calculate() {
+//   try {
+//     representation = eval(representation).toString();
+//   } catch {
+//     representation = "Error";
+//   }
+
+//   display.textContent = representation;
+// }
+
+// equal.addEventListener("click", function () {
+//   calculate();
+// });
+// end of calculator app
+
+// (%) don't know what it does...
+// percentageButton.addEventListener("click", function () {});
+
+// Traffic light app
+// const body = document.body;
+
+// const trafficLight = document.createElement("div");
+// document.body.appendChild(trafficLight);
+// trafficLight.classList.add("traffic-light");
+
+// const redCircle = document.createElement("div");
+// const yellowCircle = document.createElement("div");
+// const greenCircle = document.createElement("div");
+
+// trafficLight.append(redCircle, yellowCircle, greenCircle);
+
+// redCircle.classList.add("red-circle");
+// yellowCircle.classList.add("yellow-circle");
+// greenCircle.classList.add("green-circle");
+
+// function resetLights() {
+//   redCircle.classList.remove("red");
+//   yellowCircle.classList.remove("yellow");
+//   greenCircle.classList.remove("green");
+// }
+
+// function run() {
+//   setTimeout(function () {
+//     redCircle.classList.add("red");
+//   }, 3000);
+
+//   setTimeout(function () {
+//     yellowCircle.classList.add("yellow");
+//   }, 5000);
+
+//   setTimeout(function () {
+//     greenCircle.classList.add("green");
+//   }, 7000);
+
+//   setTimeout(function () {
+//     resetLights();
+//   }, 8000);
+
+//   setTimeout(function () {
+//     run();
+//   }, 9000);
+// }
+
+// // Infinite version
+// // let i = 0;
+// // while (i < 10) {
+// //   run();
+// // }
+
+// let i = 1;
+// while (i < 100) {
+//   run();
+//   i++;
+// }
+
+// // End of traffic light app
+
+// Password strength checker
+// const body = document.body;
+
+// const container = document.createElement("div");
+// container.classList.add("container");
+// document.body.appendChild(container);
+
+// const label = document.createElement("label");
+// label.classList.add("label");
+// label.textContent = "Password Strength Checker";
+
+// const userInput = document.createElement("input");
+// userInput.classList.add("user-input");
+
+// const strengthContainer = document.createElement("div");
+// strengthContainer.classList.add("strength-container");
+
+// container.append(label, userInput, strengthContainer);
+
+// const strengthWord = document.createElement("p");
+// strengthWord.classList.add("strength-word");
+
+// strengthContainer.appendChild(strengthWord);
+// strengthWord.textContent = "";
+
+// userInput.addEventListener("input", () => {
+//   const value = userInput.value;
+
+//   let score = 0;
+//   let uniqueElements = ["!", "@", "#", "$", "&", "*", "%"];
+
+//   if (value.length >= 8) score++;
+//   if (value !== value.toLowerCase()) score++;
+//   if (value !== value.toUpperCase()) score++;
+//   if (uniqueElements.some((char) => value.includes(char))) score++;
+
+//   if (score <= 2) {
+//     strengthWord.textContent = "Weak";
+//     strengthContainer.classList.add("red");
+//   } else if (score === 3) {
+//     strengthWord.textContent = "Medium";
+//     strengthContainer.classList.add("yellow");
+//   } else {
+//     strengthWord.textContent = "Strong";
+//     strengthContainer.classList.add("green");
+//   }
+// });
+
+// End of Password strength checker
+
+//Interactive to-do list app
+const body = document.body;
+
+const container = document.createElement("div");
+document.body.appendChild(container);
+container.classList.add("container");
+
+const title = document.createElement("p");
+title.classList.add("title-of-app");
+title.textContent = "Interactive To-Do List";
+
+const firstTask = document.createElement("div");
+firstTask.classList.add("task-container");
+
+container.append(title, firstTask);
+
+const firstTaskContainer = document.createElement("div");
+firstTaskContainer.classList.add("first-task-container");
+
+const firstTaskTitle = document.createElement("p");
+
+firstTaskTitle.classList.add("first-task-title");
+firstTaskTitle.textContent = "Task 1";
+firstTask.append(firstTaskContainer);
+
+const statusContainer = document.createElement("div");
+statusContainer.classList.add("statusContainer");
+
+const status = document.createElement("p");
+status.textContent = "pending";
+status.classList.add("status");
+
+statusContainer.append(status);
+
+const taskDescription = document.createElement("p");
+taskDescription.classList.add("taskDescription");
+taskDescription.textContent = "Descripton for Task 1";
+
+firstTaskContainer.append(firstTaskTitle, statusContainer);
+
+const firstTaskDeleteButton = document.createElement("button");
+firstTaskDeleteButton.classList.add("firstTaskDeleteButton");
+firstTaskDeleteButton.textContent = "Delete";
+
+firstTask.append(taskDescription, firstTaskDeleteButton);
+
+firstTaskDeleteButton.addEventListener("click", function () {
+  firstTask.remove(firstTask);
+});
+
+// -----------------------------------------
+
+const secondTaskMainContainer = document.createElement("div");
+secondTaskMainContainer.classList.add("secondTaskMainContainer");
+
+container.append(secondTaskMainContainer);
+
+const taskTitleAndStatusContainer = document.createElement("div");
+taskTitleAndStatusContainer.classList.add("taskTitleAndStatusContainer");
+
+const secondTaskTitle = document.createElement("p");
+secondTaskTitle.textContent = "Task 2";
+secondTaskTitle.classList.add("secondTaskTitle");
+
+const secondTaskStatusContainer = document.createElement("div");
+secondTaskStatusContainer.classList.add("secondTaskStatusContainer");
+
+const secondTaskStatusDescription = document.createElement("p");
+secondTaskStatusDescription.textContent = "Description for Task 2";
+secondTaskStatusDescription.classList.add("taskDescription");
+
+const wordInProgress = document.createElement("p");
+wordInProgress.textContent = "in progress";
+wordInProgress.classList.add("secondTaskStatusContainer");
+
+taskTitleAndStatusContainer.append(secondTaskTitle, secondTaskStatusContainer);
+
+secondTaskStatusContainer.append(wordInProgress);
+
+const secondTaskDeleteButton = document.createElement("button");
+secondTaskDeleteButton.classList.add("firstTaskDeleteButton");
+secondTaskDeleteButton.textContent = "Delete";
+
+secondTaskMainContainer.append(
+  taskTitleAndStatusContainer,
+  secondTaskStatusDescription,
+  secondTaskDeleteButton,
+);
+
+secondTaskDeleteButton.addEventListener("click", function () {
+  secondTaskMainContainer.remove(secondTaskMainContainer);
+});
+
+// -----------------------------------------
+
+const thirdTask = document.createElement("div");
+thirdTask.classList.add("task-container");
+
+container.append(thirdTask);
+
+const thirdTaskContainer = document.createElement("div");
+thirdTaskContainer.classList.add("first-task-container");
+
+const thirdTaskTitle = document.createElement("p");
+
+thirdTaskTitle.classList.add("first-task-title");
+thirdTaskTitle.textContent = "Task 3";
+thirdTask.append(thirdTaskContainer);
+
+thirdTaskContainer.append(thirdTaskTitle);
+
+const thirdstatusContainer = document.createElement("div");
+thirdstatusContainer.classList.add("thirdStatusContainer");
+
+const thirdStatusWord = document.createElement("p");
+thirdStatusWord.classList.add("thirdStatusWord");
+thirdStatusWord.textContent = "completed";
+
+thirdTaskContainer.append(thirdstatusContainer);
+
+const thirdDescription = document.createElement("p");
+thirdDescription.classList.add("thirdDescription");
+
+thirdstatusContainer.append(thirdStatusWord);
+
+const thirdtaskDescription = document.createElement("p");
+thirdtaskDescription.classList.add("taskDescription");
+thirdtaskDescription.textContent = "Descripton for Task 3";
+
+const thirdTaskDeleteButton = document.createElement("button");
+thirdTaskDeleteButton.classList.add("firstTaskDeleteButton");
+thirdTaskDeleteButton.textContent = "Delete";
+
+thirdTask.append(thirdtaskDescription, thirdTaskDeleteButton);
+
+thirdTaskDeleteButton.addEventListener("click", function () {
+  thirdTask.remove(thirdTask);
+});
+
+const addTaskButton = document.createElement("button");
+addTaskButton.classList.add("addTaskButton");
+addTaskButton.textContent = "Add Task";
+container.append(addTaskButton);
