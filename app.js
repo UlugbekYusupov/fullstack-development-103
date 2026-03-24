@@ -339,4 +339,368 @@
 
 
 
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List - DOM Mashqi</title>
+    <style>
+        /* Oddiy dizayn */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Har bir vazifa kartasi */
+        .task {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .task strong {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .task p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        /* Status belgilari (rangli) */
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .pending { background-color: #ff9800; }
+        .in-progress { background-color: #2196f3; }
+        .completed { background-color: #4caf50; }
+
+        /* Tugmalar */
+        .delete-btn {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .delete-btn:hover {
+            background-color: #d32f2f;
+        }
+
+        .add-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .add-btn:hover {
+            background-color: #1565c0;
+        }
+
+        /* Modal oyna (darsdagi oyna) */
+        .modal {
+            display: none; /* Boshida yashirin */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Qoramtir fon */
+        }
+
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .modal h3 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .save-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .close-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Asosiy sarlavha -->
+    <h2>Interactive To-Do List</h2>
+
+    <!-- Bu yerda barcha vazifalar ko'rsatiladi -->
+    <!-- Darsda o'rganganimizdek, bu Container (ota element) -->
+    <div id="taskList">
+        <!-- Mavjud vazifa namunasi -->
+        <div class="task">
+            <strong>Task 1</strong>
+            <span class="badge pending">pending</span>
+            <p>Description for Task 1</p>
+            <button class="delete-btn">Delete</button>
+        </div>
+    </div>
+
+    <!-- Yangi vazifa qo'shish tugmasi -->
+    <button id="addTaskBtn" class="add-btn">Add Task</button>
+
+    <!-- Modal oyna (darsdagi rasmdagi oyna) -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <h3>Add Task</h3>
+            
+            <!-- Input maydonlari -->
+            <input type="text" id="taskTitle" placeholder="Task Title">
+            <textarea id="taskDesc" placeholder="Task Description" rows="3"></textarea>
+            
+            <!-- Status tanlash -->
+            <select id="taskStatus">
+                <option value="pending">Pending</option>
+                <option value="in-progress">In Progress</option>
+                <option value="completed">Completed</option>
+            </select>
+            
+            <button id="saveTask" class="save-btn">Save Task</button>
+            <button id="closeModal" class="close-btn">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        // QADAM 1: ELEMENTLARNI TANLASH (DOM Access)
+        // Darsda o'rgangan getElementById va querySelector larni ishlatamiz
+        // ============================================================
+        
+        // getElementById() - ID bo'yicha elementni tanlaydi
+        const addTaskBtn = document.getElementById('addTaskBtn');
+        const modal = document.getElementById('taskModal');
+        const taskList = document.getElementById('taskList');
+        const saveTaskBtn = document.getElementById('saveTask');
+        const closeModalBtn = document.getElementById('closeModal');
+        
+        // Input maydonlarini tanlaymiz
+        const titleInput = document.getElementById('taskTitle');
+        const descInput = document.getElementById('taskDesc');
+        const statusInput = document.getElementById('taskStatus');
+
+        // ============================================================
+        // QADAM 2: MODAL OYNANI BOSHQARISH (Show/Hide)
+        // CSS ni JavaScript orqali o'zgartirish
+        // ============================================================
+        
+        // Add Task tugmasiga bosilganda modal ni ko'rsatish
+        // addEventListener() - darsda o'rgangan hodisalar bilan ishlash usuli
+        addTaskBtn.addEventListener('click', function() {
+            // style.property - elementning CSS xususiyatini o'zgartirish
+            modal.style.display = 'block';
+        });
+
+        // Close tugmasiga bosilganda modal ni yashirish
+        closeModalBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        // Modal tashqarisiga (qoramtir fonga) bosilganda yopish
+        // Bu Event Bubbling misoli - click hodiasi window gacha tarqaladi
+        window.addEventListener('click', function(event) {
+            // event.target - bosilgan element
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // ============================================================
+        // QADAM 3: YANGI VAZIFA YARATISH (Creating Elements)
+        // Darsdagi document.createElement() dan foydalanamiz
+        // ============================================================
+        
+        saveTaskBtn.addEventListener('click', function() {
+            // Inputlardan qiymatlarni olish
+            const title = titleInput.value;
+            const description = descInput.value;
+            const status = statusInput.value;
+            
+            // Tekshirish: sarlavha bo'sh bo'lmasligi kerak
+            if (title === '') {
+                alert('Iltimos, sarlavha kiriting!');
+                return; // Funksiyani to'xtatish
+            }
+            
+            // --------------------------------------------------------
+            // 3.1 Yangi element yaratish
+            // document.createElement(tagName) - yangi HTML element yaratadi
+            // --------------------------------------------------------
+            const taskDiv = document.createElement('div');
+            
+            // --------------------------------------------------------
+            // 3.2 Class qo'shish
+            // classList.add() - darsda o'rgangan usul
+            // Bu elementga "task" classini qo'shadi
+            // --------------------------------------------------------
+            taskDiv.classList.add('task');
+            
+            // --------------------------------------------------------
+            // 3.3 Status classini aniqlash
+            // pending, in-progress, yoki completed
+            // --------------------------------------------------------
+            let statusClass = '';
+            if (status === 'pending') statusClass = 'pending';
+            else if (status === 'in-progress') statusClass = 'in-progress';
+            else if (status === 'completed') statusClass = 'completed';
+            
+            // --------------------------------------------------------
+            // 3.4 Element ichini to'ldirish
+            // innerHTML - darsda o'rgatilgan, HTML ichiga kod yozish
+            // Eslatma: xavfsizlik uchun real loyihalarda textContent ham ishlatiladi
+            // --------------------------------------------------------
+            taskDiv.innerHTML = `
+                <strong>${title}</strong>
+                <span class="badge ${statusClass}">${status}</span>
+                <p>${description}</p>
+                <button class="delete-btn">Delete</button>
+            `;
+            
+            // --------------------------------------------------------
+            // 3.5 Elementni DOM ga qo'shish
+            // appendChild() - elementni oxiriga qo'shadi
+            // Bu yerda taskList (ota element) ga taskDiv (bola) qo'shiladi
+            // --------------------------------------------------------
+            taskList.appendChild(taskDiv);
+            
+            // --------------------------------------------------------
+            // 3.6 Inputlarni tozalash
+            // value = '' - maydonni bo'shatish
+            // --------------------------------------------------------
+            titleInput.value = '';
+            descInput.value = '';
+            
+            // Modal ni yopish
+            modal.style.display = 'none';
+        });
+
+        // ============================================================
+        // QADAM 4: VAZIFANI O'CHIRISH (Deleting Elements)
+        // Darsdagi Event Delegation usulini qo'llaymiz
+        // ============================================================
+        
+        // ----------------------------------------------------------------
+        // Event Delegation nima?
+        // Darsda aytib o'tilgan: o'rniga har bir delete tugmasiga alohida
+        // event qo'shish, bitta ota elementga qo'shamiz va target ni tekshiramiz
+        // ----------------------------------------------------------------
+        
+        taskList.addEventListener('click', function(event) {
+            // event.target - bosilgan element
+            // classList.contains() - bu elementda "delete-btn" classi bormi?
+            if (event.target.classList.contains('delete-btn')) {
+                
+                // parentElement - ota elementni olish
+                // Yani <button> ning otasi <div class="task">
+                const taskElement = event.target.parentElement;
+                
+                // --------------------------------------------------------
+                // O'chirish usullari (darsda ikkisi ham ko'rsatilgan):
+                // 1. remove() - elementni o'zini o'chiradi (zamonaviy usul)
+                // 2. removeChild() - ota elementdan bola elementni o'chiradi
+                // --------------------------------------------------------
+                
+                // Usul 1: remove()
+                taskElement.remove();
+                
+                // Usul 2: removeChild() - agar kerak bo'lsa
+                // taskList.removeChild(taskElement);
+            }
+        });
+
+        // ============================================================
+        // QO'SHIMCHA: Event Propagation ni to'xtatish (Stop Propagation)
+        // Darsda o'rgangan event.stopPropagation()
+        // ============================================================
+        
+        // Agar biz modal ichidagi click lar tashqariga chiqmasligini xohlasak:
+        document.querySelector('.modal-content').addEventListener('click', function(e) {
+            // Bu modal ichiga bosilganda oynaning tashqarisi bosilmagandek bo'ladi
+            e.stopPropagation();
+        });
+
+        // ============================================================
+        // XULOSA: Darsda o'rgangan narsalarni qo'lladik:
+        // 1. getElementById() - elementlarni tanlash
+        // 2. addEventListener() - hodisalar bilan ishlash (click, etc)
+        // 3. createElement() - yangi element yaratish
+        // 4. classList.add() - class qo'shish
+        // 5. innerHTML - element ichini o'zgartirish
+        // 6. appendChild() - element qo'shish
+        // 7. remove() / removeChild() - element o'chirish
+        // 8. Event Delegation - samarali event boshqaruvi
+        // 9. stopPropagation() - hodisa tarqalishini to'xtatish
+        // 10. parentElement - ota elementga murojaat
+        // ============================================================
+    </script>
+
+</body>
+</html>
+
 
