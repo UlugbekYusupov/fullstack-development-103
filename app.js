@@ -541,20 +541,23 @@ saveBtn.addEventListener("click", function () {
   const desc = document.getElementById("desc");
   const status = document.getElementById("status");
 
-  const task = {
-    id: taskList.length + 1,
-    title: title.value,
-    description: desc.value,
-    status: status.value,
-  };
+  if (title.value != "" || desc.value != "") {
+    const task = {
+      id: taskList.length + 1,
+      title: title.value,
+      description: desc.value,
+      status: status.value,
+    };
 
-  tasks.unshift(task);
-  render();
+    tasks.unshift(task);
+    render();
 
-  title.value = "";
-  desc.value = "";
-  status.value = "pending";
-  modal.style.display = "none";
+    title.value = "";
+    desc.value = "";
+    status.value = "pending";
+    modal.style.display = "none";
+  }
+  return;
 });
 
 function deleteTask(id) {
