@@ -2046,145 +2046,393 @@
 // End of Password strength checker
 
 //Interactive to-do list app
-const body = document.body;
+// const body = document.body;
 
-const container = document.createElement("div");
-document.body.appendChild(container);
-container.classList.add("container");
+// const container = document.createElement("div");
+// document.body.appendChild(container);
+// container.classList.add("container");
 
-const title = document.createElement("p");
-title.classList.add("title-of-app");
-title.textContent = "Interactive To-Do List";
+// const title = document.createElement("p");
+// title.classList.add("title-of-app");
+// title.textContent = "Interactive To-Do List";
 
-const firstTask = document.createElement("div");
-firstTask.classList.add("task-container");
+// const firstTask = document.createElement("div");
+// firstTask.classList.add("task-container");
 
-container.append(title, firstTask);
+// container.append(title, firstTask);
 
-const firstTaskContainer = document.createElement("div");
-firstTaskContainer.classList.add("first-task-container");
+// const firstTaskContainer = document.createElement("div");
+// firstTaskContainer.classList.add("first-task-container");
 
-const firstTaskTitle = document.createElement("p");
+// const firstTaskTitle = document.createElement("p");
 
-firstTaskTitle.classList.add("first-task-title");
-firstTaskTitle.textContent = "Task 1";
-firstTask.append(firstTaskContainer);
+// firstTaskTitle.classList.add("first-task-title");
+// firstTaskTitle.textContent = "Task 1";
+// firstTask.append(firstTaskContainer);
 
-const statusContainer = document.createElement("div");
-statusContainer.classList.add("statusContainer");
+// const statusContainer = document.createElement("div");
+// statusContainer.classList.add("statusContainer");
 
-const status = document.createElement("p");
-status.textContent = "pending";
-status.classList.add("status");
+// const status = document.createElement("p");
+// status.textContent = "pending";
+// status.classList.add("status");
 
-statusContainer.append(status);
+// statusContainer.append(status);
 
-const taskDescription = document.createElement("p");
-taskDescription.classList.add("taskDescription");
-taskDescription.textContent = "Descripton for Task 1";
+// const taskDescription = document.createElement("p");
+// taskDescription.classList.add("taskDescription");
+// taskDescription.textContent = "Descripton for Task 1";
 
-firstTaskContainer.append(firstTaskTitle, statusContainer);
+// firstTaskContainer.append(firstTaskTitle, statusContainer);
 
-const firstTaskDeleteButton = document.createElement("button");
-firstTaskDeleteButton.classList.add("firstTaskDeleteButton");
-firstTaskDeleteButton.textContent = "Delete";
+// const firstTaskDeleteButton = document.createElement("button");
+// firstTaskDeleteButton.classList.add("firstTaskDeleteButton");
+// firstTaskDeleteButton.textContent = "Delete";
 
-firstTask.append(taskDescription, firstTaskDeleteButton);
+// firstTask.append(taskDescription, firstTaskDeleteButton);
 
-firstTaskDeleteButton.addEventListener("click", function () {
-  firstTask.remove(firstTask);
+// firstTaskDeleteButton.addEventListener("click", function () {
+//   firstTask.remove(firstTask);
+// });
+
+// // -----------------------------------------
+
+// const secondTaskMainContainer = document.createElement("div");
+// secondTaskMainContainer.classList.add("secondTaskMainContainer");
+
+// container.append(secondTaskMainContainer);
+
+// const taskTitleAndStatusContainer = document.createElement("div");
+// taskTitleAndStatusContainer.classList.add("taskTitleAndStatusContainer");
+
+// const secondTaskTitle = document.createElement("p");
+// secondTaskTitle.textContent = "Task 2";
+// secondTaskTitle.classList.add("secondTaskTitle");
+
+// const secondTaskStatusContainer = document.createElement("div");
+// secondTaskStatusContainer.classList.add("secondTaskStatusContainer");
+
+// const secondTaskStatusDescription = document.createElement("p");
+// secondTaskStatusDescription.textContent = "Description for Task 2";
+// secondTaskStatusDescription.classList.add("taskDescription");
+
+// const wordInProgress = document.createElement("p");
+// wordInProgress.textContent = "in progress";
+// wordInProgress.classList.add("secondTaskStatusContainer");
+
+// taskTitleAndStatusContainer.append(secondTaskTitle, secondTaskStatusContainer);
+
+// secondTaskStatusContainer.append(wordInProgress);
+
+// const secondTaskDeleteButton = document.createElement("button");
+// secondTaskDeleteButton.classList.add("firstTaskDeleteButton");
+// secondTaskDeleteButton.textContent = "Delete";
+
+// secondTaskMainContainer.append(
+//   taskTitleAndStatusContainer,
+//   secondTaskStatusDescription,
+//   secondTaskDeleteButton,
+// );
+
+// secondTaskDeleteButton.addEventListener("click", function () {
+//   secondTaskMainContainer.remove(secondTaskMainContainer);
+// });
+
+// // -----------------------------------------
+
+// const thirdTask = document.createElement("div");
+// thirdTask.classList.add("task-container");
+
+// container.append(thirdTask);
+
+// const thirdTaskContainer = document.createElement("div");
+// thirdTaskContainer.classList.add("first-task-container");
+
+// const thirdTaskTitle = document.createElement("p");
+
+// thirdTaskTitle.classList.add("first-task-title");
+// thirdTaskTitle.textContent = "Task 3";
+// thirdTask.append(thirdTaskContainer);
+
+// thirdTaskContainer.append(thirdTaskTitle);
+
+// const thirdstatusContainer = document.createElement("div");
+// thirdstatusContainer.classList.add("thirdStatusContainer");
+
+// const thirdStatusWord = document.createElement("p");
+// thirdStatusWord.classList.add("thirdStatusWord");
+// thirdStatusWord.textContent = "completed";
+
+// thirdTaskContainer.append(thirdstatusContainer);
+
+// const thirdDescription = document.createElement("p");
+// thirdDescription.classList.add("thirdDescription");
+
+// thirdstatusContainer.append(thirdStatusWord);
+
+// const thirdtaskDescription = document.createElement("p");
+// thirdtaskDescription.classList.add("taskDescription");
+// thirdtaskDescription.textContent = "Descripton for Task 3";
+
+// const thirdTaskDeleteButton = document.createElement("button");
+// thirdTaskDeleteButton.classList.add("firstTaskDeleteButton");
+// thirdTaskDeleteButton.textContent = "Delete";
+
+// thirdTask.append(thirdtaskDescription, thirdTaskDeleteButton);
+
+// thirdTaskDeleteButton.addEventListener("click", function () {
+//   thirdTask.remove(thirdTask);
+// });
+
+// const addTaskButton = document.createElement("button");
+// addTaskButton.classList.add("addTaskButton");
+// addTaskButton.textContent = "Add Task";
+// container.append(addTaskButton);
+// const title = document.getElementById("main-heading");
+// console.log(title);
+
+// const listItem = document.getElementsByClassName("list-items");
+// console.log(listItem);
+
+// const listItem = document.getElementsByTagName("li");
+// console.log(listItem);
+
+// const container = document.querySelector("div");
+// console.log(container);
+
+// const secondContainer = document.querySelectorAll("div");
+// console.log(secondContainer);
+
+// const title = document.querySelector("#main-heading");
+// title.style.color = "red";
+
+// const listItems = document.querySelectorAll(".list-items");
+// console.log(listItems);
+
+// // listItems.style.fontSize = "25px"; it does now work.
+
+// for (let i = 0; i < listItems.length; i++) {
+//   listItems[i].style.fontSize = "35px";
+// }
+
+// const ul = document.querySelector("ul");
+// const li = document.createElement("li");
+
+// ul.append(li);
+
+// // Modifying
+// // const firstListItem = document.querySelector(".list-items");
+
+// // console.log(firstListItem.innerText);
+// // console.log(firstListItem.textContent);
+// // console.log(firstListItem.innerHTML);
+// li.innerText = "X-men";
+// // li.setAttribute("id", "main-heading");
+// // li.removeAttribute("id");
+
+// // const title = document.querySelector("#main-heading");
+// // console.log(title.getAttribute("id"));
+// li.classList.add("list-items");
+// li.classList.remove("list-items");
+// console.log(li.classList.contains("list-items"));
+
+// // Removing an element.
+// li.remove();
+// let ul = document.querySelector("ul");
+// console.log(ul.parentNode.parentNode);
+// console.log(ul.parentElement.parentElement);
+// const html = document.documentElement;
+// console.log(html);
+// console.log(html.parentNode);
+
+// ul.childNodes[1].style.backgroundColor = "blue";
+// console.log(ul.children);
+// console.log(ul.firstElementChild);
+// console.log(ul.lastElementChild);
+// const div = document.querySelector("div");
+
+// console.log(div.childNodes);
+
+// console.log(ul.nextSibling);
+// console.log(ul.previousSibling);
+// console.log(ul.previousElementSibling);
+
+// event listener
+// const buttonTwo = document.querySelector(".btn-2");
+
+// function alertBtn() {
+//   alert("I love python more than JavaScript");
+// }
+
+// buttonTwo.addEventListener("click", alertBtn);
+
+// const newBackgroundColor = document.querySelector(".box-3");
+
+// function ChangeBg() {
+//   newBackgroundColor.style.backgroundColor = "blue";
+// }
+
+// newBackgroundColor.addEventListener("mouseover", ChangeBg);
+// const revealBtn = document.querySelector(".reveal-btn");
+
+// const hiddenContent = document.querySelector(".hidden-content");
+
+// function revealContent() {
+//   if (hiddenContent.classList.contains("reveal-btn")) {
+//     hiddenContent.classList.remove("reveal-btn");
+//   } else {
+//     hiddenContent.classList.add("reveal-btn");
+//   }
+// }
+
+// revealBtn.addEventListener("click", revealContent);
+
+// document.querySelector("#football").addEventListener("click", function (e) {
+//   console.log("Football is clicked");
+
+//   const target = e.target;
+
+//   if (target.matches("li")) {
+//     target.style.backgroundColor = "grey";
+//   }
+// });
+
+// document.querySelector("#sports").addEventListener("click", function (e) {
+//   console.log(e.target.getAttribute("id") + " is clicked!");
+
+//   const target = e.target;
+
+//   if (target.matches("li")) {
+//     target.style.backgroundColor = "grey";
+//   }
+// });
+
+// const sports = document.querySelector("#sports");
+// const newSport = document.createElement("li");
+
+// newSport.innerText = "Rugby";
+// newSport.setAttribute("id", "rugby");
+
+// sports.appendChild(newSport);
+
+// let btn = document.querySelector("#new-quote");
+// let quote = document.querySelector(".quote");
+// let person = document.querySelector(".person");
+
+// const quotes = [
+//   {
+//     quote: `"Success is not final, failure is not fatal: it is the courage to continue that counts."`,
+//     person: `Winston Churchill`,
+//   },
+
+//   {
+//     quote: `"Do not watch the clock. Do what it does. Keep going."`,
+//     person: `Sam Levenson`,
+//   },
+
+//   {
+//     quote: `"In the middle of difficulty lies opportunity."`,
+//     person: `Albert Einstein`,
+//   },
+
+//   {
+//     quote: `"It always seems impossible until it is done."`,
+//     person: `Nelson Mandela`,
+//   },
+
+//   {
+//     quote: `"Discipline is choosing between what you want now and what you want most."`,
+//     person: `Abraham Lincoln`,
+//   },
+
+//   {
+//     quote: `"You miss 100% of the shots you don't take."`,
+//     person: `Wayne Gretzky`,
+//   },
+// ];
+
+// btn.addEventListener("click", function () {
+//   let random = Math.floor(Math.random() * quotes.length);
+
+//   quote.innerText = quotes[random].quote;
+//   person.innerText = quotes[random].person;
+// });
+
+// let openBtn = document.getElementById("#open-btn");
+// let modalContainer = document.getElementById("#modal-container");
+// let closeBtn = document.getElementById("close-btn");
+// let hereIam = document.getElementById("#modal");
+
+// // openBtn.addEventListener("click", function () {
+// //   modalContainer.style.display = "block";
+// // });
+
+// // closeBtn.addEventListener("click", function () {
+// //   modalContainer.style.display = "none";
+// // });
+
+// // window.addEventListener("click", function (e) {
+// //   if (e.target === modalContainer) {
+// //     modalContainer.style.display = "none";
+// //   }
+// // });
+
+// openBtn.addEventListener("click", function () {
+//   hereIam.style.display = "block";
+// });
+
+// const question = document.querySelector(".question");
+// const answer = document.querySelector(".answer");
+
+// question.addEventListener("click", () => {
+//   answer.classList.toggle("hidden");
+// });
+
+// const list = document.querySelector("#list");
+
+// list.addEventListener("click", (e) => {
+//   if (e.target.matches("li")) {
+//     e.target.style.backgroundColor = "grey";
+//   }
+// });
+
+// const input = document.querySelector("#input");
+// const list = document.querySelector("#list");
+// const addBtn = document.querySelector("#addBtn");
+
+// addBtn.addEventListener("click", function () {
+//   const value = input.value;
+
+//   if (value === "") return;
+
+//   const li = document.createElement("li");
+//   li.textContent = value;
+//   list.appendChild(li);
+
+//   input.value = "";
+// });
+
+const input = document.querySelector("#input");
+const addBtn = document.querySelector("#add-btn");
+const list = document.querySelector("#list");
+
+addBtn.addEventListener("click", function () {
+  const value = input.value;
+  if (value === "") return;
+  const li = document.createElement("li");
+  li.textContent = value;
+  list.appendChild(li);
+  input.value = "";
 });
 
-// -----------------------------------------
-
-const secondTaskMainContainer = document.createElement("div");
-secondTaskMainContainer.classList.add("secondTaskMainContainer");
-
-container.append(secondTaskMainContainer);
-
-const taskTitleAndStatusContainer = document.createElement("div");
-taskTitleAndStatusContainer.classList.add("taskTitleAndStatusContainer");
-
-const secondTaskTitle = document.createElement("p");
-secondTaskTitle.textContent = "Task 2";
-secondTaskTitle.classList.add("secondTaskTitle");
-
-const secondTaskStatusContainer = document.createElement("div");
-secondTaskStatusContainer.classList.add("secondTaskStatusContainer");
-
-const secondTaskStatusDescription = document.createElement("p");
-secondTaskStatusDescription.textContent = "Description for Task 2";
-secondTaskStatusDescription.classList.add("taskDescription");
-
-const wordInProgress = document.createElement("p");
-wordInProgress.textContent = "in progress";
-wordInProgress.classList.add("secondTaskStatusContainer");
-
-taskTitleAndStatusContainer.append(secondTaskTitle, secondTaskStatusContainer);
-
-secondTaskStatusContainer.append(wordInProgress);
-
-const secondTaskDeleteButton = document.createElement("button");
-secondTaskDeleteButton.classList.add("firstTaskDeleteButton");
-secondTaskDeleteButton.textContent = "Delete";
-
-secondTaskMainContainer.append(
-  taskTitleAndStatusContainer,
-  secondTaskStatusDescription,
-  secondTaskDeleteButton,
-);
-
-secondTaskDeleteButton.addEventListener("click", function () {
-  secondTaskMainContainer.remove(secondTaskMainContainer);
+list.addEventListener("click", function (e) {
+  if (e.target.matches("li")) {
+    e.target.classList.toggle("done");
+  }
 });
 
-// -----------------------------------------
-
-const thirdTask = document.createElement("div");
-thirdTask.classList.add("task-container");
-
-container.append(thirdTask);
-
-const thirdTaskContainer = document.createElement("div");
-thirdTaskContainer.classList.add("first-task-container");
-
-const thirdTaskTitle = document.createElement("p");
-
-thirdTaskTitle.classList.add("first-task-title");
-thirdTaskTitle.textContent = "Task 3";
-thirdTask.append(thirdTaskContainer);
-
-thirdTaskContainer.append(thirdTaskTitle);
-
-const thirdstatusContainer = document.createElement("div");
-thirdstatusContainer.classList.add("thirdStatusContainer");
-
-const thirdStatusWord = document.createElement("p");
-thirdStatusWord.classList.add("thirdStatusWord");
-thirdStatusWord.textContent = "completed";
-
-thirdTaskContainer.append(thirdstatusContainer);
-
-const thirdDescription = document.createElement("p");
-thirdDescription.classList.add("thirdDescription");
-
-thirdstatusContainer.append(thirdStatusWord);
-
-const thirdtaskDescription = document.createElement("p");
-thirdtaskDescription.classList.add("taskDescription");
-thirdtaskDescription.textContent = "Descripton for Task 3";
-
-const thirdTaskDeleteButton = document.createElement("button");
-thirdTaskDeleteButton.classList.add("firstTaskDeleteButton");
-thirdTaskDeleteButton.textContent = "Delete";
-
-thirdTask.append(thirdtaskDescription, thirdTaskDeleteButton);
-
-thirdTaskDeleteButton.addEventListener("click", function () {
-  thirdTask.remove(thirdTask);
+list.addEventListener("dblclick", function (e) {
+  if (e.target.matches("li")) {
+    e.target.remove();
+  }
 });
-
-const addTaskButton = document.createElement("button");
-addTaskButton.classList.add("addTaskButton");
-addTaskButton.textContent = "Add Task";
-container.append(addTaskButton);
