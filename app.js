@@ -110,263 +110,264 @@
 // ==================================================================================================================
 // //PRACTICE 1
 
-// const style = document.createElement('style');
-// style.textContent = `
-//   body { font-family: sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; padding: 20px; }
-//   .container { background: white; width: 400px; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-//   h2 { text-align: center; }
-//   .task-card { border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 5px; position: relative; }
-//   .btn-delete { background: red; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px; }
-//   .status { position: absolute; top: 10px; right: 10px; padding: 2px 8px; border-radius: 10px; font-size: 12px; color: white; }
-//   .pending { background: orange; }
-//   .in-progress { background: blue; }
-//   .completed { background: green; }
-//   .add-btn { width: 100%; background: #007bff; color: white; border: none; padding: 10px; cursor: pointer; border-radius: 5px; margin-top: 10px; }
+const style = document.createElement('style');
+style.textContent = `
+  body { font-family: sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; padding: 20px; }
+  .container { background: white; width: 400px; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+  h2 { text-align: center; }
+  .task-card { border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 5px; position: relative; }
+  .btn-delete { background: red; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px; }
+  .status { position: absolute; top: 10px; right: 10px; padding: 2px 8px; border-radius: 10px; font-size: 12px; color: white; }
+  .pending { background: orange; }
+  .in-progress { background: blue; }
+  .completed { background: green; }
+  .add-btn { width: 100%; background: #007bff; color: white; border: none; padding: 10px; cursor: pointer; border-radius: 5px; margin-top: 10px; }
   
-//   /* Modal oynasi */
-//   .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; }
-//   .modal-content { background: white; padding: 20px; border-radius: 8px; width: 300px; display: flex; flex-direction: column; gap: 10px; }
-// `;
-// document.head.appendChild(style);
+  /* Modal oynasi */
+  .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; }
+  .modal-content { background: white; padding: 20px; border-radius: 8px; width: 300px; display: flex; flex-direction: column; gap: 10px; }
+`;
+document.head.appendChild(style);
 
-// //PRACTICE 2
+//PRACTICE 2
 
-// const styleElement = document.createElement('style');
-// styleElement.textContent = `
-//     body {
-//         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-//         background-color: #f0f2f5;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         height: 100vh;
-//         margin: 0;
-//     }
+const styleElement = document.createElement('style');
+styleElement.textContent = `
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
 
-//     .card {
-//         background-color: white;
-//         padding: 30px;
-//         border-radius: 12px;
-//         box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-//         width: 350px;
-//         text-align: center;
-//         transition: all 0.3s ease;
-//     }
+    .card {
+        background-color: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        width: 350px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
 
-//     .card-title {
-//         font-size: 22px;
-//         font-weight: 700;
-//         color: #1c1e21;
-//         margin-bottom: 20px;
-//     }
+    .card-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #1c1e21;
+        margin-bottom: 20px;
+    }
 
-//     .input-field {
-//         width: 100%;
-//         padding: 12px;
-//         font-size: 16px;
-//         border: 2px solid #ddd;
-//         border-radius: 8px;
-//         box-sizing: border-box; /* Padding ichida qoladi */
-//         transition: border-color 0.3s ease;
-//         margin-bottom: 15px;
-//     }
+    .input-field {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        box-sizing: border-box; /* Padding ichida qoladi */
+        transition: border-color 0.3s ease;
+        margin-bottom: 15px;
+    }
 
-//     .input-field:focus {
-//         outline: none;
-//         border-color: #1877f2; /* Moviy rang fikus bo'lganda */
-//     }
+    .input-field:focus {
+        outline: none;
+        border-color: #1877f2; /* Moviy rang fikus bo'lganda */
+    }
 
-//     /* Kuchlilik darajasi tugmasi */
-//     .strength-badge {
-//         display: inline-block;
-//         padding: 8px 20px;
-//         font-size: 14px;
-//         font-weight: bold;
-//         color: white;
-//         border-radius: 6px;
-//         margin-top: 5px;
-//         opacity: 0; /* Boshida ko'rinmaydi */
-//         transition: opacity 0.3s ease, background-color 0.3s ease;
-//     }
+    /* Kuchlilik darajasi tugmasi */
+    .strength-badge {
+        display: inline-block;
+        padding: 8px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+        border-radius: 6px;
+        margin-top: 5px;
+        opacity: 0; /* Boshida ko'rinmaydi */
+        transition: opacity 0.3s ease, background-color 0.3s ease;
+    }
 
-//     /* Darajalar uchun klasslar */
-//     .weak {
-//         background-color: #dc3545; /* Qizil */
-//         opacity: 1;
-//     }
+    /* Darajalar uchun klasslar */
+    .weak {
+        background-color: #dc3545; /* Qizil */
+        opacity: 1;
+    }
 
-//     .medium {
-//         background-color: #ffc107; /* Sariq */
-//         color: black;
-//         opacity: 1;
-//     }
+    .medium {
+        background-color: #ffc107; /* Sariq */
+        color: black;
+        opacity: 1;
+    }
 
-//     .strong {
-//         background-color: #198754; /* Yashil */
-//         opacity: 1;
-//     }
-// `;
-// document.head.appendChild(styleElement);
+    .strong {
+        background-color: #198754; /* Yashil */
+        opacity: 1;
+    }
+`;
+document.head.appendChild(styleElement);
 
-// const card = document.createElement('div');
-// card.className = 'card';
+const card = document.createElement('div');
+card.className = 'card';
 
-// const title = document.createElement('h2');
-// title.className = 'card-title';
-// title.textContent = 'Password Strength Checker';
-// card.appendChild(title);
+const title = document.createElement('h2');
+title.className = 'card-title';
+title.textContent = 'Password Strength Checker';
+card.appendChild(title);
 
-// const passwordInput = document.createElement('input');
-// passwordInput.type = 'password';
-// passwordInput.className = 'input-field';
-// passwordInput.placeholder = 'Enter password';
-// card.appendChild(passwordInput);
+const passwordInput = document.createElement('input');
+passwordInput.type = 'password';
+passwordInput.className = 'input-field';
+passwordInput.placeholder = 'Enter password';
+card.appendChild(passwordInput);
 
-// const strengthBadge = document.createElement('span');
-// strengthBadge.className = 'strength-badge';
-// strengthBadge.textContent = 'Weak'; // Boshlang'ich matn
-// card.appendChild(strengthBadge);
+const strengthBadge = document.createElement('span');
+strengthBadge.className = 'strength-badge';
+strengthBadge.textContent = 'Weak'; // Boshlang'ich matn
+card.appendChild(strengthBadge);
 
-// document.body.appendChild(card);
+document.body.appendChild(card);
 
-// function checkPasswordStrength(password) {
-//     let score = 0;
+function checkPasswordStrength(password) {
+    let score = 0;
 
-//     if (password.length === 0) return 0;
+    if (password.length === 0) return 0;
 
-//     if (password.length >= 8) score++;
+    if (password.length >= 8) score++;
 
-//     if (/[a-zA-Z]/.test(password)) score++;
+    if (/[a-zA-Z]/.test(password)) score++;
 
-//     if (/\d/.test(password)) score++;
+    if (/\d/.test(password)) score++;
 
-//     return score; 
-// }
+    return score; 
+}
 
-// passwordInput.addEventListener('input', function() {
-//     const password = this.value;
-//     const strength = checkPasswordStrength(password);
+passwordInput.addEventListener('input', function() {
+    const password = this.value;
+    const strength = checkPasswordStrength(password);
 
-//     strengthBadge.classList.remove('weak', 'medium', 'strong');
+    strengthBadge.classList.remove('weak', 'medium', 'strong');
     
-//     if (password.length === 0) {
-//         strengthBadge.style.opacity = '0';
-//         return;
-//     }
+    if (password.length === 0) {
+        strengthBadge.style.opacity = '0';
+        return;
+    }
 
-//     if (strength === 0 || strength === 1) {
-//         strengthBadge.textContent = 'Weak';
-//         strengthBadge.classList.add('weak');
-//     } else if (strength === 2) {
-//         strengthBadge.textContent = 'Medium';
-//         strengthBadge.classList.add('medium');
-//     } else if (strength === 3) {
-//         strengthBadge.textContent = 'Strong';
-//         strengthBadge.classList.add('strong');
-//     }
-// });
+    if (strength === 0 || strength === 1) {
+        strengthBadge.textContent = 'Weak';
+        strengthBadge.classList.add('weak');
+    } else if (strength === 2) {
+        strengthBadge.textContent = 'Medium';
+        strengthBadge.classList.add('medium');
+    } else if (strength === 3) {
+        strengthBadge.textContent = 'Strong';
+        strengthBadge.classList.add('strong');
+    }
+});
 
-// //PRACTICE 3
-// const style = document.createElement('style');
-// style.textContent = `
-//   body { display: flex; justify-content: space-around; align-items: center; height: 100vh; background-color: #f5f5f5; font-family: sans-serif; }
+//PRACTICE 3
+const style = document.createElement('style');
+style.textContent = `
+  body { display: flex; justify-content: space-around; align-items: center; height: 100vh; background-color: #f5f5f5; font-family: sans-serif; }
   
-//   /* Calculator sytle */
-//   .calc-container { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 280px; }
-//   .display { width: 100%; height: 50px; background: #f9f9f9; border-radius: 8px; margin-bottom: 20px; text-align: right; padding: 10px; box-sizing: border-box; font-size: 24px; border: 1px solid #eee; }
-//   .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-//   button { padding: 15px; font-size: 18px; border: none; border-radius: 8px; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-//   .btn-num { background: white; color: #333; }
-//   .btn-op { background: #ff9500; color: white; }
-//   .btn-func { background: #ff9500; color: white; }
-//   .btn-equal { background: #28a745; color: white; grid-column: span 1; }
-//   .btn-zero { grid-column: span 2; background: white; }
-//   button:active { transform: scale(0.95); }
+  /* Calculator sytle */
+  .calc-container { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 280px; }
+  .display { width: 100%; height: 50px; background: #f9f9f9; border-radius: 8px; margin-bottom: 20px; text-align: right; padding: 10px; box-sizing: border-box; font-size: 24px; border: 1px solid #eee; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  button { padding: 15px; font-size: 18px; border: none; border-radius: 8px; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+  .btn-num { background: white; color: #333; }
+  .btn-op { background: #ff9500; color: white; }
+  .btn-func { background: #ff9500; color: white; }
+  .btn-equal { background: #28a745; color: white; grid-column: span 1; }
+  .btn-zero { grid-column: span 2; background: white; }
+  button:active { transform: scale(0.95); }
 
-//   /* Svetofor stillari */
-//   .traffic-light { background: #111; padding: 15px; border-radius: 20px; display: flex; flex-direction: column; gap: 15px; }
-//   .light { width: 60px; height: 60px; border-radius: 50%; background: #333; transition: 0.3s; }
-//   .red-active { background: #ff3b30; box-shadow: 0 0 20px #ff3b30; }
-//   .yellow-active { background: #ffcc00; box-shadow: 0 0 20px #ffcc00; }
-//   .green-active { background: #4cd964; box-shadow: 0 0 20px #4cd964; }
-// `;
-// document.head.appendChild(style);
+  /* Svetofor stillari */
+  .traffic-light { background: #111; padding: 15px; border-radius: 20px; display: flex; flex-direction: column; gap: 15px; }
+  .light { width: 60px; height: 60px; border-radius: 50%; background: #333; transition: 0.3s; }
+  .red-active { background: #ff3b30; box-shadow: 0 0 20px #ff3b30; }
+  .yellow-active { background: #ffcc00; box-shadow: 0 0 20px #ffcc00; }
+  .green-active { background: #4cd964; box-shadow: 0 0 20px #4cd964; }
+`;
+document.head.appendChild(style);
 
-// const calcContainer = document.createElement('div');
-// calcContainer.className = 'calc-container';
+const calcContainer = document.createElement('div');
+calcContainer.className = 'calc-container';
 
-// const display = document.createElement('div');
-// display.className = 'display';
-// display.innerText = '0';
-// calcContainer.appendChild(display);
+const display = document.createElement('div');
+display.className = 'display';
+display.innerText = '0';
+calcContainer.appendChild(display);
 
-// const grid = document.createElement('div');
-// grid.className = 'grid';
+const grid = document.createElement('div');
+grid.className = 'grid';
 
-// const buttons = [
-//   'C', 'DEL', '%', '÷',
-//   '7', '8', '9', '×',
-//   '4', '5', '6', '-',
-//   '1', '2', '3', '+',
-//   '0', '.', '='
-// ];
+const buttons = [
+  'C', 'DEL', '%', '÷',
+  '7', '8', '9', '×',
+  '4', '5', '6', '-',
+  '1', '2', '3', '+',
+  '0', '.', '='
+];
 
-// buttons.forEach(text => {
-//   const btn = document.createElement('button');
-//   btn.innerText = text;
+buttons.forEach(text => {
+  const btn = document.createElement('button');
+  btn.innerText = text;
   
-//   if (text === '0') btn.className = 'btn-zero btn-num';
-//   else if (text === '=') btn.className = 'btn-equal';
-//   else if (['÷', '×', '-', '+'].includes(text)) btn.className = 'btn-op';
-//   else if (['C', 'DEL', '%'].includes(text)) btn.className = 'btn-func';
-//   else btn.className = 'btn-num';
+  if (text === '0') btn.className = 'btn-zero btn-num';
+  else if (text === '=') btn.className = 'btn-equal';
+  else if (['÷', '×', '-', '+'].includes(text)) btn.className = 'btn-op';
+  else if (['C', 'DEL', '%'].includes(text)) btn.className = 'btn-func';
+  else btn.className = 'btn-num';
 
-//   btn.onclick = () => {
-//     if (text === 'C') display.innerText = '0';
-//     else if (display.innerText === '0') display.innerText = text;
-//     else display.innerText += text;
-//   };
+  btn.onclick = () => {
+    if (text === 'C') display.innerText = '0';
+    else if (display.innerText === '0') display.innerText = text;
+    else display.innerText += text;
+  };
 
-//   grid.appendChild(btn);
-// });
+  grid.appendChild(btn);
+});
 
-// calcContainer.appendChild(grid);
-// document.body.appendChild(calcContainer);
+calcContainer.appendChild(grid);
+document.body.appendChild(calcContainer);
 
 //Practice 4
-// const trafficLight = document.createElement('div');
-// trafficLight.className = 'traffic-light';
 
-// const red = document.createElement('div');
-// red.className = 'light';
-// const yellow = document.createElement('div');
-// yellow.className = 'light';
-// const green = document.createElement('div');
-// green.className = 'light';
+const trafficLight = document.createElement('div');
+trafficLight.className = 'traffic-light';
 
-// trafficLight.append(red, yellow, green);
-// document.body.appendChild(trafficLight);
+const red = document.createElement('div');
+red.className = 'light';
+const yellow = document.createElement('div');
+yellow.className = 'light';
+const green = document.createElement('div');
+green.className = 'light';
 
-// let step = 0;
-// function changeLight() {
-//   red.classList.remove('red-active');
-//   yellow.classList.remove('yellow-active');
-//   green.classList.remove('green-active');
+trafficLight.append(red, yellow, green);
+document.body.appendChild(trafficLight);
 
-//   if (step === 0) {
-//     red.classList.add('red-active');
-//     step = 1;
-//   } else if (step === 1) {
-//     yellow.classList.add('yellow-active');
-//     step = 2;
-//   } else {
-//     green.classList.add('green-active');
-//     step = 0;
-//   }
-// }
+let step = 0;
+function changeLight() {
+  red.classList.remove('red-active');
+  yellow.classList.remove('yellow-active');
+  green.classList.remove('green-active');
 
-// setInterval(changeLight, 2000); 
-// changeLight();
+  if (step === 0) {
+    red.classList.add('red-active');
+    step = 1;
+  } else if (step === 1) {
+    yellow.classList.add('yellow-active');
+    step = 2;
+  } else {
+    green.classList.add('green-active');
+    step = 0;
+  }
+}
+
+setInterval(changeLight, 2000); 
+changeLight();
 
 
 const style = document.createElement('style');
@@ -484,11 +485,7 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// ==========================================
-// 2. DOM Tuzilishi
-// ==========================================
 
-// Jamoa qo'shish formasi
 const addTeamCard = document.createElement('div');
 addTeamCard.className = 'card';
 addTeamCard.innerHTML = `
@@ -502,7 +499,7 @@ addTeamCard.innerHTML = `
 `;
 document.body.appendChild(addTeamCard);
 
-// Leaderboard jadvali
+
 const boardCard = document.createElement('div');
 boardCard.className = 'card leaderboard-card';
 boardCard.innerHTML = `
