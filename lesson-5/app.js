@@ -218,3 +218,21 @@
 
 // console.log(passcodeCodeChecker(soz));
 
+
+
+// task-2
+
+// function light() {
+//     setTimeout(function(){
+//         console.log("Red");
+//     }),5000
+//     setTimeout(function(){
+//         console.log("yello");
+//     }),3000
+//     setTimeout(function(){
+//         console.log("green");
+//     }),2000
+// }
+
+
+// light()
