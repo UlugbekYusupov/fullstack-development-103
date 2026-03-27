@@ -2412,27 +2412,183 @@
 //   input.value = "";
 // });
 
-const input = document.querySelector("#input");
-const addBtn = document.querySelector("#add-btn");
-const list = document.querySelector("#list");
+// const input = document.querySelector("#input");
+// const addBtn = document.querySelector("#add-btn");
+// const list = document.querySelector("#list");
 
-addBtn.addEventListener("click", function () {
-  const value = input.value;
-  if (value === "") return;
-  const li = document.createElement("li");
-  li.textContent = value;
-  list.appendChild(li);
-  input.value = "";
-});
+// addBtn.addEventListener("click", function () {
+//   const value = input.value;
+//   if (value === "") return;
+//   const li = document.createElement("li");
+//   li.textContent = value;
+//   list.appendChild(li);
+//   input.value = "";
+// });
 
-list.addEventListener("click", function (e) {
-  if (e.target.matches("li")) {
-    e.target.classList.toggle("done");
-  }
-});
+// list.addEventListener("click", function (e) {
+//   if (e.target.matches("li")) {
+//     e.target.classList.toggle("done");
+//   }
+// });
 
-list.addEventListener("dblclick", function (e) {
-  if (e.target.matches("li")) {
-    e.target.remove();
-  }
-});
+// list.addEventListener("dblclick", function (e) {
+//   if (e.target.matches("li")) {
+//     e.target.remove();
+//   }
+// });
+
+// to do list
+// const addTask = document.getElementsByClassName("add-btn")[0];
+// const modal = document.getElementsByClassName("modal")[0];
+// const closeBtn = document.getElementsByClassName("close-btn")[0];
+// const taskList = document.getElementById("taskList");
+// const saveBtn = document.getElementsByClassName("save-btn")[0];
+// const editBtn = document.getElementsByClassName("edit-btn");
+// const editModal = document.getElementsByClassName("edit-modal-container")[0];
+// const confirmBtn = document.getElementsByClassName("confirm-btn")[0]
+// const cancelBtn = document.getElementsByClassName("cancel-btn")[0]
+
+// let currentEditId = null
+
+// let tasks = [
+//   {
+//     id: 1,
+//     title: "Task 1",
+//     description: "Description 1",
+//     status: "Pending",
+//   },
+//   {
+//     id: 2,
+//     title: "Task 2",
+//     description: "Description 2",
+//     status: "Completed",
+//   },
+//   {
+//     id: 3,
+//     title: "Task 3",
+//     description: "Description 3",
+//     status: "In progress",
+//   },
+// ];
+
+// function render() {
+//   taskList.innerHTML = "";
+
+//   tasks.forEach(function (task) {
+//     const data = `
+//         <div class="task">
+//           <div class="task-header">
+//             <div class="task-title">${task.title}</div>
+//             <span class="badge pending">${task.status}</span>
+//           </div>
+//           <div class="task-desc">${task.description}</div>
+//           <button class="delete-btn" onclick="deleteTask(${task.id})">Delete</button>
+//           <button class="edit-btn" onclick="edit(${task.id})">Edit</button>
+//         </div>
+//     `;
+//     // taskList.appendChild(data);
+//     taskList.innerHTML += data;
+//   });
+// }
+
+// render();
+
+// addTask.addEventListener("click", function () {
+//   editModal.style.display = "none";
+//   modal.style.display = "flex";
+// });
+
+// closeBtn.addEventListener("click", function () {
+//   modal.style.display = "none";
+// });
+
+// saveBtn.addEventListener("click", function () {
+//   const title = document.getElementById("title");
+//   const desc = document.getElementById("desc");
+//   const status = document.getElementById("status");
+
+//   if (title.value != "" || desc.value != "") {
+//     const task = {
+//       id: taskList.length + 1,
+//       title: title.value,
+//       description: desc.value,
+//       status: status.value,
+//     };
+
+//     tasks.unshift(task);
+//     render();
+
+//     title.value = "";
+//     desc.value = "";
+//     status.value = "pending";
+//     modal.style.display = "none";
+//   }
+//   return;
+// });
+
+// function deleteTask(id) {
+//   tasks = tasks.filter(function (task) {
+//     return task.id !== id;
+//   });
+//   render();
+// }
+
+// function edit(id) {
+//   editModal.style.display = "flex";
+  
+//   const task = tasks.find((t) => t.id === id);
+//   if (!task) return;
+
+//   currentEditId = id;
+
+//   document.getElementById("edit-title").value = task.title;
+//   document.getElementById("edit-desc").value = task.description;
+//   document.getElementById("edit-status").value = task.status.toLowerCase()
+// }
+
+// confirmBtn.addEventListener("click", function() {
+
+//   const title = document.getElementById("edit-title").value
+//   const desc = document.getElementById("edit-desc").value
+//   const status = document.getElementById("edit-status").value
+
+//   const task = tasks.find(t => t.id === currentEditId);
+//   if (!task) return 
+
+//   task.title = title
+//   task.description = desc
+//   task.status = status
+
+//   render()
+//   editModal.style.display = "none";
+// })
+
+// cancelBtn.addEventListener("click", function() {editModal.style.display = "none";})
+// to do list (ending)
+
+const inputBtn = document.getElementById("input")
+const statusContainer = document.querySelector(".status")
+
+inputBtn.addEventListener("input", function() {
+    const value = inputBtn.value
+
+    let score = 0
+    let uniqueElements = ["!", "@", "#", "$", "_", "%", "*", "&"]
+
+    if (value.length >= 8) score++
+    if (value !== value.toLowerCase()) score++
+    if (value !== value.toUpperCase()) score++
+    if (uniqueElements.some(char => value.includes(char))) score++
+
+    if (score <= 2) {
+        statusContainer.textContent = "Weak"
+        statusContainer.style.backgroundColor = "red"
+    } else if (score === 3) {
+        statusContainer.textContent = "Medium"
+        statusContainer.style.backgroundColor = "yellow"
+    } else {
+        statusContainer.textContent = "Strong"
+        statusContainer.style.backgroundColor = "green"
+    }
+
+})
