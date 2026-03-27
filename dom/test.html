@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>To-Do UI</title>
-
   <style>
     * {
       margin: 0;
@@ -103,7 +102,20 @@
     }
 
     /* MODAL */
-    #modal {
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .edit-modal {
       position: fixed;
       top: 0;
       left: 0;
@@ -156,31 +168,59 @@
       padding: 8px;
       border-radius: 5px;
     }
+
+    .edit-btn {
+      background: #1216ff;
+      color: white;
+      border: none;
+      padding: 6px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .update-btn {
+      background: #1216ff;
+      color: white;
+      border: none;
+      padding: 6px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    /* PASSWORD CHECKER */
+    .passwordInput {
+      width: 50%;
+      display: flex;
+    }
+
+    .passwordStrength {
+      background-color: #ccc;
+      color: black;
+      padding: 10px 10px;
+    }
   </style>
 </head>
 
 <body>
-
   <div class="container">
     <div class="title">Interactive To-Do List</div>
-
-    <div id="tasks"></div>
-
+    <div id="taskList"></div>
     <button class="add-btn">Add Task</button>
   </div>
 
   <!-- MODAL (static preview) -->
-  <div id="modal">
+  <div class="modal">
     <div class="modal-box">
       <div class="modal-title">Add Task</div>
 
-      <input id="modal-name" type="text" placeholder="Task Title">
-      <textarea id="modal-desc" placeholder="Task Description"></textarea>
+      <input id="title" type="text" placeholder="Task Title" required />
+      <textarea id="desc" placeholder="Task Description"></textarea>
 
-      <select>
-        <option>pending</option>
-        <option>progress</option>
-        <option>completed</option>
+      <select id="status">
+        <option value="pending">Pending</option>
+        <option value="in-prgress">In Progress</option>
+        <option value="completed">Completed</option>
       </select>
 
       <button class="save-btn">Save Task</button>
@@ -188,6 +228,24 @@
     </div>
   </div>
 
+  <!-- EDIT MODAL -->
+  <div class="edit-modal">
+    <div class="modal-box">
+      <div class="modal-title">Edit Task</div>
+
+      <input id="edit-title" type="text" placeholder="Task Title" required />
+      <textarea id="edit-desc" placeholder="Task Description"></textarea>
+
+      <select id="edit-status">
+        <option value="pending">Pending</option>
+        <option value="in-prgress">In Progress</option>
+        <option value="completed">Completed</option>
+      </select>
+
+      <button class="update-btn">Update Task</button>
+      <button class="close-btn">Close</button>
+    </div>
+  </div>
   <script src="main.js"></script>
 </body>
 

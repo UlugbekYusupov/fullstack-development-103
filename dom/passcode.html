@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Checker</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #667eea;
+}
+
+.passwordStrength {
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background: #eee;
+    font-weight: bold;
+}
+
+.weak {
+    background: #ff4d4d;
+    color: white;
+}
+
+.medium {
+    background: #ffb84d;
+    color: white;
+}
+
+.strong {
+    background: #4CAF50;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="form">
+    <label>Password</label>
+    <input type="password" class="passwordInput" placeholder="Enter your password...">
+    <p class="passwordStrength">...</p>
+</div>
+
+<script src="passcode.js"></script>
+
+</body>
+</html>
