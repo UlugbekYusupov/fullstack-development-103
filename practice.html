@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Advanced Toggle</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 40px;
+        }
+
+        .card {
+            width: 260px;
+            padding: 16px;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .card.active {
+            border-color: green;
+            background: #f0fff4;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+        }
+
+        .cart {
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cart">
+        🛒 Cart: <span id="cartCount">0</span>
+    </div>
+
+    <div class="card" data-id="1">
+        <h3>Car Mirror</h3>
+        <button class="btn">Add to Cart</button>
+    </div>
+
+    <script>
+        const button = document.querySelector(".btn");
+        const card = document.querySelector(".card");
+        const cartCountEl = document.getElementById("cartCount");
+
+        let inCart = false;   // 🔑 STATE
+        let cartCount = 0;
+
+        button.addEventListener("click", () => {
+            // toggle state
+            inCart = !inCart;
+
+            if (inCart) {
+                cartCount++;
+                button.textContent = "Remove from Cart";
+                card.classList.add("active");
+            } else {
+                cartCount--;
+                button.textContent = "Add to Cart";
+                card.classList.remove("active");
+            }
+
+            cartCountEl.textContent = cartCount;
+        });
+    </script>
+
+</body>
+
+</html>

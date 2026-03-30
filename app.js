@@ -2566,29 +2566,63 @@
 // cancelBtn.addEventListener("click", function() {editModal.style.display = "none";})
 // to do list (ending)
 
-const inputBtn = document.getElementById("input")
-const statusContainer = document.querySelector(".status")
+// const inputBtn = document.getElementById("input")
+// const statusContainer = document.querySelector(".status")
 
-inputBtn.addEventListener("input", function() {
-    const value = inputBtn.value
+// inputBtn.addEventListener("input", function() {
+//     const value = inputBtn.value
 
-    let score = 0
-    let uniqueElements = ["!", "@", "#", "$", "_", "%", "*", "&"]
+//     let score = 0
+//     let uniqueElements = ["!", "@", "#", "$", "_", "%", "*", "&"]
 
-    if (value.length >= 8) score++
-    if (value !== value.toLowerCase()) score++
-    if (value !== value.toUpperCase()) score++
-    if (uniqueElements.some(char => value.includes(char))) score++
+//     if (value.length >= 8) score++
+//     if (value !== value.toLowerCase()) score++
+//     if (value !== value.toUpperCase()) score++
+//     if (uniqueElements.some(char => value.includes(char))) score++
 
-    if (score <= 2) {
-        statusContainer.textContent = "Weak"
-        statusContainer.style.backgroundColor = "red"
-    } else if (score === 3) {
-        statusContainer.textContent = "Medium"
-        statusContainer.style.backgroundColor = "yellow"
+//     if (score <= 2) {
+//         statusContainer.textContent = "Weak"
+//         statusContainer.style.backgroundColor = "red"
+//     } else if (score === 3) {
+//         statusContainer.textContent = "Medium"
+//         statusContainer.style.backgroundColor = "yellow"
+//     } else {
+//         statusContainer.textContent = "Strong"
+//         statusContainer.style.backgroundColor = "green"
+//     }
+
+// })
+
+// Sing up, login dom
+const title = document.querySelector("#title")
+const container = document.querySelector(".container")
+const inputsContainer = document.querySelector(".inputs")
+
+// Inputs
+const userNameInput = document.querySelector("#username-input")
+const emailInput = document.querySelector("#email-input")
+const password = document.querySelector("#password")
+
+// buttons
+const submitBtn = document.querySelector("#submit-button")
+const questionBtn = document.querySelector("#question-button")
+
+// logics
+let isLoginMode = false
+
+questionBtn.addEventListener("click", function() {
+    isLoginMode = !isLoginMode
+
+    if (isLoginMode) {
+        userNameInput.remove()
+        title.innerHTML = "Login";
+
+        questionBtn.innerHTML = "Don't have an account? Sign Up"
+
     } else {
-        statusContainer.textContent = "Strong"
-        statusContainer.style.backgroundColor = "green"
-    }
+        inputsContainer.appendChild(userNameInput)
+        title.textContent = "Sign Up"
 
+        questionBtn.innerHTML = "Already have an account? Login"
+    }
 })
